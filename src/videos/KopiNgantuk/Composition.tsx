@@ -3,7 +3,7 @@ import { AbsoluteFill, Sequence } from 'remotion';
 import { ParticleBackground } from '../../shared/effects/ParticleBackground';
 import { MainCharacter } from '../../shared/characters/MainCharacter';
 import { BrainMascot } from '../../shared/characters/BrainMascot';
-import { Captions } from '../../components/Captions';
+import { ViralCaptions } from '../../shared/ui/ViralCaptions';
 import { ProgressBar } from '../../components/ProgressBar';
 
 export const KopiNgantukVideo: React.FC = () => {
@@ -20,7 +20,7 @@ export const KopiNgantukVideo: React.FC = () => {
               <MainCharacter mood="sleepy" holdingItem="coffee" scale={1.35} />
             </g>
           </svg>
-          <Captions
+          <ViralCaptions
             badge="MINUM KOPI MALAH NGANTUK?!"
             text="Pernah nggak sih, kamu sengaja ngopi biar melek ngerjain tugas, tapi sejam kemudian malah ngantuk berat?"
           />
@@ -39,7 +39,7 @@ export const KopiNgantukVideo: React.FC = () => {
               <BrainMascot mood="thinking" />
             </g>
           </svg>
-          <Captions
+          <ViralCaptions
             badge="FAKTOR ADENOSIN"
             text="Kafein di kopi sebenarnya bukan memberi energi baru, tapi cuma membajak reseptor adenosin (sinyal lelah) di otak kita!"
           />
@@ -55,7 +55,7 @@ export const KopiNgantukVideo: React.FC = () => {
               <MainCharacter mood="shocked" scale={1.35} />
             </g>
           </svg>
-          <Captions
+          <ViralCaptions
             badge="THE CAFFEINE CRASH!"
             text="Begitu efek kafein habis, tumpukan sinyal lelah yang tertahan tadi langsung menyerbu otakmu secara bersamaan!"
           />
@@ -71,7 +71,7 @@ export const KopiNgantukVideo: React.FC = () => {
               <MainCharacter mood="eureka" scale={1.35} />
             </g>
           </svg>
-          <Captions
+          <ViralCaptions
             badge="TRIK: COBA COFFEE NAP!"
             text="Solusinya: Minum kopi lalu langsung tidur siang 15 menit. Bangun-bangun badanmu bakal super segar!"
           />

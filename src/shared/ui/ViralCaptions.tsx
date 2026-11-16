@@ -41,10 +41,6 @@ export const ViralCaptions: React.FC<ViralCaptionsProps> = ({
         pointerEvents: 'none',
       }}
     >
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800;900&family=Nunito:wght@800;900;1000&display=swap');
-      `}</style>
-
       {/* Top Rounded Category Badge */}
       <div
         style={{

@@ -4,7 +4,9 @@
   "description": "Educational animation shorts created with Remotion",
   "scripts": {
     "start": "remotion preview",
-    "build": "remotion render DoorwayEffect out/video.mp4"
+    "build": "remotion render DoorwayEffect out/doorway_effect_final_v3.mp4 --concurrency=1 --scale=0.5",
+    "build:full": "remotion render DoorwayEffect out/doorway_effect_1080p.mp4 --concurrency=1",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.244",

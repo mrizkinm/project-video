@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Sequence, Audio, staticFile } from 'remotion';
+import { AbsoluteFill, Sequence, Audio, staticFile, interpolate } from 'remotion';
 import { Scene1_Bedroom } from './scenes/Scene1_Bedroom';
 import { Scene2_Walking } from './scenes/Scene2_Walking';
 import { Scene3_Freeze } from './scenes/Scene3_Freeze';
@@ -15,10 +15,23 @@ import { SceneTransition } from '../../shared/effects/SceneTransition';
 export const DoorwayEffectVideo: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: '#000000' }}>
-      {/* 🎵 BACKGROUND MUSIC (Sneaky / Mystery Theme at audible 28% volume) */}
+      {/* 🔤 Global Font Loader (Loaded once for the whole composition) */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800;900&family=Nunito:wght@800;900;1000&display=swap');
+      `}</style>
+
+      {/* 🎵 BACKGROUND MUSIC (Sneaky / Mystery Theme at 28% with smooth outro fade-out) */}
       <Audio
         src={staticFile('audio/bgm/bgm_mystery.mp3')}
-        volume={0.28}
+        volume={(f) => {
+          if (f > 920) {
+            return interpolate(f, [920, 960], [0.28, 0], {
+              extrapolateLeft: 'clamp',
+              extrapolateRight: 'clamp',
+            });
+          }
+          return 0.28;
+        }}
         loop
       />
 
@@ -34,8 +47,8 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 1→2: frame 93-105 (flash-cut cyan) */}
-      <Sequence from={93} durationInFrames={12}>
+      {/* ✨ TRANSITION 1→2: Centered at frame 105 cut (frame 99-111, flash-cut cyan) */}
+      <Sequence from={99} durationInFrames={12}>
         <SceneTransition type="flash-cut" durationFrames={12} color="#38bdf8" />
       </Sequence>
 
@@ -52,8 +65,8 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 2→3: frame 183-195 (wipe-diagonal red) */}
-      <Sequence from={183} durationInFrames={12}>
+      {/* ✨ TRANSITION 2→3: Centered at frame 195 cut (frame 189-201, wipe-diagonal red) */}
+      <Sequence from={189} durationInFrames={12}>
         <SceneTransition type="wipe-diagonal" durationFrames={12} color="#ef4444" />
       </Sequence>
 
@@ -70,8 +83,8 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 3→4: frame 288-300 (circle-reveal yellow) */}
-      <Sequence from={288} durationInFrames={12}>
+      {/* ✨ TRANSITION 3→4: Centered at frame 300 cut (frame 294-306, circle-reveal yellow) */}
+      <Sequence from={294} durationInFrames={12}>
         <SceneTransition type="circle-reveal" durationFrames={12} color="#facc15" />
       </Sequence>
 
@@ -88,8 +101,8 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 4→5: frame 393-405 (slide-up purple) */}
-      <Sequence from={393} durationInFrames={12}>
+      {/* ✨ TRANSITION 4→5: Centered at frame 405 cut (frame 399-411, slide-up purple) */}
+      <Sequence from={399} durationInFrames={12}>
         <SceneTransition type="slide-up" durationFrames={12} color="#8b5cf6" />
       </Sequence>
 
@@ -106,8 +119,8 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 5→6: frame 528-540 (split-vertical blue) */}
-      <Sequence from={528} durationInFrames={12}>
+      {/* ✨ TRANSITION 5→6: Centered at frame 540 cut (frame 534-546, split-vertical blue) */}
+      <Sequence from={534} durationInFrames={12}>
         <SceneTransition type="split-vertical" durationFrames={12} color="#0284c7" />
       </Sequence>
 
@@ -124,8 +137,8 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 6→7: frame 663-675 (flash-cut amber) */}
-      <Sequence from={663} durationInFrames={12}>
+      {/* ✨ TRANSITION 6→7: Centered at frame 675 cut (frame 669-681, flash-cut amber) */}
+      <Sequence from={669} durationInFrames={12}>
         <SceneTransition type="flash-cut" durationFrames={12} color="#f59e0b" />
       </Sequence>
 
@@ -142,8 +155,8 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 7→8: frame 798-810 (zoom-out green) */}
-      <Sequence from={798} durationInFrames={12}>
+      {/* ✨ TRANSITION 7→8: Centered at frame 810 cut (frame 804-816, zoom-out green) */}
+      <Sequence from={804} durationInFrames={12}>
         <SceneTransition type="zoom-out" durationFrames={12} color="#10b981" />
       </Sequence>
 
