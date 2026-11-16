@@ -24,7 +24,7 @@ export const Scene1_Bedroom: React.FC = () => {
       >
         {/* Floating Mini Idea Bulb */}
         {frame > 12 && (
-          <g transform={`translate(620, 780) scale(${Math.max(0, bulbScale)})`}>
+          <g transform={`translate(650, 580) scale(${Math.max(0, bulbScale)})`}>
             <circle cx="0" cy="0" r="45" fill="#facc15" opacity="0.3" />
             <circle cx="0" cy="0" r="30" fill="#fef08a" />
             <text x="0" y="10" fontSize="32" textAnchor="middle">💡</text>

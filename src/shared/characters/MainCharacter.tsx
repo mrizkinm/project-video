@@ -31,426 +31,619 @@ export const MainCharacter: React.FC<MainCharacterProps> = ({
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // 1. Breathing animation (smooth sine wave)
+  // 1. Natural Breathing Motion
   const breathY = interpolate(
-    Math.sin((frame / fps) * Math.PI * 1.4),
+    Math.sin((frame / fps) * Math.PI * 1.5),
     [-1, 1],
-    [-5, 5]
+    [-3.5, 3.5]
   );
 
-  // 2. Walking cycle with dynamic arm swing
+  // 2. Walking Cycle (Leg swing, arm swing, body bob)
   const walkCycle = isWalking ? Math.sin((frame / fps) * Math.PI * 6.5) : 0;
-  const legAngleLeft = walkCycle * 28;
-  const legAngleRight = -walkCycle * 28;
-  const walkBobY = isWalking ? Math.abs(Math.sin((frame / fps) * Math.PI * 6.5)) * -18 : 0;
-  const armSwingLeft = isWalking ? -walkCycle * 22 : 0;
-  const armSwingRight = isWalking ? walkCycle * 22 : 0;
+  const legAngleLeft = walkCycle * 24;
+  const legAngleRight = -walkCycle * 24;
+  const walkBobY = isWalking ? Math.abs(Math.sin((frame / fps) * Math.PI * 6.5)) * -16 : 0;
+  const armSwingLeft = isWalking ? -walkCycle * 20 : 0;
+  const armSwingRight = isWalking ? walkCycle * 20 : 0;
 
-  // 3. Blink every ~3.5s
+  // 3. Eye Blinking Cycle (~3.5 seconds)
   const blinkCycle = frame % 105;
   const isBlinking = blinkCycle >= 99 && blinkCycle <= 104;
 
-  // 4. Head tilt by mood
+  // 4. Subtle Head Tilt by Mood
   const headTilt =
     mood === 'confused' ? 7 :
-    mood === 'thinking' ? -6 :
+    mood === 'thinking' ? -5 :
     mood === 'shocked' ? 2 : 0;
 
-  // 5. Tail/ear wiggle for expressiveness
-  const wiggle = Math.sin((frame / fps) * Math.PI * 2.5) * 4;
-
-  // 6. Hover bounce when idle
+  // 5. Idle Hover Floating
   const hoverY = isWalking ? 0 : interpolate(
-    Math.sin((frame / fps) * Math.PI * 0.9),
+    Math.sin((frame / fps) * Math.PI * 1.0),
     [-1, 1],
-    [-3, 3]
+    [-2, 2]
   );
 
-  const bodyColor = '#38bdf8';
-  const bodyColorDark = '#0284c7';
-  const bodyColorAccent = '#7dd3fc';
-  const skinLight = '#fddcb5';
-  const skinMid = '#f5be93';
-  const skinDark = '#e29b68';
-  const hairDark = '#2d1810';
-  const hairMid = '#4a2419';
+  // Palette: Modern Young Adult Vector Explainer (Kurzgesagt / Webtoon aesthetic)
+  const skinLight = '#fde3d0';
+  const skinMid = '#f7c5a4';
+  const skinShadow = '#e09e78';
+  const hairDark = '#181826';
+  const hairMid = '#2a283e';
+  const sweaterPrimary = '#0284c7';
+  const sweaterAccent = '#38bdf8';
+  const sweaterDark = '#0369a1';
+  const pantsColor = '#1e293b';
+  const pantsShadow = '#0f172a';
+  const sneakerSole = '#ffffff';
 
   return (
     <g transform={`scale(${flipX ? -scale : scale}, ${scale})`}>
       <defs>
-        <linearGradient id="skinGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+        <linearGradient id="skinGradModern" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor={skinLight} />
-          <stop offset="60%" stopColor={skinMid} />
-          <stop offset="100%" stopColor={skinDark} />
+          <stop offset="65%" stopColor={skinMid} />
+          <stop offset="100%" stopColor={skinShadow} />
         </linearGradient>
-        <linearGradient id="hairGrad2" x1="0%" y1="0%" x2="30%" y2="100%">
+
+        <linearGradient id="hairGradModern" x1="0%" y1="0%" x2="30%" y2="100%">
           <stop offset="0%" stopColor={hairMid} />
           <stop offset="100%" stopColor={hairDark} />
         </linearGradient>
-        <linearGradient id="bodyGrad2" x1="-50%" y1="0%" x2="50%" y2="100%">
-          <stop offset="0%" stopColor={bodyColorAccent} />
-          <stop offset="50%" stopColor={bodyColor} />
-          <stop offset="100%" stopColor={bodyColorDark} />
+
+        <linearGradient id="sweaterGradModern" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor={sweaterAccent} />
+          <stop offset="45%" stopColor={sweaterPrimary} />
+          <stop offset="100%" stopColor={sweaterDark} />
         </linearGradient>
-        <linearGradient id="pantsGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#334155" />
-          <stop offset="100%" stopColor="#1e293b" />
+
+        <linearGradient id="pantsGradModern" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor={pantsColor} />
+          <stop offset="100%" stopColor={pantsShadow} />
         </linearGradient>
-        <linearGradient id="shoeGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#f8fafc" />
-          <stop offset="100%" stopColor="#cbd5e1" />
-        </linearGradient>
-        <radialGradient id="shadowGrad2" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#000000" stopOpacity="0.4" />
+
+        <radialGradient id="shadowGradModern" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#000000" stopOpacity="0.45" />
           <stop offset="100%" stopColor="#000000" stopOpacity="0" />
         </radialGradient>
-        <linearGradient id="sweatGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+
+        <linearGradient id="sweatGradModern" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="#bae6fd" />
-          <stop offset="100%" stopColor="#38bdf8" />
+          <stop offset="100%" stopColor="#0284c7" />
         </linearGradient>
-        <filter id="charGlow">
-          <feGaussianBlur stdDeviation="8" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
       </defs>
 
-      {/* Ground shadow ellipse */}
-      <ellipse cx="0" cy="235" rx={120 + (isWalking ? 20 : 0)} ry="18"
-        fill="url(#shadowGrad2)" opacity="0.5" />
+      {/* ── GROUND SHADOW (Anchor: cy = 200) ── */}
+      <ellipse
+        cx="0"
+        cy="200"
+        rx={100 + (isWalking ? 15 : 0)}
+        ry="14"
+        fill="url(#shadowGradModern)"
+      />
 
-      {/* ── LEGS ── */}
-      <g transform="translate(0, 125)">
-        {/* Left leg */}
-        <g transform={`rotate(${legAngleLeft}, -38, 0)`}>
-          <rect x="-58" y="0" width="40" height="90" rx="18"
-            fill="url(#pantsGrad2)" />
-          {/* Shoe */}
-          <ellipse cx="-38" cy="96" rx="30" ry="13" fill="url(#shoeGrad2)" />
-          <ellipse cx="-28" cy="93" rx="18" ry="8" fill="#f8fafc" />
-          {/* Shoe stripe */}
-          <path d="M -58 93 L -18 93" stroke={bodyColor} strokeWidth="4"
-            strokeLinecap="round" opacity="0.8" />
+      {/* ── 1. LEGS (Slim-Fit Chinos + Modern Sneakers) ── */}
+      <g transform="translate(0, 15)">
+        {/* Left Leg */}
+        <g transform={`rotate(${legAngleLeft}, -30, 0)`}>
+          <path
+            d="M -45 0 L -49 175 L -18 175 L -14 0 Z"
+            fill="url(#pantsGradModern)"
+          />
+          {/* Sneaker Left */}
+          <g transform="translate(-60, 170)">
+            <path d="M 0 20 L 52 20 C 60 20 58 6 45 6 L 10 6 Z" fill={sweaterDark} />
+            <rect x="0" y="19" width="54" height="9" rx="3.5" fill={sneakerSole} />
+            <path d="M 15 9 L 24 16" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" />
+          </g>
         </g>
-        {/* Right leg */}
-        <g transform={`rotate(${legAngleRight}, 38, 0)`}>
-          <rect x="18" y="0" width="40" height="90" rx="18"
-            fill="url(#pantsGrad2)" />
-          <ellipse cx="38" cy="96" rx="30" ry="13" fill="url(#shoeGrad2)" />
-          <ellipse cx="28" cy="93" rx="18" ry="8" fill="#f8fafc" />
-          <path d="M 18 93 L 58 93" stroke={bodyColor} strokeWidth="4"
-            strokeLinecap="round" opacity="0.8" />
+
+        {/* Right Leg */}
+        <g transform={`rotate(${legAngleRight}, 30, 0)`}>
+          <path
+            d="M 14 0 L 18 175 L 49 175 L 45 0 Z"
+            fill="url(#pantsGradModern)"
+          />
+          {/* Sneaker Right */}
+          <g transform="translate(15, 170)">
+            <path d="M 0 6 L 35 6 C 48 6 46 20 55 20 L 0 20 Z" fill={sweaterDark} />
+            <rect x="-3" y="19" width="60" height="9" rx="3.5" fill={sneakerSole} />
+            <path d="M 18 9 L 27 16" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" />
+          </g>
         </g>
       </g>
 
-      {/* ── TORSO + HEAD (breath + walk bob + hover) ── */}
+      {/* ── 2. UPPER BODY & HEAD ── */}
       <g transform={`translate(0, ${breathY + walkBobY + hoverY})`}>
 
-        {/* ── ARMS ── rendered behind body */}
-        {/* Left arm */}
-        <g transform={`rotate(${armSwingLeft - (mood === 'thinking' ? 25 : 0)}, -80, 10)`}>
-          <path d="M -72 -5 Q -130 50 -105 110" stroke="url(#bodyGrad2)"
-            strokeWidth="45" strokeLinecap="round" fill="none" />
-          {/* Left hand */}
-          <circle cx="-108" cy="118" r="22" fill="url(#skinGrad2)"
-            stroke={skinDark} strokeWidth="3" />
-          {/* Thinking finger on chin */}
-          {mood === 'thinking' && (
-            <path d="M -95 118 Q -80 115 -75 108"
-              stroke={skinDark} strokeWidth="6" fill="none" strokeLinecap="round" />
-          )}
-        </g>
-        {/* Right arm */}
-        <g transform={`rotate(${armSwingRight + (mood === 'eureka' ? -40 : 0)}, 80, 10)`}>
-          <path d="M 72 -5 Q 130 50 105 110" stroke="url(#bodyGrad2)"
-            strokeWidth="45" strokeLinecap="round" fill="none" />
-          {/* Right hand */}
-          <circle cx="108" cy="118" r="22" fill="url(#skinGrad2)"
-            stroke={skinDark} strokeWidth="3" />
-          {/* Eureka raised fist */}
-          {mood === 'eureka' && (
-            <g transform="translate(108, 100)">
-              <circle cx="0" cy="0" r="24" fill="#facc15" opacity="0.3" />
-              <text x="0" y="12" fontSize="38" textAnchor="middle">✊</text>
-            </g>
-          )}
-        </g>
+        {/* ── SLENDER HUMAN NECK ── */}
+        <rect
+          x="-16"
+          y="-190"
+          width="32"
+          height="46"
+          rx="7"
+          fill="url(#skinGradModern)"
+        />
+        {/* Neck shadow under jawline */}
+        <ellipse cx="0" cy="-154" rx="18" ry="5" fill="#000000" opacity="0.12" />
 
-        {/* ── HOODIE BODY ── */}
-        {/* Back panel / hood shadow */}
-        <ellipse cx="0" cy="-45" rx="80" ry="60" fill={bodyColorDark} opacity="0.3" />
-
-        {/* Main hoodie shape - more rounded/cute */}
+        {/* ── TORSO: MODERN CREWNECK SWEATER ── */}
         <path
-          d="M -100 -15 C -118 80 -88 148 -65 155 L 65 155 C 88 148 118 80 100 -15 C 60 -55 -60 -55 -100 -15 Z"
-          fill="url(#bodyGrad2)"
-          stroke={bodyColorDark}
-          strokeWidth="5"
+          d="M -68 -148 C -82 -80 -70 0 -52 30 L 52 30 C 70 0 82 -80 68 -148 C 36 -160 -36 -160 -68 -148 Z"
+          fill="url(#sweaterGradModern)"
+          stroke={sweaterDark}
+          strokeWidth="4"
         />
 
-        {/* Hood rim at top */}
+        {/* Ribbed Sweater Collar */}
         <path
-          d="M -80 -20 C -60 -65 60 -65 80 -20"
-          fill="none"
-          stroke={bodyColorAccent}
-          strokeWidth="8"
+          d="M -26 -154 Q 0 -136 26 -154"
+          stroke={sweaterDark}
+          strokeWidth="7"
           strokeLinecap="round"
-          opacity="0.5"
+          fill="none"
         />
-
-        {/* Kangaroo pocket — rounder */}
         <path
-          d="M -50 72 Q 0 95 50 72 L 42 132 Q 0 140 -42 132 Z"
-          fill={bodyColorDark}
-          opacity="0.55"
+          d="M -26 -154 Q 0 -136 26 -154"
+          stroke="#e0f2fe"
+          strokeWidth="3"
+          strokeLinecap="round"
+          fill="none"
+          opacity="0.75"
         />
 
-        {/* Hoodie drawstrings with knot */}
-        <line x1="-14" y1="-8" x2="-16" y2="48"
-          stroke="#f0f9ff" strokeWidth="6" strokeLinecap="round" />
-        <line x1="14" y1="-8" x2="16" y2="48"
-          stroke="#f0f9ff" strokeWidth="6" strokeLinecap="round" />
-        <circle cx="-16" cy="51" r="6" fill="#94a3b8" />
-        <circle cx="16" cy="51" r="6" fill="#94a3b8" />
+        {/* Sweater Ribbed Bottom Hem */}
+        <line
+          x1="-50"
+          y1="26"
+          x2="50"
+          y2="26"
+          stroke={sweaterDark}
+          strokeWidth="6"
+          strokeLinecap="round"
+        />
 
-        {/* Sleeve cuffs */}
-        <ellipse cx="-108" cy="125" rx="22" ry="8" fill={bodyColorDark} opacity="0.4" />
-        <ellipse cx="108" cy="125" rx="22" ry="8" fill={bodyColorDark} opacity="0.4" />
+        {/* Minimalist Chest Accent */}
+        <path
+          d="M -36 -100 L -15 -100 L -15 -80 L -25 -72 L -36 -80 Z"
+          fill={sweaterDark}
+          opacity="0.3"
+        />
 
-        {/* Neck */}
-        <rect x="-22" y="-58" width="44" height="48" rx="14"
-          fill="url(#skinGrad2)" />
-        {/* Neck shadow line */}
-        <ellipse cx="0" cy="-20" rx="18" ry="6" fill="#000000" opacity="0.1" />
+        {/* ── HEAD GROUP (Tilted by mood) ── */}
+        <g transform={`translate(0, -210) rotate(${headTilt})`}>
 
-        {/* ── HEAD GROUP ── */}
-        <g transform={`translate(0, -112) rotate(${headTilt + wiggle * 0.3})`}>
-
-          {/* Head glow aura for expressive moods */}
-          {(mood === 'eureka' || mood === 'shocked') && (
-            <circle cx="0" cy="0" r="115"
-              fill={mood === 'eureka' ? '#facc15' : '#ef4444'}
-              opacity="0.12" />
+          {/* Eureka / Shocked Aura Glow */}
+          {mood === 'eureka' && (
+            <circle cx="0" cy="-10" r="105" fill="#facc15" opacity="0.16" />
+          )}
+          {mood === 'shocked' && (
+            <circle cx="0" cy="-10" r="105" fill="#ef4444" opacity="0.16" />
           )}
 
-          {/* Ears */}
-          <circle cx="-98" cy="5" r="26" fill="url(#skinGrad2)"
-            stroke={skinDark} strokeWidth="4" />
-          <circle cx="-98" cy="5" r="14" fill={skinDark} opacity="0.3" />
-          <circle cx="98" cy="5" r="26" fill="url(#skinGrad2)"
-            stroke={skinDark} strokeWidth="4" />
-          <circle cx="98" cy="5" r="14" fill={skinDark} opacity="0.3" />
-
-          {/* Main head shape (slightly more oval/cute) */}
-          <ellipse cx="0" cy="0" rx="94" ry="97"
-            fill="url(#skinGrad2)" stroke={skinDark} strokeWidth="4.5" />
-
-          {/* ── HAIR ── more stylish with layers */}
-          {/* Hair base */}
+          {/* Ears (Human Anatomical Position) */}
           <path
-            d="M -97 -22 C -110 -130 -15 -165 22 -155 C 72 -142 128 -88 108 -22 C 92 -72 48 -92 2 -92 C -48 -92 -88 -66 -97 -22 Z"
-            fill="url(#hairGrad2)"
-          />
-          {/* Layered hair strands */}
-          <path
-            d="M -92 -38 Q -50 -105 -8 -68 Q 24 -98 68 -55 Q 32 -74 -18 -74 Z"
-            fill={hairDark} opacity="0.7"
-          />
-          {/* Hair sheen highlight */}
-          <path
-            d="M -30 -130 Q 10 -145 42 -120"
-            stroke="#8d5b41" strokeWidth="8" strokeLinecap="round" fill="none" opacity="0.5"
-          />
-          {/* Side sideburn detail */}
-          <path
-            d="M -97 -10 Q -104 25 -97 42"
-            stroke={hairDark} strokeWidth="6" strokeLinecap="round" fill="none"
+            d="M -54 -8 C -63 -14 -63 12 -54 18"
+            stroke={skinShadow}
+            strokeWidth="4"
+            fill="url(#skinGradModern)"
           />
           <path
-            d="M 97 -10 Q 104 25 97 42"
-            stroke={hairDark} strokeWidth="6" strokeLinecap="round" fill="none"
+            d="M 54 -8 C 63 -14 63 12 54 18"
+            stroke={skinShadow}
+            strokeWidth="4"
+            fill="url(#skinGradModern)"
           />
 
-          {/* ── EYEBROWS + EYES + MOUTH (by mood) ── */}
+          {/* Head & Jawline (Modern Slender Human Taper) */}
+          <path
+            d="M -52 -30 C -54 24 -33 58 0 64 C 33 58 54 24 52 -30 C 52 -90 -52 -90 -52 -30 Z"
+            fill="url(#skinGradModern)"
+            stroke={skinShadow}
+            strokeWidth="3.5"
+          />
 
-          {/* Cheeks (always present, opacity varies) */}
-          <ellipse cx="-58" cy="32" rx="22" ry="11"
-            fill="#f43f5e" opacity={mood === 'eureka' ? 0.55 : 0.28} />
-          <ellipse cx="58" cy="32" rx="22" ry="11"
-            fill="#f43f5e" opacity={mood === 'eureka' ? 0.55 : 0.28} />
+          {/* ── MODERN CURTAIN HAIR (SOLID & TEXTURED) ── */}
+          {/* Solid Hair Cap covering full cranium */}
+          <path
+            d="M -56 -24 C -62 -105 62 -105 56 -24 C 50 -8 38 2 30 -6 C 20 -18 12 -34 0 -34 C -12 -34 -20 -18 -30 -6 C -38 2 -50 -8 -56 -24 Z"
+            fill="url(#hairGradModern)"
+          />
 
-          {/* Nose */}
-          <path d="M 0 8 Q 7 15 0 18" stroke={skinDark}
-            strokeWidth="4.5" strokeLinecap="round" fill="none" />
+          {/* Left Curtain Fringe (Sweeping gracefully across forehead) */}
+          <path
+            d="M 3 -35 C -9 -24 -27 -16 -45 -2 C -52 8 -46 20 -40 18 C -34 15 -22 -6 -12 -14 C -3 -20 3 -26 6 -34 Z"
+            fill="url(#hairGradModern)"
+            stroke={hairDark}
+            strokeWidth="1.6"
+          />
 
-          {/* BLINK OVERRIDE */}
+          {/* Right Curtain Fringe (Matching parted side) */}
+          <path
+            d="M -3 -35 C 9 -24 27 -16 45 -2 C 52 8 46 20 40 18 C 34 15 22 -6 12 -14 C 3 -20 -3 -26 -6 -34 Z"
+            fill="url(#hairGradModern)"
+            stroke={hairDark}
+            strokeWidth="1.6"
+          />
+
+          {/* Sideburns framing ears */}
+          <path
+            d="M -54 -6 L -51 15 L -46 5"
+            stroke={hairDark}
+            strokeWidth="5"
+            strokeLinecap="round"
+            fill="none"
+          />
+          <path
+            d="M 54 -6 L 51 15 L 46 5"
+            stroke={hairDark}
+            strokeWidth="5"
+            strokeLinecap="round"
+            fill="none"
+          />
+
+          {/* Hair Highlight Arcs */}
+          <path
+            d="M -26 -68 Q 0 -76 26 -68"
+            stroke="#474462"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            fill="none"
+            opacity="0.75"
+          />
+          <path
+            d="M -15 -56 Q 0 -62 15 -56"
+            stroke="#474462"
+            strokeWidth="3"
+            strokeLinecap="round"
+            fill="none"
+            opacity="0.5"
+          />
+
+          {/* Healthy Cheek Blush */}
+          <ellipse cx="-30" cy="22" rx="11" ry="6" fill="#f43f5e" opacity="0.2" />
+          <ellipse cx="30" cy="22" rx="11" ry="6" fill="#f43f5e" opacity="0.2" />
+
+          {/* Nose (Clean Minimalist Bridge) */}
+          <path
+            d="M 0 6 L 0 20 L 5 23"
+            stroke={skinShadow}
+            strokeWidth="2.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+          />
+
+          {/* ── FACIAL EXPRESSIONS BY MOOD ── */}
           {isBlinking ? (
-            <g stroke="#1e293b" strokeWidth="8" strokeLinecap="round" fill="none">
-              <path d="M -58 2 Q -40 -10 -22 2" />
-              <path d="M 22 2 Q 40 -10 58 2" />
-              <path d="M -24 42 Q 0 32 24 42" stroke="#1e293b" strokeWidth="7" fill="none" />
+            /* Natural Blink */
+            <g stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none">
+              <path d="M -33 6 Q -22 -1 -12 6" />
+              <path d="M 12 6 Q 22 -1 33 6" />
+              <path d="M -12 42 Q 0 46 12 42" strokeWidth="3" />
+            </g>
+          ) : mood === 'thinking' ? (
+            <g>
+              {/* Asymmetrical Thinking Eyebrows */}
+              <path d="M -34 -8 Q -22 -16 -10 -7" stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none" />
+              <path d="M 10 -13 Q 22 -19 34 -8" stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none" />
+
+              {/* Eyes Looking Thoughtfully Upward */}
+              <ellipse cx="-22" cy="6" rx="8" ry="9.5" fill="#ffffff" stroke={hairDark} strokeWidth="2.5" />
+              <circle cx="-24" cy="3" r="5.5" fill="#0f172a" />
+              <circle cx="-26" cy="1" r="2" fill="#ffffff" />
+
+              <ellipse cx="22" cy="6" rx="8" ry="9.5" fill="#ffffff" stroke={hairDark} strokeWidth="2.5" />
+              <circle cx="20" cy="3" r="5.5" fill="#0f172a" />
+              <circle cx="18" cy="1" r="2" fill="#ffffff" />
+
+              {/* Thoughtful Smirk */}
+              <path d="M -9 40 Q 0 43 12 37" stroke="#0f172a" strokeWidth="3.5" strokeLinecap="round" fill="none" />
             </g>
           ) : mood === 'confused' ? (
             <g>
-              {/* Uneven eyebrows */}
-              <path d="M -63 -32 Q -44 -46 -24 -36" stroke={hairDark}
-                strokeWidth="8" strokeLinecap="round" fill="none" />
-              <path d="M 24 -48 Q 44 -38 63 -32" stroke={hairDark}
-                strokeWidth="8" strokeLinecap="round" fill="none" />
-              {/* Round eyes with shine */}
-              <circle cx="-42" cy="-5" r="18" fill="#0f172a" />
-              <circle cx="-36" cy="-11" r="6" fill="#ffffff" />
-              <circle cx="-44" cy="1" r="2.5" fill="#ffffff" opacity="0.6" />
-              <circle cx="42" cy="-5" r="18" fill="#0f172a" />
-              <circle cx="48" cy="-11" r="6" fill="#ffffff" />
-              <circle cx="40" cy="1" r="2.5" fill="#ffffff" opacity="0.6" />
-              {/* Wavy confused mouth */}
-              <path d="M -26 44 Q -10 38 0 44 Q 10 50 26 44"
-                stroke="#0f172a" strokeWidth="7" fill="none" strokeLinecap="round" />
-            </g>
-          ) : mood === 'eureka' ? (
-            <g>
-              {/* High raised excited eyebrows */}
-              <path d="M -60 -44 Q -40 -58 -20 -44" stroke={hairDark}
-                strokeWidth="8" strokeLinecap="round" fill="none" />
-              <path d="M 20 -44 Q 40 -58 60 -44" stroke={hairDark}
-                strokeWidth="8" strokeLinecap="round" fill="none" />
-              {/* Sparkle stars in eyes */}
-              <circle cx="-40" cy="-5" r="20" fill="#0f172a" />
-              <text x="-40" y="2" fontSize="20" textAnchor="middle" fill="#facc15">★</text>
-              <circle cx="40" cy="-5" r="20" fill="#0f172a" />
-              <text x="40" y="2" fontSize="20" textAnchor="middle" fill="#facc15">★</text>
-              {/* Big happy mouth */}
-              <path d="M -32 32 Q 0 72 32 32 Z"
-                fill="#e11d48" stroke="#0f172a" strokeWidth="6" />
-              <path d="M -18 40 Q 0 56 18 40" fill="#fb7185" />
-              {/* Teeth */}
-              <path d="M -20 36 L 20 36" stroke="#f8fafc" strokeWidth="6"
-                strokeLinecap="round" opacity="0.9" />
-            </g>
-          ) : mood === 'happy' ? (
-            <g>
-              <path d="M -60 -34 Q -40 -46 -20 -36" stroke={hairDark}
-                strokeWidth="8" strokeLinecap="round" fill="none" />
-              <path d="M 20 -36 Q 40 -46 60 -34" stroke={hairDark}
-                strokeWidth="8" strokeLinecap="round" fill="none" />
-              {/* Squinting happy eyes */}
-              <path d="M -58 -2 Q -40 -18 -22 -2" stroke="#0f172a"
-                strokeWidth="10" fill="none" strokeLinecap="round" />
-              <circle cx="40" cy="-5" r="17" fill="#0f172a" />
-              <circle cx="46" cy="-11" r="6" fill="#ffffff" />
-              {/* Smile */}
-              <path d="M -24 40 Q 0 64 24 40"
-                stroke="#0f172a" strokeWidth="8" fill="none" strokeLinecap="round" />
+              {/* Confused Eyebrows (One high, one furrowed) */}
+              <path d="M -35 -5 Q -22 -18 -10 -7" stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none" />
+              <path d="M 10 -15 Q 23 -6 35 -4" stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none" />
+
+              {/* Perplexed Eyes */}
+              <ellipse cx="-22" cy="6" rx="8.5" ry="10" fill="#ffffff" stroke={hairDark} strokeWidth="2.5" />
+              <circle cx="-21" cy="6" r="6" fill="#0f172a" />
+              <circle cx="-23" cy="4" r="2" fill="#ffffff" />
+
+              <ellipse cx="22" cy="6" rx="8.5" ry="10" fill="#ffffff" stroke={hairDark} strokeWidth="2.5" />
+              <circle cx="23" cy="6" r="6" fill="#0f172a" />
+              <circle cx="21" cy="4" r="2" fill="#ffffff" />
+
+              {/* Wavy Confused Mouth */}
+              <path d="M -14 40 Q -4 34 0 40 Q 4 46 14 37" stroke="#0f172a" strokeWidth="3.5" strokeLinecap="round" fill="none" />
             </g>
           ) : mood === 'shocked' ? (
             <g>
-              {/* Flat shocked eyebrows */}
-              <line x1="-62" y1="-46" x2="-20" y2="-46"
-                stroke={hairDark} strokeWidth="9" strokeLinecap="round" />
-              <line x1="20" y1="-46" x2="62" y2="-46"
-                stroke={hairDark} strokeWidth="9" strokeLinecap="round" />
-              {/* Wide open eyes */}
-              <circle cx="-40" cy="-5" r="23" fill="#0f172a" />
-              <circle cx="-34" cy="-12" r="8" fill="#ffffff" />
-              <circle cx="-42" cy="4" r="3.5" fill="#ffffff" opacity="0.5" />
-              <circle cx="40" cy="-5" r="23" fill="#0f172a" />
-              <circle cx="46" cy="-12" r="8" fill="#ffffff" />
-              <circle cx="38" cy="4" r="3.5" fill="#ffffff" opacity="0.5" />
-              {/* Open mouth O-shape */}
-              <ellipse cx="0" cy="45" rx="20" ry="26"
-                fill="#e11d48" stroke="#0f172a" strokeWidth="6" />
-              <ellipse cx="0" cy="45" rx="12" ry="18" fill="#9f1239" opacity="0.7" />
+              {/* High Arched Shock Eyebrows */}
+              <path d="M -34 -18 Q -22 -25 -10 -18" stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none" />
+              <path d="M 10 -18 Q 22 -25 34 -18" stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none" />
+
+              {/* Wide Eyes with Small Pinpoint Pupils */}
+              <circle cx="-22" cy="6" r="11" fill="#ffffff" stroke={hairDark} strokeWidth="2.8" />
+              <circle cx="-22" cy="6" r="4" fill="#0f172a" />
+              <circle cx="-23" cy="4.5" r="1.5" fill="#ffffff" />
+
+              <circle cx="22" cy="6" r="11" fill="#ffffff" stroke={hairDark} strokeWidth="2.8" />
+              <circle cx="22" cy="6" r="4" fill="#0f172a" />
+              <circle cx="21" cy="4.5" r="1.5" fill="#ffffff" />
+
+              {/* Open Shocked Mouth (Gasp) */}
+              <ellipse cx="0" cy="42" rx="9" ry="13" fill="#0f172a" stroke="#0f172a" strokeWidth="2" />
+              <ellipse cx="0" cy="43" rx="6" ry="9" fill="#be123c" />
+            </g>
+          ) : mood === 'eureka' ? (
+            <g>
+              {/* Excited Raised Eyebrows */}
+              <path d="M -34 -13 Q -22 -20 -10 -13" stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none" />
+              <path d="M 10 -13 Q 22 -20 34 -13" stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none" />
+
+              {/* Eyes with Star Sparkles */}
+              <ellipse cx="-22" cy="6" rx="9" ry="10" fill="#ffffff" stroke={hairDark} strokeWidth="2.5" />
+              <circle cx="-22" cy="6" r="6.5" fill="#0f172a" />
+              <text x="-22" y="10" fontSize="11" textAnchor="middle" fill="#facc15">★</text>
+
+              <ellipse cx="22" cy="6" rx="9" ry="10" fill="#ffffff" stroke={hairDark} strokeWidth="2.5" />
+              <circle cx="22" cy="6" r="6.5" fill="#0f172a" />
+              <text x="22" y="10" fontSize="11" textAnchor="middle" fill="#facc15">★</text>
+
+              {/* Triumphant Smile */}
+              <path d="M -18 36 Q 0 58 18 36 Z" fill="#be123c" stroke="#0f172a" strokeWidth="2.8" />
+              <path d="M -13 39 Q 0 45 13 39" stroke="#ffffff" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+            </g>
+          ) : mood === 'sleepy' ? (
+            <g>
+              {/* Droopy Eyebrows */}
+              <path d="M -32 -6 Q -22 -3 -12 -6" stroke={hairDark} strokeWidth="3.5" strokeLinecap="round" fill="none" />
+              <path d="M 12 -6 Q 22 -3 32 -6" stroke={hairDark} strokeWidth="3.5" strokeLinecap="round" fill="none" />
+
+              {/* Half Closed Eyelids */}
+              <path d="M -30 7 Q -22 0 -13 7" stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none" />
+              <path d="M 13 7 Q 22 0 30 7" stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none" />
+
+              {/* Yawn Mouth */}
+              <ellipse cx="0" cy="38" rx="7" ry="10" fill="#be123c" stroke="#0f172a" strokeWidth="2.5" />
             </g>
           ) : (
+            /* Default Friendly / Confident */
             <g>
-              {/* Thinking brows */}
-              <path d="M -62 -36 Q -42 -32 -22 -36" stroke={hairDark}
-                strokeWidth="8" strokeLinecap="round" fill="none" />
-              <path d="M 22 -36 Q 42 -32 62 -36" stroke={hairDark}
-                strokeWidth="8" strokeLinecap="round" fill="none" />
-              {/* One eye looking up (thinking) */}
-              <circle cx="-40" cy="-12" r="16" fill="#0f172a" />
-              <circle cx="-36" cy="-18" r="5" fill="#ffffff" />
-              <circle cx="40" cy="-12" r="16" fill="#0f172a" />
-              <circle cx="46" cy="-18" r="5" fill="#ffffff" />
-              {/* Small thoughtful smile */}
-              <path d="M -20 42 Q 0 50 20 42"
-                stroke="#0f172a" strokeWidth="7" fill="none" strokeLinecap="round" />
-              {/* Thinking dots "..." in bubble */}
+              <path d="M -32 -8 Q -22 -14 -12 -8" stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none" />
+              <path d="M 12 -8 Q 22 -14 32 -8" stroke={hairDark} strokeWidth="4" strokeLinecap="round" fill="none" />
+
+              <ellipse cx="-22" cy="6" rx="8.5" ry="9.5" fill="#ffffff" stroke={hairDark} strokeWidth="2.5" />
+              <circle cx="-20" cy="6" r="5.8" fill="#0f172a" />
+              <circle cx="-22" cy="4" r="2" fill="#ffffff" />
+
+              <ellipse cx="22" cy="6" rx="8.5" ry="9.5" fill="#ffffff" stroke={hairDark} strokeWidth="2.5" />
+              <circle cx="20" cy="6" r="5.8" fill="#0f172a" />
+              <circle cx="18" cy="4" r="2" fill="#ffffff" />
+
+              {/* Confident Smile */}
+              <path d="M -15 36 Q 0 50 15 36" stroke="#0f172a" strokeWidth="3.5" strokeLinecap="round" fill="none" />
             </g>
           )}
 
-          {/* Sweat drop (anime-style teardrop) */}
+          {/* Anime Sweat Drop */}
           {sweatDrop && (
-            <g transform="translate(85, -55)">
-              <path d="M 0 -20 C -16 -8 -16 16 0 16 C 16 16 16 -8 0 -20 Z"
-                fill="url(#sweatGrad2)" stroke="#0891b2" strokeWidth="3" />
+            <g transform="translate(45, -35)">
+              <path
+                d="M 0 -17 C -11 -6 -11 11 0 11 C 11 11 11 -6 0 -17 Z"
+                fill="url(#sweatGradModern)"
+                stroke="#0284c7"
+                strokeWidth="2.5"
+              />
             </g>
           )}
 
         </g>
-        {/* ── END HEAD ── */}
+        {/* ── END HEAD GROUP ── */}
 
-        {/* ── HELD ITEMS ── */}
+        {/* ── 3. ARMS & HANDS (Rendered in Front of Torso for Natural Anatomy) ── */}
+
+        {/* --- LEFT ARM --- */}
+        {mood === 'thinking' ? (
+          /* Thinking Pose: Arm crosses upward with hand resting thoughtfully under chin */
+          <g>
+            {/* Upper arm from shoulder to elbow */}
+            <path
+              d="M -66 -140 Q -102 -95 -75 -60"
+              stroke="url(#sweaterGradModern)"
+              strokeWidth="28"
+              strokeLinecap="round"
+              fill="none"
+            />
+            {/* Forearm from elbow up to chin */}
+            <path
+              d="M -75 -60 Q -48 -95 -22 -145"
+              stroke="url(#sweaterGradModern)"
+              strokeWidth="26"
+              strokeLinecap="round"
+              fill="none"
+            />
+            {/* Hand resting thoughtfully under chin */}
+            <g transform="translate(-22, -145)">
+              <circle cx="0" cy="0" r="12" fill="url(#skinGradModern)" stroke={skinShadow} strokeWidth="2.5" />
+              {/* Thinking finger pointing towards chin */}
+              <path d="M 0 -3 L 3 -15" stroke={skinShadow} strokeWidth="3.5" strokeLinecap="round" />
+            </g>
+          </g>
+        ) : mood === 'shocked' ? (
+          /* Shocked Pose: Hand clutching side of face */
+          <g>
+            <path
+              d="M -66 -140 Q -102 -150 -60 -210"
+              stroke="url(#sweaterGradModern)"
+              strokeWidth="28"
+              strokeLinecap="round"
+              fill="none"
+            />
+            <circle cx="-60" cy="-212" r="14" fill="url(#skinGradModern)" stroke={skinShadow} strokeWidth="2.8" />
+          </g>
+        ) : (
+          /* Relaxed / Walking Left Arm */
+          <g transform={`rotate(${armSwingLeft}, -68, -140)`}>
+            <path
+              d="M -66 -140 Q -88 -60 -72 0"
+              stroke="url(#sweaterGradModern)"
+              strokeWidth="28"
+              strokeLinecap="round"
+              fill="none"
+            />
+            <circle
+              cx="-72"
+              cy="6"
+              r="13.5"
+              fill="url(#skinGradModern)"
+              stroke={skinShadow}
+              strokeWidth="2.5"
+            />
+          </g>
+        )}
+
+        {/* --- RIGHT ARM --- */}
+        {mood === 'eureka' ? (
+          /* Eureka Pose: Arm raised high in triumph */
+          <g>
+            <path
+              d="M 66 -140 Q 102 -180 92 -260"
+              stroke="url(#sweaterGradModern)"
+              strokeWidth="28"
+              strokeLinecap="round"
+              fill="none"
+            />
+            <circle cx="92" cy="-270" r="15" fill="url(#skinGradModern)" stroke={skinShadow} strokeWidth="2.8" />
+            <text x="92" y="-285" fontSize="30" textAnchor="middle">✨</text>
+          </g>
+        ) : mood === 'shocked' ? (
+          /* Shocked Pose: Hand clutching other side of face */
+          <g>
+            <path
+              d="M 66 -140 Q 102 -150 60 -210"
+              stroke="url(#sweaterGradModern)"
+              strokeWidth="28"
+              strokeLinecap="round"
+              fill="none"
+            />
+            <circle cx="60" cy="-212" r="14" fill="url(#skinGradModern)" stroke={skinShadow} strokeWidth="2.8" />
+          </g>
+        ) : holdingItem !== 'none' ? (
+          /* Holding Item Arm: Reaching forward in front of sweater */
+          <g>
+            <path
+              d="M 66 -140 Q 92 -80 66 -40"
+              stroke="url(#sweaterGradModern)"
+              strokeWidth="28"
+              strokeLinecap="round"
+              fill="none"
+            />
+          </g>
+        ) : (
+          /* Relaxed / Walking Right Arm */
+          <g transform={`rotate(${armSwingRight}, 68, -140)`}>
+            <path
+              d="M 66 -140 Q 88 -60 72 0"
+              stroke="url(#sweaterGradModern)"
+              strokeWidth="28"
+              strokeLinecap="round"
+              fill="none"
+            />
+            <circle
+              cx="72"
+              cy="6"
+              r="13.5"
+              fill="url(#skinGradModern)"
+              stroke={skinShadow}
+              strokeWidth="2.5"
+            />
+          </g>
+        )}
+
+        {/* ── 4. HELD ITEMS (Positioned naturally in front hand) ── */}
         {holdingItem === 'charger' && (
-          <g transform="translate(100, 55)">
-            <circle cx="0" cy="0" r="24" fill="url(#skinGrad2)"
-              stroke={skinDark} strokeWidth="3" />
-            <path d="M 0 -4 Q 32 20 22 -55 Q 14 -120 54 -100"
-              stroke="#f8fafc" strokeWidth="9" fill="none" strokeLinecap="round" />
-            <rect x="40" y="-130" width="30" height="40" rx="7"
-              fill="#e2e8f0" stroke="#64748b" strokeWidth="3" />
-            <circle cx="55" cy="-110" r="5" fill="#10b981" />
-            {/* Plug icon */}
-            <line x1="48" y1="-130" x2="48" y2="-140"
-              stroke="#94a3b8" strokeWidth="5" strokeLinecap="round" />
-            <line x1="62" y1="-130" x2="62" y2="-140"
-              stroke="#94a3b8" strokeWidth="5" strokeLinecap="round" />
+          <g transform="translate(66, -40)">
+            {/* Hand grasping adapter */}
+            <circle cx="0" cy="0" r="14" fill="url(#skinGradModern)" stroke={skinShadow} strokeWidth="2.5" />
+            {/* White Cable Loop */}
+            <path
+              d="M 0 -3 Q 30 24 21 -48 Q 12 -112 54 -93"
+              stroke="#f8fafc"
+              strokeWidth="7"
+              fill="none"
+              strokeLinecap="round"
+            />
+            {/* Charger Adapter Block */}
+            <rect
+              x="39"
+              y="-135"
+              width="30"
+              height="42"
+              rx="7"
+              fill="#f1f5f9"
+              stroke="#64748b"
+              strokeWidth="3"
+            />
+            <circle cx="54" cy="-114" r="4.5" fill="#10b981" />
+            {/* Metal Prongs */}
+            <line x1="46" y1="-135" x2="46" y2="-147" stroke="#94a3b8" strokeWidth="5" strokeLinecap="round" />
+            <line x1="62" y1="-135" x2="62" y2="-147" stroke="#94a3b8" strokeWidth="5" strokeLinecap="round" />
           </g>
         )}
 
         {holdingItem === 'coffee' && (
-          <g transform="translate(95, 60)">
-            <circle cx="0" cy="0" r="23" fill="url(#skinGrad2)"
-              stroke={skinDark} strokeWidth="3" />
-            {/* Coffee cup */}
-            <path d="M -18 -55 L -14 20 Q 0 26 14 20 L 18 -55 Z"
-              fill="#f8fafc" stroke="#94a3b8" strokeWidth="4" />
-            <rect x="-20" y="-62" width="40" height="12" rx="4" fill="#ef4444" />
-            {/* Coffee waves */}
-            <path d="M -6 -40 Q 0 -50 6 -40" stroke="#6b4f35"
-              strokeWidth="4" fill="none" strokeLinecap="round" opacity="0.6" />
+          <g transform="translate(66, -38)">
+            <circle cx="0" cy="0" r="14" fill="url(#skinGradModern)" stroke={skinShadow} strokeWidth="2.5" />
+            {/* Coffee Cup */}
+            <path
+              d="M -18 -57 L -13 18 Q 0 24 13 18 L 18 -57 Z"
+              fill="#f8fafc"
+              stroke="#64748b"
+              strokeWidth="3"
+            />
+            {/* Kraft Sleeve */}
+            <path
+              d="M -16 -33 L -13 0 Q 0 4 13 0 L 16 -33 Z"
+              fill="#d97706"
+              opacity="0.85"
+            />
+            {/* Coffee Lid */}
+            <rect x="-21" y="-63" width="42" height="10" rx="3.5" fill="#ea580c" />
           </g>
         )}
 
         {holdingItem === 'phone' && (
-          <g transform="translate(96, 56)">
-            <circle cx="0" cy="0" r="23" fill="url(#skinGrad2)"
-              stroke={skinDark} strokeWidth="3" />
-            <rect x="-14" y="-75" width="38" height="66" rx="8"
-              fill="#1e293b" stroke="#475569" strokeWidth="3" />
-            <rect x="-10" y="-71" width="30" height="52" rx="5" fill="#38bdf8" opacity="0.4" />
-            <circle cx="10" cy="-15" r="4" fill="#64748b" />
+          <g transform="translate(66, -40)">
+            <circle cx="0" cy="0" r="14" fill="url(#skinGradModern)" stroke={skinShadow} strokeWidth="2.5" />
+            <rect
+              x="-12"
+              y="-78"
+              width="36"
+              height="66"
+              rx="7"
+              fill="#0f172a"
+              stroke="#334155"
+              strokeWidth="3"
+            />
+            <rect x="-7" y="-72" width="27" height="52" rx="4" fill="#38bdf8" opacity="0.6" />
           </g>
         )}
 
         {holdingItem === 'scissors' && (
-          <g transform="translate(96, 55)">
-            <circle cx="0" cy="0" r="23" fill="url(#skinGrad2)"
-              stroke={skinDark} strokeWidth="3" />
-            <circle cx="10" cy="-24" r="14" fill="none"
-              stroke="#ef4444" strokeWidth="6" />
-            <circle cx="28" cy="-14" r="14" fill="none"
-              stroke="#ef4444" strokeWidth="6" />
-            <line x1="18" y1="-32" x2="50" y2="-80"
-              stroke="#94a3b8" strokeWidth="7" strokeLinecap="round" />
-            <line x1="34" y1="-24" x2="54" y2="-72"
-              stroke="#94a3b8" strokeWidth="7" strokeLinecap="round" />
+          <g transform="translate(66, -40)">
+            <circle cx="0" cy="0" r="14" fill="url(#skinGradModern)" stroke={skinShadow} strokeWidth="2.5" />
+            <circle cx="10" cy="-22" r="12" fill="none" stroke="#ef4444" strokeWidth="5" />
+            <circle cx="25" cy="-12" r="12" fill="none" stroke="#ef4444" strokeWidth="5" />
+            <line x1="18" y1="-30" x2="48" y2="-81" stroke="#94a3b8" strokeWidth="6" strokeLinecap="round" />
+            <line x1="33" y1="-22" x2="54" y2="-72" stroke="#94a3b8" strokeWidth="6" strokeLinecap="round" />
           </g>
         )}
 
       </g>
-      {/* ── END TORSO+HEAD ── */}
+      {/* ── END UPPER BODY ── */}
     </g>
   );
 };

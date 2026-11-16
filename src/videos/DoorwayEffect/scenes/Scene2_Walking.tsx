@@ -20,7 +20,7 @@ export const Scene2_Walking: React.FC = () => {
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 10 }}
       >
         {/* Motion dust puffs near feet */}
-        <g transform={`translate(${540 + walkX - 80}, 1280)`} opacity="0.4">
+        <g transform={`translate(${540 + walkX - 80}, 1370)`} opacity="0.4">
           <circle cx="0" cy="0" r="14" fill="#ffffff" />
           <circle cx="-25" cy="5" r="10" fill="#ffffff" />
         </g>
