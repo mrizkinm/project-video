@@ -243,27 +243,11 @@ export const MainCharacter: React.FC<MainCharacterProps> = ({
             strokeWidth="3.5"
           />
 
-          {/* ── MODERN CURTAIN HAIR (SOLID & TEXTURED) ── */}
-          {/* Solid Hair Cap covering full cranium */}
+          {/* ── MODERN CURTAIN HAIR ── */}
+          {/* Solid Hair Cap covering full cranium (Previous base shape preserved) */}
           <path
             d="M -56 -24 C -62 -105 62 -105 56 -24 C 50 -8 38 2 30 -6 C 20 -18 12 -34 0 -34 C -12 -34 -20 -18 -30 -6 C -38 2 -50 -8 -56 -24 Z"
             fill="url(#hairGradModern)"
-          />
-
-          {/* Left Curtain Fringe (Sweeping gracefully across forehead) */}
-          <path
-            d="M 3 -35 C -9 -24 -27 -16 -45 -2 C -52 8 -46 20 -40 18 C -34 15 -22 -6 -12 -14 C -3 -20 3 -26 6 -34 Z"
-            fill="url(#hairGradModern)"
-            stroke={hairDark}
-            strokeWidth="1.6"
-          />
-
-          {/* Right Curtain Fringe (Matching parted side) */}
-          <path
-            d="M -3 -35 C 9 -24 27 -16 45 -2 C 52 8 46 20 40 18 C 34 15 22 -6 12 -14 C 3 -20 -3 -26 -6 -34 Z"
-            fill="url(#hairGradModern)"
-            stroke={hairDark}
-            strokeWidth="1.6"
           />
 
           {/* Sideburns framing ears */}
@@ -280,24 +264,6 @@ export const MainCharacter: React.FC<MainCharacterProps> = ({
             strokeWidth="5"
             strokeLinecap="round"
             fill="none"
-          />
-
-          {/* Hair Highlight Arcs */}
-          <path
-            d="M -26 -68 Q 0 -76 26 -68"
-            stroke="#474462"
-            strokeWidth="3.5"
-            strokeLinecap="round"
-            fill="none"
-            opacity="0.75"
-          />
-          <path
-            d="M -15 -56 Q 0 -62 15 -56"
-            stroke="#474462"
-            strokeWidth="3"
-            strokeLinecap="round"
-            fill="none"
-            opacity="0.5"
           />
 
           {/* Healthy Cheek Blush */}

@@ -6,8 +6,8 @@ import { MainCharacter } from '../../../shared/characters/MainCharacter';
 export const Scene2_Walking: React.FC = () => {
   const frame = useCurrentFrame();
 
-  // Walk position across screen (snappy 90 frames / 3.0s)
-  const walkX = interpolate(frame, [0, 90], [-180, 220], {
+  // Walk position across screen (smoothly across 105 frames)
+  const walkX = interpolate(frame, [0, 105], [-180, 220], {
     extrapolateRight: 'clamp',
   });
 

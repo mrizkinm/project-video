@@ -7,8 +7,8 @@ export const Scene4_LivingRoom: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Character looking left then right (snappy at frame 50)
-  const flip = frame > 50;
+  // Character looking left then right (smoothly at frame 65)
+  const flip = frame > 65;
 
   // 3 Orbiting question marks
   const orbitAngle = (frame / fps) * Math.PI * 1.5;

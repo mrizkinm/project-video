@@ -24,8 +24,8 @@ export const DoorwayEffectVideo: React.FC = () => {
       <Audio
         src={staticFile('audio/bgm/bgm_mystery.mp3')}
         volume={(f) => {
-          if (f > 920) {
-            return interpolate(f, [920, 960], [0.28, 0], {
+          if (f > 1100) {
+            return interpolate(f, [1100, 1140], [0.28, 0], {
               extrapolateLeft: 'clamp',
               extrapolateRight: 'clamp',
             });
@@ -35,8 +35,8 @@ export const DoorwayEffectVideo: React.FC = () => {
         loop
       />
 
-      {/* SCENE 1: 0 - 3.5s (105 frames) */}
-      <Sequence from={0} durationInFrames={105}>
+      {/* SCENE 1: 0 - 3.17s (95 frames) | VO: 73 frames */}
+      <Sequence from={0} durationInFrames={95}>
         <Audio src={staticFile('audio/voiceover/scene1.mp3')} volume={1.0} />
         <Scene1_Bedroom />
         <ViralCaptions
@@ -47,13 +47,13 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 1→2: Centered at frame 105 cut (frame 99-111, flash-cut cyan) */}
-      <Sequence from={99} durationInFrames={12}>
+      {/* ✨ TRANSITION 1→2: Centered at frame 95 cut (frame 89-101, flash-cut cyan) */}
+      <Sequence from={89} durationInFrames={12}>
         <SceneTransition type="flash-cut" durationFrames={12} color="#38bdf8" />
       </Sequence>
 
-      {/* SCENE 2: 3.5s - 6.5s (90 frames) */}
-      <Sequence from={105} durationInFrames={90}>
+      {/* SCENE 2: 3.17s - 6.83s (110 frames) | VO: 88 frames */}
+      <Sequence from={95} durationInFrames={110}>
         <Audio src={staticFile('audio/voiceover/scene2.mp3')} volume={1.0} />
         <Audio src={staticFile('audio/sfx/whoosh.wav')} volume={0.45} />
         <Scene2_Walking />
@@ -65,13 +65,13 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 2→3: Centered at frame 195 cut (frame 189-201, wipe-diagonal red) */}
-      <Sequence from={189} durationInFrames={12}>
+      {/* ✨ TRANSITION 2→3: Centered at frame 205 cut (frame 199-211, wipe-diagonal red) */}
+      <Sequence from={199} durationInFrames={12}>
         <SceneTransition type="wipe-diagonal" durationFrames={12} color="#ef4444" />
       </Sequence>
 
-      {/* SCENE 3: 6.5s - 10.0s (105 frames) */}
-      <Sequence from={195} durationInFrames={105}>
+      {/* SCENE 3: 6.83s - 12.0s (155 frames) | VO: 136 frames */}
+      <Sequence from={205} durationInFrames={155}>
         <Audio src={staticFile('audio/voiceover/scene3.mp3')} volume={1.0} />
         <Audio src={staticFile('audio/sfx/glitch.wav')} volume={0.55} />
         <Scene3_Freeze />
@@ -83,13 +83,13 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 3→4: Centered at frame 300 cut (frame 294-306, circle-reveal yellow) */}
-      <Sequence from={294} durationInFrames={12}>
+      {/* ✨ TRANSITION 3→4: Centered at frame 360 cut (frame 354-366, circle-reveal yellow) */}
+      <Sequence from={354} durationInFrames={12}>
         <SceneTransition type="circle-reveal" durationFrames={12} color="#facc15" />
       </Sequence>
 
-      {/* SCENE 4: 10.0s - 13.5s (105 frames) */}
-      <Sequence from={300} durationInFrames={105}>
+      {/* SCENE 4: 12.0s - 17.0s (150 frames) | VO: 129 frames */}
+      <Sequence from={360} durationInFrames={150}>
         <Audio src={staticFile('audio/voiceover/scene4.mp3')} volume={1.0} />
         <Audio src={staticFile('audio/sfx/pop.wav')} volume={0.5} />
         <Scene4_LivingRoom />
@@ -101,13 +101,13 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 4→5: Centered at frame 405 cut (frame 399-411, slide-up purple) */}
-      <Sequence from={399} durationInFrames={12}>
+      {/* ✨ TRANSITION 4→5: Centered at frame 510 cut (frame 504-516, slide-up purple) */}
+      <Sequence from={504} durationInFrames={12}>
         <SceneTransition type="slide-up" durationFrames={12} color="#8b5cf6" />
       </Sequence>
 
-      {/* SCENE 5: 13.5s - 18.0s (135 frames) */}
-      <Sequence from={405} durationInFrames={135}>
+      {/* SCENE 5: 17.0s - 21.83s (145 frames) | VO: 124 frames */}
+      <Sequence from={510} durationInFrames={145}>
         <Audio src={staticFile('audio/voiceover/scene5.mp3')} volume={1.0} />
         <Audio src={staticFile('audio/sfx/chime.wav')} volume={0.45} />
         <Scene5_BrainRoom />
@@ -119,13 +119,13 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 5→6: Centered at frame 540 cut (frame 534-546, split-vertical blue) */}
-      <Sequence from={534} durationInFrames={12}>
+      {/* ✨ TRANSITION 5→6: Centered at frame 655 cut (frame 649-661, split-vertical blue) */}
+      <Sequence from={649} durationInFrames={12}>
         <SceneTransition type="split-vertical" durationFrames={12} color="#0284c7" />
       </Sequence>
 
-      {/* SCENE 6: 18.0s - 22.5s (135 frames) */}
-      <Sequence from={540} durationInFrames={135}>
+      {/* SCENE 6: 21.83s - 27.5s (170 frames) | VO: 148 frames */}
+      <Sequence from={655} durationInFrames={170}>
         <Audio src={staticFile('audio/voiceover/scene6.mp3')} volume={1.0} />
         <Audio src={staticFile('audio/sfx/whoosh.wav')} volume={0.4} />
         <Scene6_SciencePortal />
@@ -137,13 +137,13 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 6→7: Centered at frame 675 cut (frame 669-681, flash-cut amber) */}
-      <Sequence from={669} durationInFrames={12}>
+      {/* ✨ TRANSITION 6→7: Centered at frame 825 cut (frame 819-831, flash-cut amber) */}
+      <Sequence from={819} durationInFrames={12}>
         <SceneTransition type="flash-cut" durationFrames={12} color="#f59e0b" />
       </Sequence>
 
-      {/* SCENE 7: 22.5s - 27.0s (135 frames) */}
-      <Sequence from={675} durationInFrames={135}>
+      {/* SCENE 7: 27.5s - 32.67s (155 frames) | VO: 134 frames */}
+      <Sequence from={825} durationInFrames={155}>
         <Audio src={staticFile('audio/voiceover/scene7.mp3')} volume={1.0} />
         <Audio src={staticFile('audio/sfx/ding.wav')} volume={0.55} />
         <Scene7_RewindHack />
@@ -155,13 +155,13 @@ export const DoorwayEffectVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 7→8: Centered at frame 810 cut (frame 804-816, zoom-out green) */}
-      <Sequence from={804} durationInFrames={12}>
+      {/* ✨ TRANSITION 7→8: Centered at frame 980 cut (frame 974-986, zoom-out green) */}
+      <Sequence from={974} durationInFrames={12}>
         <SceneTransition type="zoom-out" durationFrames={12} color="#10b981" />
       </Sequence>
 
-      {/* SCENE 8: 27.0s - 32.0s (150 frames) */}
-      <Sequence from={810} durationInFrames={150}>
+      {/* SCENE 8: 32.67s - 38.0s (160 frames) | VO: 127 frames */}
+      <Sequence from={980} durationInFrames={160}>
         <Audio src={staticFile('audio/voiceover/scene8.mp3')} volume={1.0} />
         <Audio src={staticFile('audio/sfx/bell.wav')} volume={0.55} />
         <Scene8_VictoryOutro />

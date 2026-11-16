@@ -7,8 +7,8 @@ export const Scene8_VictoryOutro: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Rotation of celebratory sunburst (snappy 150 frames)
-  const sunRotation = interpolate(frame, [0, 150], [0, 90]);
+  // Rotation of celebratory sunburst (smooth across 160 frames)
+  const sunRotation = interpolate(frame, [0, 160], [0, 96]);
 
   // Big glowing Eureka bulb
   const bulbScale = spring({

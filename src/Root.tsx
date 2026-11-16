@@ -6,11 +6,11 @@ import { KopiNgantukVideo } from './videos/KopiNgantuk/Composition';
 export const Root: React.FC = () => {
   return (
     <>
-      {/* VIDEO 1: The Doorway Effect (32 seconds / 960 frames @ 30 fps) */}
+      {/* VIDEO 1: The Doorway Effect (38 seconds / 1140 frames @ 30 fps) */}
       <Composition
         id="DoorwayEffect"
         component={DoorwayEffectVideo}
-        durationInFrames={960}
+        durationInFrames={1140}
         fps={30}
         width={1080}
         height={1920}
