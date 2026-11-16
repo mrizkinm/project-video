@@ -22,7 +22,14 @@ export const Scene2_RelatableDilemma: React.FC = () => {
 
       <svg
         viewBox="0 0 1080 1920"
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 10 }}
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 10,
+          fontFamily: '"Plus Jakarta Sans", "Nunito", -apple-system, sans-serif',
+        }}
       >
         {!isPart2 ? (
           /* PART 1: PINTU & AMNESIA (Frame 0 - 84) */

@@ -20,7 +20,14 @@ export const Scene1_Hook: React.FC = () => {
 
       <svg
         viewBox="0 0 1080 1920"
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 10 }}
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 10,
+          fontFamily: '"Plus Jakarta Sans", "Nunito", -apple-system, sans-serif',
+        }}
       >
         {/* Floating Curious Question Marks */}
         {frame > 10 && (
