@@ -85,10 +85,24 @@ export const MainCharacter: React.FC<MainCharacterProps> = ({
           <stop offset="100%" stopColor={skinShadow} />
         </linearGradient>
 
-        <linearGradient id="hairGradModern" x1="0%" y1="0%" x2="30%" y2="100%">
-          <stop offset="0%" stopColor={hairMid} />
-          <stop offset="100%" stopColor={hairDark} />
+        <linearGradient id="hairGradModern" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#2e2b48" />
+          <stop offset="45%" stopColor="#1e1c2e" />
+          <stop offset="100%" stopColor="#11101d" />
         </linearGradient>
+
+        <linearGradient id="hairSheenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#818cf8" stopOpacity="0" />
+          <stop offset="25%" stopColor="#818cf8" stopOpacity="0.4" />
+          <stop offset="50%" stopColor="#e0e7ff" stopOpacity="0.7" />
+          <stop offset="75%" stopColor="#818cf8" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#818cf8" stopOpacity="0" />
+        </linearGradient>
+
+        {/* Clip-path ensuring all hair textures & lighting stay 100% strictly inside hair volume */}
+        <clipPath id="hairClipModern">
+          <path d="M -56 -20 C -62 -105 62 -105 56 -20 C 50 -8 38 2 30 -6 C 20 -18 12 -34 0 -34 C -12 -34 -20 -18 -30 -6 C -38 2 -50 -8 -56 -20 Z" />
+        </clipPath>
 
         <linearGradient id="sweaterGradModern" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor={sweaterAccent} />
@@ -243,28 +257,40 @@ export const MainCharacter: React.FC<MainCharacterProps> = ({
             strokeWidth="3.5"
           />
 
-          {/* ── MODERN CURTAIN HAIR ── */}
-          {/* Solid Hair Cap covering full cranium (Previous base shape preserved) */}
-          <path
-            d="M -56 -24 C -62 -105 62 -105 56 -24 C 50 -8 38 2 30 -6 C 20 -18 12 -34 0 -34 C -12 -34 -20 -18 -30 -6 C -38 2 -50 -8 -56 -24 Z"
-            fill="url(#hairGradModern)"
-          />
+          {/* ── MODERN CURTAIN HAIR WITH RICH TEXTURE & LIGHTING (CLIPPED) ── */}
+          <g clipPath="url(#hairClipModern)">
+            {/* 1. Base Hair Volume */}
+            <path
+              d="M -56 -20 C -62 -105 62 -105 56 -20 C 50 -8 38 2 30 -6 C 20 -18 12 -34 0 -34 C -12 -34 -20 -18 -30 -6 C -38 2 -50 -8 -56 -20 Z"
+              fill="url(#hairGradModern)"
+            />
 
-          {/* Sideburns framing ears */}
-          <path
-            d="M -54 -6 L -51 15 L -46 5"
-            stroke={hairDark}
-            strokeWidth="5"
-            strokeLinecap="round"
-            fill="none"
-          />
-          <path
-            d="M 54 -6 L 51 15 L 46 5"
-            stroke={hairDark}
-            strokeWidth="5"
-            strokeLinecap="round"
-            fill="none"
-          />
+            {/* 2. Soft Organic Hair Highlights (Subtle sheen along hair curvature) */}
+            <path
+              d="M -38 -74 Q 0 -86 38 -74 C 24 -82 0 -83 -38 -74 Z"
+              fill="#818cf8"
+              opacity="0.35"
+            />
+            <path
+              d="M -22 -78 Q 0 -86 22 -78"
+              stroke="#ffffff"
+              strokeWidth="2"
+              strokeLinecap="round"
+              fill="none"
+              opacity="0.35"
+            />
+
+            {/* 3. Subtle Hair Flow Strands (Natural texture following curtain curvature) */}
+            <g stroke="#433f66" strokeLinecap="round" fill="none" opacity="0.6">
+              {/* Parting flow lines */}
+              <path d="M -5 -38 C -15 -42 -28 -34 -42 -22" strokeWidth="2" />
+              <path d="M 5 -38 C 15 -42 28 -34 42 -22" strokeWidth="2" />
+              
+              {/* Side flow strands */}
+              <path d="M -18 -66 C -32 -56 -44 -40 -48 -24" strokeWidth="1.8" />
+              <path d="M 18 -66 C 32 -56 44 -40 48 -24" strokeWidth="1.8" />
+            </g>
+          </g>
 
           {/* Healthy Cheek Blush */}
           <ellipse cx="-30" cy="22" rx="11" ry="6" fill="#f43f5e" opacity="0.2" />
