@@ -44,7 +44,7 @@ export const Scene2_RelatableDilemma: React.FC = () => {
 
             {/* Dilemma Badge 1 */}
             <g transform={`translate(540, 430) scale(${Math.max(0, cardPop)})`}>
-              <rect x="-240" y="-36" width="480" height="72" rx="36" fill="#ef4444" stroke="#ffffff" strokeWidth="3" />
+              <rect x="-260" y="-38" width="520" height="76" rx="38" fill="#ef4444" stroke="#ffffff" strokeWidth="3.5" />
               <text x="0" y="12" fill="#ffffff" fontSize="28" fontWeight="900" textAnchor="middle">
                 🚪 Baru Buka Pintu... Blank?!
               </text>
@@ -60,7 +60,7 @@ export const Scene2_RelatableDilemma: React.FC = () => {
           <g>
             {/* Dilemma Badge 2 */}
             <g transform={`translate(540, 430) scale(${Math.max(0, cardPop)})`}>
-              <rect x="-250" y="-36" width="500" height="72" rx="36" fill="#d97706" stroke="#ffffff" strokeWidth="3" />
+              <rect x="-290" y="-38" width="580" height="76" rx="38" fill="#d97706" stroke="#ffffff" strokeWidth="3.5" />
               <text x="0" y="12" fill="#ffffff" fontSize="28" fontWeight="900" textAnchor="middle">
                 ☕ Minum Kopi... Malah Ngantuk?!
               </text>
