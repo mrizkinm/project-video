@@ -2,6 +2,11 @@
 node_modules/
 .npm-cache/
 
+# Environment files & Secrets
+.env
+.env.*
+*.env
+
 # Rendered output & previews
 out/*
 !out/.keep
