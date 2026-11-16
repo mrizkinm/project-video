@@ -1,0 +1,19 @@
+{
+  "name": "project-video",
+  "version": "1.0.0",
+  "description": "Educational animation shorts created with Remotion",
+  "scripts": {
+    "start": "remotion preview",
+    "build": "remotion render DoorwayEffect out/video.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.244",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.244"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "typescript": "^5.4.5"
+  }
+}
