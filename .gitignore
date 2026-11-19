@@ -13,6 +13,7 @@ out/*
 .remotion/
 build/
 dist/
+public/*.png
 
 # System and editor files
 .DS_Store

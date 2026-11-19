@@ -1,5 +1,5 @@
-import React from 'react';
-import { AbsoluteFill, Sequence, Audio, staticFile, interpolate } from 'remotion';
+import React, { useState, useEffect } from 'react';
+import { AbsoluteFill, Sequence, Audio, staticFile, interpolate, delayRender, continueRender } from 'remotion';
 import { Scene1_Bedroom } from './scenes/Scene1_Bedroom';
 import { Scene2_Walking } from './scenes/Scene2_Walking';
 import { Scene3_Freeze } from './scenes/Scene3_Freeze';
@@ -13,24 +13,56 @@ import { ProgressBar } from '../../components/ProgressBar';
 import { SceneTransition } from '../../shared/effects/SceneTransition';
 
 export const DoorwayEffectVideo: React.FC = () => {
+  const [handle] = useState(() => delayRender('load-fonts-doorway'));
+
+  useEffect(() => {
+    if (typeof document !== 'undefined' && document.fonts) {
+      document.fonts.ready.then(() => {
+        continueRender(handle);
+      }).catch(() => {
+        continueRender(handle);
+      });
+    } else {
+      continueRender(handle);
+    }
+  }, [handle]);
+
   return (
-    <AbsoluteFill style={{ backgroundColor: '#000000' }}>
-      {/* 🔤 Global Font Loader (Loaded once for the whole composition) */}
+    <AbsoluteFill
+      style={{
+        backgroundColor: '#000000',
+        fontFamily: "'Plus Jakarta Sans', 'Fredoka', sans-serif",
+      }}
+    >
+      {/* 🔤 Local High-Speed Font Loader (100% Offline & Deterministic) */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800;900&family=Nunito:wght@800;900;1000&display=swap');
+        @font-face {
+          font-family: 'Fredoka';
+          src: url('${staticFile('fonts/Fredoka.ttf')}') format('truetype');
+          font-weight: 100 900;
+          font-style: normal;
+          font-display: block;
+        }
+        @font-face {
+          font-family: 'Plus Jakarta Sans';
+          src: url('${staticFile('fonts/PlusJakartaSans.ttf')}') format('truetype');
+          font-weight: 200 800;
+          font-style: normal;
+          font-display: block;
+        }
       `}</style>
 
-      {/* 🎵 BACKGROUND MUSIC (Sneaky / Mystery Theme at 28% with smooth outro fade-out) */}
+      {/* 🎵 BACKGROUND MUSIC (Sneaky / Mystery Theme - Ducked to 16% for clean voiceover clarity) */}
       <Audio
         src={staticFile('audio/bgm/bgm_mystery.mp3')}
         volume={(f) => {
           if (f > 1100) {
-            return interpolate(f, [1100, 1140], [0.28, 0], {
+            return interpolate(f, [1100, 1140], [0.16, 0], {
               extrapolateLeft: 'clamp',
               extrapolateRight: 'clamp',
             });
           }
-          return 0.28;
+          return 0.16;
         }}
         loop
       />
@@ -55,7 +87,8 @@ export const DoorwayEffectVideo: React.FC = () => {
       {/* SCENE 2: 3.17s - 6.83s (110 frames) | VO: 88 frames */}
       <Sequence from={95} durationInFrames={110}>
         <Audio src={staticFile('audio/voiceover/scene2.mp3')} volume={1.0} />
-        <Audio src={staticFile('audio/sfx/whoosh.wav')} volume={0.45} />
+        {/* Subtle, tasteful transition whoosh accent (volume lowered from 0.45 to 0.14) */}
+        <Audio src={staticFile('audio/sfx/whoosh.wav')} volume={0.14} />
         <Scene2_Walking />
         <ViralCaptions
           badge="MELANGKAH PEDE"
@@ -73,7 +106,8 @@ export const DoorwayEffectVideo: React.FC = () => {
       {/* SCENE 3: 6.83s - 12.0s (155 frames) | VO: 136 frames */}
       <Sequence from={205} durationInFrames={155}>
         <Audio src={staticFile('audio/voiceover/scene3.mp3')} volume={1.0} />
-        <Audio src={staticFile('audio/sfx/glitch.wav')} volume={0.55} />
+        {/* Subtle, soft glitch texture (volume lowered from 0.55 to 0.12 so VO isn't masked) */}
+        <Audio src={staticFile('audio/sfx/glitch.wav')} volume={0.12} />
         <Scene3_Freeze />
         <ViralCaptions
           badge="MENDADAK BLANK?!"
@@ -91,7 +125,8 @@ export const DoorwayEffectVideo: React.FC = () => {
       {/* SCENE 4: 12.0s - 17.0s (150 frames) | VO: 129 frames */}
       <Sequence from={360} durationInFrames={150}>
         <Audio src={staticFile('audio/voiceover/scene4.mp3')} volume={1.0} />
-        <Audio src={staticFile('audio/sfx/pop.wav')} volume={0.5} />
+        {/* Gentle pop accent (volume lowered from 0.50 to 0.15) */}
+        <Audio src={staticFile('audio/sfx/pop.wav')} volume={0.15} />
         <Scene4_LivingRoom />
         <ViralCaptions
           badge="BUKAN PIKUN!"
@@ -109,7 +144,8 @@ export const DoorwayEffectVideo: React.FC = () => {
       {/* SCENE 5: 17.0s - 21.83s (145 frames) | VO: 124 frames */}
       <Sequence from={510} durationInFrames={145}>
         <Audio src={staticFile('audio/voiceover/scene5.mp3')} volume={1.0} />
-        <Audio src={staticFile('audio/sfx/chime.wav')} volume={0.45} />
+        {/* Soft chime accent (volume lowered from 0.45 to 0.15) */}
+        <Audio src={staticFile('audio/sfx/chime.wav')} volume={0.15} />
         <Scene5_BrainRoom />
         <ViralCaptions
           badge="THE DOORWAY EFFECT"
@@ -127,7 +163,8 @@ export const DoorwayEffectVideo: React.FC = () => {
       {/* SCENE 6: 21.83s - 27.5s (170 frames) | VO: 148 frames */}
       <Sequence from={655} durationInFrames={170}>
         <Audio src={staticFile('audio/voiceover/scene6.mp3')} volume={1.0} />
-        <Audio src={staticFile('audio/sfx/whoosh.wav')} volume={0.4} />
+        {/* Gentle whoosh accent (volume lowered from 0.40 to 0.14) */}
+        <Audio src={staticFile('audio/sfx/whoosh.wav')} volume={0.14} />
         <Scene6_SciencePortal />
         <ViralCaptions
           badge="AMBANG PINTU"
@@ -145,7 +182,12 @@ export const DoorwayEffectVideo: React.FC = () => {
       {/* SCENE 7: 27.5s - 32.67s (155 frames) | VO: 134 frames */}
       <Sequence from={825} durationInFrames={155}>
         <Audio src={staticFile('audio/voiceover/scene7.mp3')} volume={1.0} />
-        <Audio src={staticFile('audio/sfx/ding.wav')} volume={0.55} />
+        {/* Subtle idea ding accent (volume lowered from 0.50 to 0.15) */}
+        <Audio src={staticFile('audio/sfx/ding.wav')} volume={0.15} />
+        <Sequence from={18} durationInFrames={60}>
+          {/* Subtle rewind whoosh accent (volume lowered from 0.35 to 0.14) */}
+          <Audio src={staticFile('audio/sfx/whoosh.wav')} volume={0.14} />
+        </Sequence>
         <Scene7_RewindHack />
         <ViralCaptions
           badge="SOLUSI KILAT"
@@ -163,7 +205,8 @@ export const DoorwayEffectVideo: React.FC = () => {
       {/* SCENE 8: 32.67s - 38.0s (160 frames) | VO: 127 frames */}
       <Sequence from={980} durationInFrames={160}>
         <Audio src={staticFile('audio/voiceover/scene8.mp3')} volume={1.0} />
-        <Audio src={staticFile('audio/sfx/bell.wav')} volume={0.55} />
+        {/* Soft celebration bell accent (volume lowered from 0.55 to 0.16) */}
+        <Audio src={staticFile('audio/sfx/bell.wav')} volume={0.16} />
         <Scene8_VictoryOutro />
         <ViralCaptions
           badge="TAG TEMEN KAMU!"
@@ -189,19 +232,19 @@ export const DoorwayEffectVideo: React.FC = () => {
       >
         <div
           style={{
-            background: 'linear-gradient(90deg, #6366f1 0%, #a855f7 100%)',
+            background: 'linear-gradient(90deg, #f59e0b 0%, #ef4444 100%)',
             color: '#ffffff',
             fontWeight: 900,
             fontSize: 24,
             padding: '10px 26px',
             borderRadius: 30,
             letterSpacing: 1.5,
-            fontFamily: '"Plus Jakarta Sans", "Nunito", sans-serif',
+            fontFamily: "'Fredoka', sans-serif",
             boxShadow: '0 6px 18px rgba(0,0,0,0.5)',
             border: '2px solid rgba(255,255,255,0.25)',
           }}
         >
-          🧠 FAKTA PSIKOLOGI
+          🚪 SAINS MEMORI
         </div>
         <div
           style={{
@@ -212,10 +255,10 @@ export const DoorwayEffectVideo: React.FC = () => {
             padding: '8px 22px',
             borderRadius: 20,
             border: '2px solid rgba(250,204,21,0.5)',
-            fontFamily: '"Plus Jakarta Sans", "Nunito", sans-serif',
+            fontFamily: "'Fredoka', sans-serif",
           }}
         >
-          #FaktaUnik
+          #TibaTibaPaham
         </div>
       </div>
 

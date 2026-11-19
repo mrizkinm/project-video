@@ -26,22 +26,30 @@ export const Scene1_Hook: React.FC = () => {
           width: '100%',
           height: '100%',
           zIndex: 10,
-          fontFamily: '"Plus Jakarta Sans", "Nunito", -apple-system, sans-serif',
+          fontFamily: "'Plus Jakarta Sans', sans-serif",
         }}
       >
         {/* Floating Curious Question Marks */}
         {frame > 10 && (
-          <g transform={`translate(720, 680) scale(${Math.max(0, qMarkScale)})`}>
+          <g transform={`translate(735, 620) scale(${Math.max(0, qMarkScale)})`}>
             <circle cx="0" cy="0" r="70" fill="#facc15" opacity="0.25" />
             <circle cx="0" cy="0" r="50" fill="#eab308" />
-            <text x="0" y="20" fontSize="64" fontWeight="900" fill="#ffffff" textAnchor="middle">
+            <text
+              x="0"
+              y="20"
+              fontSize="64"
+              fontWeight="900"
+              fill="#ffffff"
+              textAnchor="middle"
+              fontFamily="'Fredoka', sans-serif"
+            >
               ?
             </text>
           </g>
         )}
 
-        {/* Confused Character scratching head */}
-        <g transform="translate(540, 1100)">
+        {/* Confused Character scratching head - moved lower as requested */}
+        <g transform="translate(540, 995)">
           <MainCharacter mood="thinking" scale={1.35} />
         </g>
       </svg>

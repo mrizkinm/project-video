@@ -1,5 +1,5 @@
-import React from 'react';
-import { AbsoluteFill, Sequence, Audio, staticFile, interpolate } from 'remotion';
+import React, { useState, useEffect } from 'react';
+import { AbsoluteFill, Sequence, Audio, staticFile, interpolate, delayRender, continueRender } from 'remotion';
 import { Scene1_Hook } from './scenes/Scene1_Hook';
 import { Scene2_RelatableDilemma } from './scenes/Scene2_RelatableDilemma';
 import { Scene3_BrandReveal } from './scenes/Scene3_BrandReveal';
@@ -9,30 +9,63 @@ import { ProgressBar } from '../../components/ProgressBar';
 import { SceneTransition } from '../../shared/effects/SceneTransition';
 
 export const IntroTibaTibaPahamVideo: React.FC = () => {
+  const [handle] = useState(() => delayRender('load-fonts-intro'));
+
+  useEffect(() => {
+    if (typeof document !== 'undefined' && document.fonts) {
+      document.fonts.ready.then(() => {
+        continueRender(handle);
+      }).catch(() => {
+        continueRender(handle);
+      });
+    } else {
+      continueRender(handle);
+    }
+  }, [handle]);
+
   return (
-    <AbsoluteFill style={{ backgroundColor: '#000000' }}>
-      {/* 🔤 Global Font Loader */}
+    <AbsoluteFill
+      style={{
+        backgroundColor: '#000000',
+        fontFamily: "'Plus Jakarta Sans', 'Fredoka', sans-serif",
+      }}
+    >
+      {/* 🔤 Local High-Speed Font Loader (100% Offline & Deterministic) */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800;900&family=Nunito:wght@800;900;1000&display=swap');
+        @font-face {
+          font-family: 'Fredoka';
+          src: url('${staticFile('fonts/Fredoka.ttf')}') format('truetype');
+          font-weight: 100 900;
+          font-style: normal;
+          font-display: block;
+        }
+        @font-face {
+          font-family: 'Plus Jakarta Sans';
+          src: url('${staticFile('fonts/PlusJakartaSans.ttf')}') format('truetype');
+          font-weight: 200 800;
+          font-style: normal;
+          font-display: block;
+        }
       `}</style>
 
       {/* 🎵 BACKGROUND MUSIC (Upbeat/Sneaky mystery at 26% with outro fade) */}
+      {/* 🎵 BACKGROUND MUSIC (Subtle Mystery Theme - ducked to 16% for crisp VO clarity) */}
       <Audio
         src={staticFile('audio/bgm/bgm_mystery.mp3')}
         volume={(f) => {
-          if (f > 780) {
-            return interpolate(f, [780, 830], [0.26, 0], {
+          if (f > 820) {
+            return interpolate(f, [820, 870], [0.16, 0], {
               extrapolateLeft: 'clamp',
               extrapolateRight: 'clamp',
             });
           }
-          return 0.26;
+          return 0.16;
         }}
         loop
       />
 
-      {/* SCENE 1: HOOK (0 - 4.83s | 145 frames) */}
-      <Sequence from={0} durationInFrames={145}>
+      {/* SCENE 1: HOOK (0 - 4.67s | 140 frames | VO: 120 frames) */}
+      <Sequence from={0} durationInFrames={140}>
         <Audio src={staticFile('audio/intro_voiceover/scene1.mp3')} volume={1.0} />
         <Scene1_Hook />
         <ViralCaptions
@@ -43,15 +76,16 @@ export const IntroTibaTibaPahamVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 1→2: Centered at frame 145 (139-151, flash-cut cyan) */}
-      <Sequence from={139} durationInFrames={12}>
+      {/* ✨ TRANSITION 1→2: Centered at frame 140 (134-146, flash-cut cyan) */}
+      <Sequence from={134} durationInFrames={12}>
         <SceneTransition type="flash-cut" durationFrames={12} color="#38bdf8" />
       </Sequence>
 
-      {/* SCENE 2: CONTOH RELATABLE (4.83s - 10.5s | 170 frames) */}
-      <Sequence from={145} durationInFrames={170}>
+      {/* SCENE 2: CONTOH RELATABLE (4.67s - 12.33s | 230 frames | VO: 206 frames) */}
+      <Sequence from={140} durationInFrames={230}>
         <Audio src={staticFile('audio/intro_voiceover/scene2.mp3')} volume={1.0} />
-        <Audio src={staticFile('audio/sfx/whoosh.wav')} volume={0.45} />
+        {/* Subtle, soft transition whoosh (volume lowered from 0.45 to 0.14) */}
+        <Audio src={staticFile('audio/sfx/whoosh.wav')} volume={0.14} />
         <Scene2_RelatableDilemma />
         <ViralCaptions
           badge="KENAPA BISA GITU?! 🚪☕"
@@ -61,15 +95,16 @@ export const IntroTibaTibaPahamVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 2→3: Centered at frame 315 (309-321, circle-reveal gold) */}
-      <Sequence from={309} durationInFrames={12}>
+      {/* ✨ TRANSITION 2→3: Centered at frame 370 (364-376, circle-reveal gold) */}
+      <Sequence from={364} durationInFrames={12}>
         <SceneTransition type="circle-reveal" durationFrames={12} color="#facc15" />
       </Sequence>
 
-      {/* SCENE 3: BRAND REVEAL (10.5s - 20.5s | 300 frames) */}
-      <Sequence from={315} durationInFrames={300}>
+      {/* SCENE 3: BRAND REVEAL (12.33s - 22.33s | 300 frames | VO: 278 frames) */}
+      <Sequence from={370} durationInFrames={300}>
         <Audio src={staticFile('audio/intro_voiceover/scene3.mp3')} volume={1.0} />
-        <Audio src={staticFile('audio/sfx/chime.wav')} volume={0.5} />
+        {/* Soft chime accent (volume lowered from 0.50 to 0.15) */}
+        <Audio src={staticFile('audio/sfx/chime.wav')} volume={0.15} />
         <Scene3_BrandReveal />
         <ViralCaptions
           badge="TIBA-TIBA PAHAM! 💡"
@@ -79,15 +114,16 @@ export const IntroTibaTibaPahamVideo: React.FC = () => {
         />
       </Sequence>
 
-      {/* ✨ TRANSITION 3→4: Centered at frame 615 (609-621, zoom-out green) */}
-      <Sequence from={609} durationInFrames={12}>
+      {/* ✨ TRANSITION 3→4: Centered at frame 670 (664-676, zoom-out green) */}
+      <Sequence from={664} durationInFrames={12}>
         <SceneTransition type="zoom-out" durationFrames={12} color="#10b981" />
       </Sequence>
 
-      {/* SCENE 4: CALL TO ACTION (20.5s - 27.67s | 215 frames) */}
-      <Sequence from={615} durationInFrames={215}>
+      {/* SCENE 4: CALL TO ACTION (22.33s - 29.0s | 200 frames | VO: 163 frames) */}
+      <Sequence from={670} durationInFrames={200}>
         <Audio src={staticFile('audio/intro_voiceover/scene4.mp3')} volume={1.0} />
-        <Audio src={staticFile('audio/sfx/bell.wav')} volume={0.55} />
+        {/* Soft celebration bell accent (volume lowered from 0.55 to 0.16) */}
+        <Audio src={staticFile('audio/sfx/bell.wav')} volume={0.16} />
         <Scene4_OutroCTA />
         <ViralCaptions
           badge="YUK FOLLOW! 🔔"

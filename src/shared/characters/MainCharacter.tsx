@@ -15,6 +15,7 @@ interface MainCharacterProps {
   mood?: CharacterMood;
   holdingItem?: HoldingItem;
   isWalking?: boolean;
+  walkDirection?: 'forward' | 'backward';
   sweatDrop?: boolean;
   flipX?: boolean;
   scale?: number;
@@ -24,6 +25,7 @@ export const MainCharacter: React.FC<MainCharacterProps> = ({
   mood = 'confused',
   holdingItem = 'none',
   isWalking = false,
+  walkDirection = 'forward',
   sweatDrop = false,
   flipX = false,
   scale = 1,
@@ -39,12 +41,16 @@ export const MainCharacter: React.FC<MainCharacterProps> = ({
   );
 
   // 2. Walking Cycle (Leg swing, arm swing, body bob)
-  const walkCycle = isWalking ? Math.sin((frame / fps) * Math.PI * 6.5) : 0;
-  const legAngleLeft = walkCycle * 24;
-  const legAngleRight = -walkCycle * 24;
-  const walkBobY = isWalking ? Math.abs(Math.sin((frame / fps) * Math.PI * 6.5)) * -16 : 0;
-  const armSwingLeft = isWalking ? -walkCycle * 20 : 0;
-  const armSwingRight = isWalking ? walkCycle * 20 : 0;
+  const isBackward = isWalking && walkDirection === 'backward';
+  const walkSpeed = isBackward ? 5.5 : 6.5;
+  const walkCycle = isWalking ? Math.sin((frame / fps) * Math.PI * walkSpeed) : 0;
+  const walkDirFactor = isBackward ? -1 : 1;
+  const legAngleLeft = walkCycle * 24 * walkDirFactor;
+  const legAngleRight = -walkCycle * 24 * walkDirFactor;
+  const walkBobY = isWalking ? Math.abs(Math.sin((frame / fps) * Math.PI * walkSpeed)) * (isBackward ? -12 : -16) : 0;
+  const armSwingLeft = isWalking ? -walkCycle * 20 * walkDirFactor : 0;
+  const armSwingRight = isWalking ? walkCycle * 20 * walkDirFactor : 0;
+  const walkLean = isBackward ? 3.5 : 0;
 
   // 3. Eye Blinking Cycle (~3.5 seconds)
   const blinkCycle = frame % 105;
@@ -167,7 +173,7 @@ export const MainCharacter: React.FC<MainCharacterProps> = ({
       </g>
 
       {/* ── 2. UPPER BODY & HEAD ── */}
-      <g transform={`translate(0, ${breathY + walkBobY + hoverY})`}>
+      <g transform={`translate(0, ${breathY + walkBobY + hoverY}) rotate(${walkLean})`}>
 
         {/* ── SLENDER HUMAN NECK ── */}
         <rect

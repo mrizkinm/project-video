@@ -35,7 +35,7 @@ export const Scene3_BrandReveal: React.FC = () => {
           width: '100%',
           height: '100%',
           zIndex: 10,
-          fontFamily: '"Plus Jakarta Sans", "Nunito", sans-serif',
+          fontFamily: "'Plus Jakarta Sans', 'Fredoka', sans-serif",
         }}
       >
         <defs>
@@ -52,7 +52,7 @@ export const Scene3_BrandReveal: React.FC = () => {
         </defs>
 
         {/* 🌟 GRAND BRAND LOGO BANNER (Center-Top) */}
-        <g transform={`translate(540, 410) scale(${Math.max(0, logoScale)})`}>
+        <g transform={`translate(540, 350) scale(${Math.max(0, logoScale)})`}>
           {/* Glowing Aura */}
           <rect
             x="-440"
@@ -78,33 +78,51 @@ export const Scene3_BrandReveal: React.FC = () => {
 
           {/* Subtitle Pill */}
           <rect x="-180" y="-125" width="360" height="50" rx="25" fill="#facc15" />
-          <text x="0" y="-92" fill="#000000" fontSize="22" fontWeight="900" textAnchor="middle" letterSpacing="2">
+          <text
+            x="0"
+            y="-92"
+            fill="#000000"
+            fontFamily="'Plus Jakarta Sans', sans-serif"
+            fontSize="22"
+            fontWeight="900"
+            textAnchor="middle"
+            letterSpacing="2"
+          >
             ✨ SELAMAT DATANG DI ✨
           </text>
 
-          {/* Main Title: TIBA-TIBA PAHAM */}
+          {/* Main Title: TIBA-TIBA PAHAM - Friendly Fredoka Brand Wordmark */}
           <text
             x="0"
-            y="22"
+            y="24"
             fill="url(#brandGoldGrad)"
-            fontSize="62"
-            fontWeight="900"
+            fontFamily="'Fredoka', sans-serif"
+            fontSize="68"
+            fontWeight="700"
             textAnchor="middle"
-            letterSpacing="2.5"
+            letterSpacing="2"
             style={{ textShadow: '0 6px 18px rgba(0,0,0,0.6)' }}
           >
             TIBA-TIBA PAHAM 💡
           </text>
 
           {/* Slogan */}
-          <text x="0" y="62" fill="#e0e7ff" fontSize="24" fontWeight="800" textAnchor="middle">
+          <text
+            x="0"
+            y="64"
+            fill="#e0e7ff"
+            fontFamily="'Plus Jakarta Sans', sans-serif"
+            fontSize="24"
+            fontWeight="800"
+            textAnchor="middle"
+          >
             Sains & Perilaku Sehari-hari Jadi Simpel!
           </text>
         </g>
 
         {/* 🏷️ FLOATING TOPIC TAGS (Showcasing the broad umbrella scope) */}
         {frame > 40 && (
-          <g transform={`translate(220, 610) scale(${Math.max(0, tag1Pop)})`}>
+          <g transform={`translate(220, 530) scale(${Math.max(0, tag1Pop)})`}>
             <rect x="-160" y="-30" width="320" height="60" rx="30" fill="#3b82f6" stroke="#ffffff" strokeWidth="3" />
             <text x="0" y="10" fill="#ffffff" fontSize="24" fontWeight="900" textAnchor="middle">
               🧠 Misteri Otak
@@ -113,7 +131,7 @@ export const Scene3_BrandReveal: React.FC = () => {
         )}
 
         {frame > 65 && (
-          <g transform={`translate(540, 680) scale(${Math.max(0, tag2Pop)})`}>
+          <g transform={`translate(540, 595) scale(${Math.max(0, tag2Pop)})`}>
             <rect x="-160" y="-30" width="320" height="60" rx="30" fill="#10b981" stroke="#ffffff" strokeWidth="3" />
             <text x="0" y="10" fill="#ffffff" fontSize="24" fontWeight="900" textAnchor="middle">
               🧬 Biologi Tubuh
@@ -122,7 +140,7 @@ export const Scene3_BrandReveal: React.FC = () => {
         )}
 
         {frame > 90 && (
-          <g transform={`translate(860, 610) scale(${Math.max(0, tag3Pop)})`}>
+          <g transform={`translate(860, 530) scale(${Math.max(0, tag3Pop)})`}>
             <rect x="-160" y="-30" width="320" height="60" rx="30" fill="#f43f5e" stroke="#ffffff" strokeWidth="3" />
             <text x="0" y="10" fill="#ffffff" fontSize="24" fontWeight="900" textAnchor="middle">
               ✨ Fenomena Unik
@@ -130,15 +148,15 @@ export const Scene3_BrandReveal: React.FC = () => {
           </g>
         )}
 
-        {/* 🧑 DUO: Character & Brain Mascot side-by-side! */}
+        {/* 🧑 DUO: Character & Brain Mascot standing above caption */}
         {/* Main Character */}
-        <g transform="translate(420, 1140)">
+        <g transform="translate(380, 995)">
           <MainCharacter mood="happy" scale={1.35} />
         </g>
 
         {/* Brain Mascot Bouncing on the Right */}
-        <g transform={`translate(740, ${1040 + mascotBounceY}) scale(1.15)`}>
-          <BrainMascot state="cheering" scale={1.2} />
+        <g transform={`translate(720, ${905 + mascotBounceY}) scale(1.15)`}>
+          <BrainMascot mood="waving" scale={1.2} />
         </g>
       </svg>
     </AbsoluteFill>

@@ -53,7 +53,7 @@ export const ViralCaptions: React.FC<ViralCaptionsProps> = ({
           boxShadow: '0 8px 24px rgba(0,0,0,0.5)',
           marginBottom: 16,
           letterSpacing: 1.5,
-          fontFamily: '"Plus Jakarta Sans", "Nunito", -apple-system, "Segoe UI Variable Display", sans-serif',
+          fontFamily: "'Plus Jakarta Sans', sans-serif",
           border: '3px solid #ffffff',
           transform: `scale(${Math.max(0.9, popScale)})`,
         }}
@@ -70,10 +70,10 @@ export const ViralCaptions: React.FC<ViralCaptionsProps> = ({
           alignItems: 'center',
           gap: '12px',
           color: '#ffffff',
-          fontWeight: 900,
+          fontWeight: 800,
           fontSize: 38,
           lineHeight: 1.35,
-          fontFamily: '"Plus Jakarta Sans", "Nunito", -apple-system, sans-serif',
+          fontFamily: "'Plus Jakarta Sans', sans-serif",
           textShadow: `
             -3px -3px 0 #0f172a,  
              3px -3px 0 #0f172a,

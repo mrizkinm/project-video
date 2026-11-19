@@ -39,7 +39,7 @@ export const Scene4_OutroCTA: React.FC = () => {
           width: '100%',
           height: '100%',
           zIndex: 10,
-          fontFamily: '"Plus Jakarta Sans", "Nunito", sans-serif',
+          fontFamily: "'Plus Jakarta Sans', sans-serif",
         }}
       >
         <defs>
@@ -58,17 +58,17 @@ export const Scene4_OutroCTA: React.FC = () => {
         </g>
 
         {/* 💡 Giant Eureka Lightbulb */}
-        <g transform={`translate(540, 360) scale(${Math.max(0, bulbPop)})`}>
-          <circle cx="0" cy="0" r="130" fill="#facc15" opacity="0.22" />
-          <circle cx="0" cy="0" r="85" fill="#facc15" />
-          <text x="0" y="30" fontSize="90" textAnchor="middle">
+        <g transform={`translate(540, 280) scale(${Math.max(0, bulbPop)})`}>
+          <circle cx="0" cy="0" r="115" fill="#facc15" opacity="0.22" />
+          <circle cx="0" cy="0" r="78" fill="#facc15" />
+          <text x="0" y="27" fontSize="82" textAnchor="middle">
             💡
           </text>
         </g>
 
         {/* 🔔 ANIMATED FOLLOW CTA BUTTON */}
         {frame > 25 && (
-          <g transform={`translate(540, 530) scale(${Math.max(0, ctaPop)})`}>
+          <g transform={`translate(540, 440) scale(${Math.max(0, ctaPop)})`}>
             {/* Pulsing Shadow */}
             <rect
               x="-280"
@@ -111,8 +111,8 @@ export const Scene4_OutroCTA: React.FC = () => {
           </g>
         )}
 
-        {/* 🧑 Character in Eureka Victory Pose */}
-        <g transform="translate(540, 1140)">
+        {/* 🧑 Character standing above caption */}
+        <g transform="translate(540, 995)">
           <MainCharacter mood="eureka" scale={1.35} />
         </g>
       </svg>

@@ -1,7 +1,15 @@
 import React from 'react';
 import { interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
 
-export const CozyBedroomBackground: React.FC = () => {
+export interface CozyBedroomBackgroundProps {
+  hideDesk?: boolean;
+  showNightstand?: boolean;
+}
+
+export const CozyBedroomBackground: React.FC<CozyBedroomBackgroundProps> = ({
+  hideDesk = false,
+  showNightstand = false,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -34,7 +42,14 @@ export const CozyBedroomBackground: React.FC = () => {
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
-      <svg viewBox="0 0 1080 1920" style={{ width: '100%', height: '100%' }}>
+      <svg
+        viewBox="0 0 1080 1920"
+        style={{
+          width: '100%',
+          height: '100%',
+          fontFamily: '"Plus Jakarta Sans", "Nunito", -apple-system, sans-serif',
+        }}
+      >
         <defs>
           {/* Rich deep night wall gradient */}
           <linearGradient id="bedroomWall2" x1="0%" y1="0%" x2="20%" y2="100%">
@@ -90,10 +105,12 @@ export const CozyBedroomBackground: React.FC = () => {
         </defs>
 
         {/* ── BACK WALL ── */}
-        <rect x="0" y="0" width="1080" height="1310" fill="url(#bedroomWall2)" />
+        <rect x="0" y="0" width="1080" height="1180" fill="url(#bedroomWall2)" />
+        {/* Baseboard trim */}
+        <rect x="0" y="1165" width="1080" height="15" fill="#1e1208" stroke="#3d1f08" strokeWidth="2" />
 
         {/* Wall ambient glow from lamp */}
-        <ellipse cx="900" cy="1200" rx="460" ry="380" fill="url(#wallAmb)" />
+        <ellipse cx="900" cy="1120" rx="460" ry="340" fill="url(#wallAmb)" />
 
         {/* ── WINDOW (LEFT) ── */}
         <g transform="translate(80, 220)">
@@ -209,8 +226,8 @@ export const CozyBedroomBackground: React.FC = () => {
 
           {/* Books — various widths and heights */}
           <rect x="12" y="-118" width="28" height="126" rx="5" fill="#dc2626" />
-          <text x="26" y="-55" fontSize="16" fill="#fecaca" textAnchor="middle"
-            fontWeight="800" transform="rotate(-90, 26, -55)">脳</text>
+          <text x="26" y="-55" fontSize="14" fill="#fecaca" textAnchor="middle"
+            fontWeight="800" transform="rotate(-90, 26, -55)">SCI</text>
 
           <rect x="46" y="-128" width="34" height="136" rx="5" fill="#2563eb" />
           <rect x="52" y="-120" width="22" height="8" rx="2" fill="#93c5fd" />
@@ -219,8 +236,8 @@ export const CozyBedroomBackground: React.FC = () => {
           <rect x="88" y="-102" width="22" height="6" rx="2" fill="#bbf7d0" />
 
           <rect x="118" y="-125" width="38" height="133" rx="5" fill="#d97706" />
-          <text x="137" y="-60" fontSize="14" fill="#fef3c7" textAnchor="middle"
-            fontWeight="700" transform="rotate(-90, 137, -60)">PSY</text>
+          <text x="137" y="-60" fontSize="13" fill="#fef3c7" textAnchor="middle"
+            fontWeight="800" transform="rotate(-90, 137, -60)">SAINS</text>
 
           <rect x="162" y="-105" width="30" height="113" rx="5" fill="#7c3aed" />
           <rect x="164" y="-97" width="26" height="6" rx="2" fill="#c4b5fd" />
@@ -238,119 +255,146 @@ export const CozyBedroomBackground: React.FC = () => {
           <ellipse cx="234" cy="8" rx="18" ry="6" fill="#374151" />
         </g>
 
-        {/* ── DESK + LAPTOP (RIGHT SIDE) ── */}
-        <g transform="translate(760, 1020)">
-          {/* Desk surface with perspective */}
-          <path d="M -40 0 L 340 0 L 340 36 L -40 36 Z" fill="#3d1f08" />
-          <rect x="-40" y="36" width="380" height="260" fill="#2c1506" />
-          {/* Desk legs */}
-          <rect x="-20" y="296" width="20" height="120" rx="6" fill="#1a0d04" />
-          <rect x="300" y="296" width="20" height="120" rx="6" fill="#1a0d04" />
-          {/* Desk edge highlight */}
-          <line x1="-40" y1="0" x2="340" y2="0" stroke="#6b3215" strokeWidth="4" />
+        {/* ── COZY STUDY DESK + LAMP (ONLY WHEN NOT HIDDEN) ── */}
+        {!hideDesk && (
+          <g transform="translate(720, 1030)">
+            {/* Desk Surface (Solid dark wood with perspective) */}
+            <path d="M 0 0 L 360 0 L 360 30 L 0 30 Z" fill="#3d1f08" stroke="#5c2d0e" strokeWidth="2" />
+            {/* Desk Drawer Body */}
+            <rect x="10" y="30" width="340" height="42" fill="#2c1506" />
+            {/* Drawer Handle */}
+            <rect x="150" y="48" width="60" height="6" rx="3" fill="#fbbf24" opacity="0.6" />
 
-          {/* Laptop */}
-          <rect x="20" y="-55" width="220" height="140" rx="10"
-            fill="#1e293b" stroke="#334155" strokeWidth="5" />
-          {/* Screen */}
-          <rect x="30" y="-45" width="200" height="118" rx="6" fill="#0c1a2e" />
-          {/* TV glow on screen */}
-          <rect x="30" y="-45" width="200" height="118" rx="6" fill="url(#tvGlow)" />
-          {/* Code lines on screen */}
-          <rect x="40" y="-35" width="80" height="8" rx="2" fill="#38bdf8" opacity="0.6" />
-          <rect x="40" y="-22" width="130" height="8" rx="2" fill="#34d399" opacity="0.5" />
-          <rect x="40" y="-9" width="60" height="8" rx="2" fill="#f472b6" opacity="0.5" />
-          <rect x="40" y="4" width="110" height="8" rx="2" fill="#38bdf8" opacity="0.4" />
-          <rect x="40" y="17" width="90" height="8" rx="2" fill="#a3e635" opacity="0.5" />
-          {/* Laptop hinge */}
-          <rect x="20" y="80" width="220" height="12" rx="4" fill="#0f172a" />
-          {/* Laptop keyboard base */}
-          <rect x="20" y="88" width="220" height="20" rx="4" fill="#1e293b" />
+            {/* Desk Sturdy Legs - resting directly on wood floor at Y=1180 (1030 + 150 = 1180) */}
+            <rect x="25" y="72" width="22" height="78" rx="4" fill="#1a0d04" />
+            <rect x="315" y="72" width="22" height="78" rx="4" fill="#1a0d04" />
+            {/* Bottom Foot Stabilizers */}
+            <rect x="15" y="146" width="42" height="6" rx="2" fill="#0f0702" />
+            <rect x="305" y="146" width="42" height="6" rx="2" fill="#0f0702" />
 
-          {/* Coffee mug */}
-          <g transform="translate(260, -20)">
-            <rect x="-18" y="0" width="38" height="42" rx="8" fill="#e2e8f0"
-              stroke="#94a3b8" strokeWidth="3" />
-            <path d="M 20 10 Q 36 10 36 25 Q 36 40 20 40"
-              fill="none" stroke="#94a3b8" strokeWidth="5" />
-            {/* Coffee */}
-            <ellipse cx="1" cy="4" rx="15" ry="5" fill="#6b3f24" />
-            {/* Steam */}
-            <path d="M -5 -4 Q -2 -18 -5 -28" stroke="#94a3b8"
-              strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4" />
-            <path d="M 7 -4 Q 10 -16 7 -26" stroke="#94a3b8"
-              strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4" />
+            {/* 1. Laptop with code screen on the left side of desk */}
+            <g transform="translate(20, -50)">
+              <rect x="0" y="0" width="170" height="110" rx="8" fill="#1e293b" stroke="#334155" strokeWidth="4" />
+              <rect x="8" y="8" width="154" height="92" rx="5" fill="#0c1a2e" />
+              <rect x="8" y="8" width="154" height="92" rx="5" fill="url(#tvGlow)" />
+              {/* Code syntax lines */}
+              <rect x="16" y="18" width="60" height="6" rx="2" fill="#38bdf8" opacity="0.7" />
+              <rect x="16" y="28" width="100" height="6" rx="2" fill="#34d399" opacity="0.6" />
+              <rect x="16" y="38" width="45" height="6" rx="2" fill="#f472b6" opacity="0.6" />
+              <rect x="16" y="48" width="80" height="6" rx="2" fill="#38bdf8" opacity="0.5" />
+              <rect x="16" y="58" width="70" height="6" rx="2" fill="#a3e635" opacity="0.6" />
+              {/* Laptop Base */}
+              <rect x="-10" y="106" width="190" height="14" rx="4" fill="#0f172a" stroke="#334155" strokeWidth="2" />
+            </g>
+
+            {/* 2. Steaming Coffee Mug next to laptop */}
+            <g transform="translate(205, -12)">
+              <rect x="0" y="0" width="30" height="34" rx="6" fill="#f8fafc" stroke="#94a3b8" strokeWidth="2.5" />
+              <path d="M 30 8 Q 42 8 42 18 Q 42 28 30 28" fill="none" stroke="#94a3b8" strokeWidth="4" />
+              <ellipse cx="15" cy="3" rx="12" ry="4" fill="#6b3f24" />
+              {/* Gentle steam */}
+              <path d="M 8 -4 Q 12 -14 8 -22" stroke="#94a3b8" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.4" />
+              <path d="M 18 -4 Q 22 -12 18 -20" stroke="#94a3b8" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.4" />
+            </g>
+
+            {/* 3. Desk Lamp resting on right side of desk surface */}
+            <g transform="translate(255, -20)">
+              {/* Lamp base disc firmly on desk */}
+              <ellipse cx="45" cy="22" rx="34" ry="10" fill="#94a3b8" stroke="#64748b" strokeWidth="2" />
+              {/* Curved goose-neck lamp pole */}
+              <path d="M 45 22 Q 65 -45 25 -80" stroke="#64748b" strokeWidth="12" fill="none" strokeLinecap="round" />
+              {/* Lampshade */}
+              <path d="M -15 -100 Q 25 -120 65 -100 L 75 -55 Q 25 -40 -25 -55 Z" fill="#fef3c7" stroke="#fde68a" strokeWidth="3" />
+              {/* Warm light cone glowing down onto desk */}
+              <path d="M -25 -55 L 75 -55 L 140 180 L -100 180 Z" fill="url(#lampCone)" />
+              {/* Pool of light on desk surface */}
+              <ellipse cx="25" cy="24" rx="80" ry="18" fill="url(#lampPool)" />
+
+              {/* Smartphone with notification dot */}
+              <g transform="translate(-15, 6)">
+                <rect x="0" y="0" width="30" height="50" rx="6" fill="#0f172a" stroke="#334155" strokeWidth="2" />
+                <rect x="3" y="6" width="24" height="38" rx="4" fill="#1e293b" />
+                <circle cx="24" cy="4" r="3.5" fill="#ef4444" />
+              </g>
+            </g>
           </g>
-        </g>
+        )}
 
-        {/* ── LAMP on bedside table ── */}
-        <g transform="translate(804, 1095)">
-          {/* Table */}
-          <rect x="0" y="110" width="195" height="210" rx="12" fill="#3b1a07" />
-          <rect x="0" y="108" width="195" height="16" rx="6" fill="#5c2d0e" />
+        {/* ── BEDSIDE NIGHTSTAND + WARM NIGHT LAMP (COMPACT & PERFECTLY BESIDE BED) ── */}
+        {showNightstand && (
+          <g transform="translate(895, 1030)">
+            {/* Nightstand Tabletop Surface */}
+            <rect x="0" y="0" width="165" height="18" rx="5" fill="#5c3317" stroke="#3e2211" strokeWidth="2" />
 
-          {/* Lamp base disc */}
-          <ellipse cx="97" cy="104" rx="44" ry="13" fill="#94a3b8" />
-          {/* Lamp pole - curved */}
-          <path d="M 97 104 Q 112 54 68 10" stroke="#64748b"
-            strokeWidth="14" fill="none" strokeLinecap="round" />
-          {/* Lampshade */}
-          <path d="M 22 -24 Q 68 -50 115 -24 L 125 42 Q 68 60 12 42 Z"
-            fill="#fef3c7" stroke="#fde68a" strokeWidth="4" />
-          <path d="M 32 -20 Q 68 -40 106 -20" stroke="#fde68a"
-            strokeWidth="6" fill="none" opacity="0.5" />
+            {/* Nightstand Cabinet Drawer Body */}
+            <rect x="10" y="18" width="145" height="95" rx="6" fill="#2c1506" stroke="#1c0f06" strokeWidth="2.5" />
+            {/* Drawer division line */}
+            <line x1="12" y1="62" x2="153" y2="62" stroke="#3e2211" strokeWidth="2" />
+            {/* Brass Knob Handles */}
+            <circle cx="82" cy="40" r="5" fill="#fbbf24" stroke="#d97706" strokeWidth="1.5" />
+            <circle cx="82" cy="84" r="5" fill="#fbbf24" stroke="#d97706" strokeWidth="1.5" />
 
-          {/* Light cone emanating from shade */}
-          <path d="M 22 42 L 125 42 L 280 480 L -120 480 Z"
-            fill="url(#lampCone)" />
+            {/* Nightstand Tapered Legs (grounded on floor at Y=1180) */}
+            <rect x="18" y="113" width="14" height="37" rx="3" fill="#1a0d04" />
+            <rect x="133" y="113" width="14" height="37" rx="3" fill="#1a0d04" />
 
-          {/* Pool of light on table surface */}
-          <ellipse cx="97" cy="118" rx="90" ry="22" fill="url(#lampPool)" />
+            {/* Warm Bedside Night Lamp on top */}
+            <g transform="translate(75, 0)">
+              {/* Ceramic Lamp Base */}
+              <ellipse cx="0" cy="-4" rx="28" ry="7" fill="#d97706" stroke="#b45309" strokeWidth="2" />
+              {/* Lamp Stem */}
+              <rect x="-4" y="-55" width="8" height="52" rx="2" fill="#d97706" />
+              {/* Trapezoidal Warm Lampshade */}
+              <polygon points="-35,-55 35,-55 46,-10 -46,-10" fill="#fef3c7" stroke="#fbbf24" strokeWidth="2.5" />
+              {/* Warm downward ambient light cone */}
+              <polygon points="-46,-10 46,-10 85,150 -85,150" fill="url(#lampCone)" />
+              {/* Soft light pool on nightstand surface */}
+              <ellipse cx="0" cy="0" rx="45" ry="10" fill="url(#lampPool)" />
+            </g>
 
-          {/* Book on table */}
-          <g transform="translate(10, 130)">
-            <rect x="0" y="0" width="80" height="58" rx="4" fill="#1e3a8a" />
-            <rect x="0" y="0" width="8" height="58" rx="2" fill="#1e40af" />
-            <rect x="12" y="10" width="55" height="6" rx="2" fill="#93c5fd" opacity="0.7" />
-            <rect x="12" y="22" width="40" height="4" rx="2" fill="#93c5fd" opacity="0.4" />
+            {/* Smartphone resting on nightstand */}
+            <g transform="translate(18, -4)">
+              <rect x="0" y="0" width="24" height="38" rx="4" fill="#0f172a" stroke="#334155" strokeWidth="2" />
+              <rect x="2" y="3" width="20" height="28" rx="2" fill="#1e293b" />
+              <circle cx="18" cy="2" r="3" fill="#ef4444" />
+            </g>
+
+            {/* Mini potted succulent */}
+            <g transform="translate(132, -4)">
+              <polygon points="-10,0 10,0 8,14 -8,14" fill="#ea580c" />
+              <circle cx="0" cy="-6" r="8" fill="#10b981" />
+              <circle cx="-5" cy="-3" r="5" fill="#34d399" />
+              <circle cx="5" cy="-3" r="5" fill="#34d399" />
+            </g>
           </g>
-
-          {/* Phone with notification glow */}
-          <g transform="translate(115, 125)">
-            <rect x="0" y="0" width="50" height="85" rx="10"
-              fill="#0f172a" stroke="#334155" strokeWidth="3" />
-            <rect x="4" y="10" width="42" height="62" rx="6" fill="#1e293b" />
-            {/* Notification dot */}
-            <circle cx="42" cy="6" r="6" fill="#ef4444" />
-          </g>
-        </g>
+        )}
 
         {/* ── FLOOR ── */}
-        <rect x="0" y="1310" width="1080" height="610" fill="url(#woodFloor2)" />
+        <rect x="0" y="1180" width="1080" height="740" fill="url(#woodFloor2)" />
 
         {/* Floor plank lines (perspective) */}
-        {[1430, 1570, 1720, 1860].map((y, i) => (
+        {[1270, 1380, 1510, 1660, 1820].map((y, i) => (
           <line key={i} x1="0" y1={y} x2="1080" y2={y}
             stroke="#1a0d04" strokeWidth={i === 0 ? 5 : 3} opacity="0.7" />
         ))}
         {[180, 400, 580, 720, 900].map((x, i) => (
-          <line key={i} x1={x + 20} y1="1310" x2={x - 20} y2="1920"
+          <line key={i} x1={x + 20} y1="1180" x2={x - 20} y2="1920"
             stroke="#1a0d04" strokeWidth="3" opacity="0.5" />
         ))}
 
         {/* Floor sheen from lamp */}
-        <ellipse cx="900" cy="1540" rx="280" ry="80"
+        <ellipse cx="900" cy="1380" rx="280" ry="80"
           fill="#fef3c7" opacity={0.07 * lampFlicker} />
 
-        {/* ── COZY RUG ── */}
-        <ellipse cx="430" cy="1570" rx="380" ry="130" fill="url(#rugGrad)" />
-        <ellipse cx="430" cy="1570" rx="340" ry="108"
-          fill="none" stroke="#4338ca" strokeWidth="8" strokeDasharray="18,10" />
-        <ellipse cx="430" cy="1570" rx="290" ry="88"
+        {/* ── COZY RUG (Centered directly under character at Y=1285) ── */}
+        <ellipse cx="540" cy="1285" rx="380" ry="105" fill="url(#rugGrad)" />
+        <ellipse cx="540" cy="1285" rx="340" ry="88"
+          fill="none" stroke="#4338ca" strokeWidth="7" strokeDasharray="18,10" />
+        <ellipse cx="540" cy="1285" rx="290" ry="72"
           fill="none" stroke="#6366f1" strokeWidth="4" strokeDasharray="8,14" opacity="0.5" />
         {/* Rug pattern dots */}
-        {[[-150, 0], [0, -40], [150, 0], [0, 40], [-75, -30], [75, -30], [-75, 30], [75, 30]].map(([dx, dy], i) => (
-          <circle key={i} cx={430 + dx} cy={1570 + dy} r="10"
+        {[[-150, 0], [0, -30], [150, 0], [0, 30], [-75, -20], [75, -20], [-75, 20], [75, 20]].map(([dx, dy], i) => (
+          <circle key={i} cx={540 + dx} cy={1285 + dy} r="8"
             fill="#818cf8" opacity="0.3" />
         ))}
       </svg>
