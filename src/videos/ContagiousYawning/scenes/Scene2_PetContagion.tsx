@@ -78,8 +78,8 @@ export const Scene2_PetContagion: React.FC = () => {
           </text>
         </g>
 
-        {/* 2. COZY LIVING ROOM SOFA CONTAINER (Width 880px) */}
-        <g transform="translate(540, 1020)">
+        {/* 2. COZY LIVING ROOM SOFA CONTAINER (Width 880px, centered at Y=850 for perfect vertical balance) */}
+        <g transform="translate(540, 850)">
           {/* Sofa Backrest */}
           <rect x="-440" y="-220" width="880" height="340" rx="40" fill="url(#sofaGrad)" stroke="#4338ca" strokeWidth="4" />
           {/* Sofa Cushion */}

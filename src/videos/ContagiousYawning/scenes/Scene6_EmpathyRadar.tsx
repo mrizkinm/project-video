@@ -48,14 +48,14 @@ export const Scene6_EmpathyRadar: React.FC = () => {
           </linearGradient>
         </defs>
 
-        {/* 1. TOP HEADER STAMP: Korelasi Empati Sosial */}
+        {/* 1. TOP HEADER STAMP: Korelasi Empati Sosial (Wider box & balanced padding per Rule 2) */}
         <g transform={`translate(540, 230) rotate(-1) scale(${Math.max(0, stampPop)})`}>
           <rect
-            x="-310"
-            y="-38"
-            width="620"
-            height="76"
-            rx="26"
+            x="-380"
+            y="-40"
+            width="760"
+            height="80"
+            rx="28"
             fill="#0f172a"
             stroke="#10b981"
             strokeWidth="4"
@@ -63,13 +63,13 @@ export const Scene6_EmpathyRadar: React.FC = () => {
           />
           <text
             x="0"
-            y="12"
+            y="11"
             fill="#a7f3d0"
-            fontSize="28"
+            fontSize="24"
             fontWeight="900"
             textAnchor="middle"
             fontFamily="'Fredoka', sans-serif"
-            letterSpacing="1"
+            letterSpacing="0.5"
           >
             📊 MAKIN EMPATIS = MAKIN GAMPANG NULAR!
           </text>
