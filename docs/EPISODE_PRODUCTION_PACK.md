@@ -153,15 +153,13 @@ Semalem ada yang kakinya nyentak pas mau tidur? Coba absen di bawah! 👇
 
 #### 2. Naskah Caption / Deskripsi (Tinggal Copy):
 ```text
-Pernah nggak, pas iseng muter balik voice note WhatsApp sendiri, kamu langsung geli dan mikir: "Hah, suaraku beneran secempreng ini?!" 😭🎙️
+Pernah geli sendiri pas denger ulang voice note WhatsApp? 😭
 
-Tenang, ini bukan salah mikrofon HP-mu. Saat kamu ngomong langsung, otakmu nerima suara lewat dua jalur sekaligus: getaran udara dan getaran tulang tengkorak! Tulang tengkorakmu berfungsi kayak "bass booster" alami yang bikin suaramu terdengar lebih berat dan berwibawa di dalam kepalamu sendiri. 🧠🦴
+Bukan mic HP yang rusak, tapi tulang tengkorak kita itu "bass booster" alami saat ngomong langsung. Pas direkam, efek bass-nya hilang! 🧠
 
-Nah, pas direkam di HP, yang ketangkep cuma getaran udara tanpa booster tulang tadi. Tapi tenang aja, semua temanmu udah terbiasa sama suaramu yang asli kok! ✨
+Siapa yang paling anti denger suaranya sendiri?
 
-Kirim video ini ke temanmu yang paling anti dengerin voice note-nya sendiri! 😂👇
-
-#TibaTibaPaham #SainsSuara #VoiceNote #FaktaTubuh #Edukasi
+#TibaTibaPaham #SainsSuara #VoiceNote
 ```
 
 #### 3. Komentar Sematan Pertama (*Pinned Comment*):

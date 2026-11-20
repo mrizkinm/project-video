@@ -56,19 +56,13 @@ Silakan rekam suara Anda menjadi 8 file terpisah dengan format MP3 dan masukkan 
 
 ### Naskah Caption:
 ```text
-Pernah nggak, pas iseng muter balik voice note WhatsApp sendiri, kamu langsung geli dan mikir: "Hah, suaraku beneran secempreng ini?!" 😭🎙️
+Pernah geli sendiri pas denger ulang voice note WhatsApp? 😭
 
-Tenang, kamu bukan satu-satunya! Ini fenomena sains bernama Voice Confrontation Effect.
+Bukan mic HP yang rusak, tapi tulang tengkorak kita itu "bass booster" alami saat ngomong langsung. Pas direkam, efek bass-nya hilang! 🧠
 
-Saat kamu bicara langsung, otakmu mendengar suara lewat dua jalur: getaran udara dan getaran tulang tengkorak. Nah, tulang tengkorak kita bertindak sebagai equalizer alami yang menguatkan nada bass rendah, bikin suara di kepalamu terasa lebih berat dan hangat. 🦴✨
+Siapa yang paling anti denger suaranya sendiri?
 
-Tapi saat dengar rekaman HP, kamu cuma mendengar getaran udara tanpa bonus getaran tulang tengkorak. Makanya suaramu mendadak terdengar lebih cempreng dan asing!
-
-Kabar baiknya: semua orang di sekitarmu udah terbiasa mendengar suaramu yang asli sejak dulu. Cuma kamu satu-satunya orang di dunia yang ngerasa suaramu aneh. 🙌
-
-Kirim video ini ke temanmu yang paling anti dengerin voice note-nya sendiri! 😂👇
-
-#TibaTibaPaham #SainsSuara #VoiceConfrontation #FaktaBiologi #MisteriTubuh #EdukasiAnimasi
+#TibaTibaPaham #SainsSuara #VoiceNote
 ```
 
 ### Pinned Comment:

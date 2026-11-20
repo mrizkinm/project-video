@@ -70,3 +70,20 @@ Dokumen ini adalah ringkasan aturan baku (*hard rules*) hasil iterasi dan perbai
 - **Perintah CLI:** Selalu jalankan rendering dan pengambilan gambar diam melalui `cmd.exe /c "npx remotion ..."` dengan mode sandboxing yang tepat.
 - **FFmpeg Binary:** Gunakan binary ffmpeg bawaan Remotion di:  
   `node_modules\@remotion\compositor-win32-x64-msvc\ffmpeg.exe`.
+
+---
+
+## 7. 📱 Aturan Penulisan Caption Media Sosial (Anti-Panjang & Anti-AI Slop)
+- **DILARANG membuat caption terlalu panjang.** Penonton video pendek (TikTok, Instagram Reels, YouTube Shorts) hanya membaca sekilas dan enggan membaca paragraf panjang bertele-tele.
+- **Panjang Maksimal:**
+  - Maksimal **2 hingga 3 kalimat / paragraf pendek** (total **25 – 45 kata**).
+  - Ringkas, santai, padat, dan *to the point*.
+- **Struktur 3 Bagian Wajib:**
+  1. **Hook Singkat (1 baris):** Pertanyaan atau seruan keresahan yang relatable.
+  2. **Inti Sains (1–2 baris):** Jawaban sains secara gamblang tanpa penjelasan teori yang berbelit-belit.
+  3. **CTA / Interaksi (1 baris):** Pertanyaan santai pemicu komentar atau ajakan share ke teman.
+- **Penggunaan Emoji Wajar (Anti-AI Slop):**
+  - Cukup gunakan **1 hingga 3 emoji** yang relevan di seluruh teks agar terlihat natural dan tidak kaku.
+  - **DILARANG keras menumpuk deretan emoji** di setiap akhir kalimat yang memberi kesan AI generik / *AI slop*.
+- **Tagar / Hashtag Hemat & Relevan:**
+  - Cukup cantumkan **3 hingga 4 tagar resmi** (misal: `#TibaTibaPaham #SainsSuara #VoiceNote`). Hindari spam belasan tagar.
