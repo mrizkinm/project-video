@@ -17,11 +17,11 @@
 
 #### 2. Naskah Caption / Deskripsi (Tinggal Copy):
 ```text
-Niatnya mau ambil charger di kamar sebelah, tapi pas lewat pintu mendadak lupa mau ngapain?
+Niatnya mau ambil charger di kamar sebelah, tapi pas lewat pintu mendadak lupa mau ngapain? 😭🚪
 
-Ini namanya Doorway Effect. Otak kita mengelompokkan memori berdasarkan ruangan. Pas kamu ngelewatin kusen pintu, otak otomatis nge-reset memori sementara buat nyiapin ruangan baru.
+Ini namanya Doorway Effect. Otak kita mengelompokkan memori berdasarkan ruangan. Pas kamu ngelewatin kusen pintu, otak otomatis nge-reset memori sementara buat nyiapin ruangan baru. 🧠
 
-Kalau mendadak lupa, triknya gampang: jalan mundur ke posisi awal kamu di kamar tadi.
+Kalau mendadak lupa, triknya gampang: jalan mundur ke posisi awal kamu di kamar tadi! ✨
 
 Siapa yang paling sering amnesia pas lewat pintu?
 
@@ -30,7 +30,7 @@ Siapa yang paling sering amnesia pas lewat pintu?
 
 #### 3. Komentar Sematan Pertama (*Pinned Comment*):
 ```text
-Paling sering amnesia pas mau ngambil apa nih? Charger HP, gunting kuku, atau camilan?
+Paling sering amnesia pas mau ngambil apa nih? Charger HP, gunting kuku, atau camilan? 😂👇
 ```
 
 #### 4. Rekomendasi Cover / Thumbnail:
@@ -50,18 +50,18 @@ Paling sering amnesia pas mau ngambil apa nih? Charger HP, gunting kuku, atau ca
 
 #### 2. Naskah Caption:
 ```text
-Pernah bingung kenapa hal-hal sepele di tubuh dan pikiran kita suka kerasa aneh?
+Pernah bingung kenapa hal-hal sepele di tubuh dan pikiran kita suka kerasa aneh? 🤔
 
-Di Tiba-Tiba Paham, kita bahas sains dan psikologi keseharian lewat animasi simpel yang gampang dipahami.
+Di Tiba-Tiba Paham, kita bahas sains dan psikologi keseharian lewat animasi simpel yang gampang dipahami. ✨
 
-Follow @tibatibapaham biar kamu makin paham sama tubuhmu sendiri.
+Follow @tibatibapaham biar kamu makin paham sama tubuhmu sendiri! 💡
 
 #TibaTibaPaham #PopScience #EdukasiAnimasi
 ```
 
 #### 3. Komentar Sematan:
 ```text
-Hal aneh apa di tubuh atau pikiran yang paling bikin kamu penasaran buat dibahas berikutnya?
+Hal aneh apa di tubuh atau pikiran yang paling bikin kamu penasaran buat dibahas berikutnya? Tulis di bawah ya! 👇
 ```
 
 ---
@@ -76,16 +76,16 @@ Hal aneh apa di tubuh atau pikiran yang paling bikin kamu penasaran buat dibahas
 ### 📱 Paket Teks Upload Episode 2 (Tinggal Copy-Paste):
 
 #### 1. Pilihan Judul Video:
-* **YouTube Shorts:** *Kenapa Minum Kopi Malah Tambah Lemes & Ngantuk? (Coffee Paradox)*
-* **TikTok / Reels:** *Kenapa habis minum kopi malah lemes dan makin ngantuk?*
+* **YouTube Shorts:** *Kenapa Minum Kopi Malah Tambah Lemes & Ngantuk? (Coffee Paradox) ☕*
+* **TikTok / Reels:** *Kenapa habis minum kopi malah lemes dan makin ngantuk? 😭☕*
 
 #### 2. Naskah Caption / Deskripsi (Tinggal Copy):
 ```text
-Niatnya ngopi biar melek kerja, tapi 20 menit kemudian malah lemes dan makin ngantuk?
+Niatnya ngopi biar melek kerja, tapi 20 menit kemudian malah lemes dan makin ngantuk? 😭☕
 
-Ini namanya Coffee Paradox. Kafein cuma ngeblok reseptor rasa capek di otak sementara waktu, tapi nggak ngilangin zat capeknya. Pas efek kafein mulai habis, rasa lelah yang numpuk bakal menyerbu sekaligus.
+Ini namanya Coffee Paradox. Kafein cuma ngeblok reseptor rasa capek di otak sementara waktu, tapi nggak ngilangin zat capeknya. Pas efek kafein mulai habis, rasa lelah yang numpuk bakal menyerbu sekaligus! 💥
 
-Biar nggak kena caffeine crash, coba tunggu 60–90 menit setelah bangun tidur baru minum kopi pertamamu.
+Biar nggak kena caffeine crash, coba tunggu 60–90 menit setelah bangun tidur baru minum kopi pertamamu. ⏳
 
 Ada yang sering ngerasa gini juga pas ngopi?
 
@@ -94,7 +94,7 @@ Ada yang sering ngerasa gini juga pas ngopi?
 
 #### 3. Komentar Sematan Pertama (*Pinned Comment*):
 ```text
-Siapa yang tim bangun tidur langsung seduh kopi tapi jam 10 pagi udah lemes lagi?
+Siapa yang tim bangun tidur langsung seduh kopi tapi jam 10 pagi udah lemes lagi? 🙋‍♂️👇
 ```
 
 #### 4. Rekomendasi Cover / Thumbnail:
@@ -112,25 +112,25 @@ Siapa yang tim bangun tidur langsung seduh kopi tapi jam 10 pagi udah lemes lagi
 ### 📱 Paket Teks Upload Episode 3 (Tinggal Copy-Paste):
 
 #### 1. Pilihan Judul Video:
-* **TikTok / Reels:** *Pernah nggak pas mau tidur, tiba-tiba kaki nyentak kayak jatuh dari jurang?*
-* **YouTube Shorts:** *Kenapa Pas Mau Tidur Kaki Berasa Jatuh dari Jurang? (Hypnic Jerk)*
+* **TikTok / Reels:** *Pernah nggak pas mau tidur, tiba-tiba kaki nyentak kayak jatuh dari jurang? 😱⚡*
+* **YouTube Shorts:** *Kenapa Pas Mau Tidur Kaki Berasa Jatuh dari Jurang? (Hypnic Jerk) 🛌⚡*
 
 #### 2. Naskah Caption / Deskripsi (Tinggal Copy):
 ```text
-Lagi enak-enak mau tidur nyenyak, tiba-tiba kaki berasa melangkah ke jurang kosong terus kaget bangun?
+Lagi enak-enak mau tidur nyenyak, tiba-tiba kaki berasa melangkah ke jurang kosong terus kaget bangun? 😱⚡
 
-Tenang, ini namanya Hypnic Jerk. Pas ototmu mengendur terlalu cepat saat transisi tidur, otak purba mengira kamu lagi jatuh dari pohon dan langsung kirim sinyal kejut darurat ke kaki buat nyari tumpuan.
+Tenang, ini namanya Hypnic Jerk. Pas ototmu mengendur terlalu cepat saat transisi tidur, otak purba mengira kamu lagi jatuh dari pohon dan langsung kirim sinyal kejut darurat ke kaki buat nyari tumpuan. 🌳
 
-Biar nggak sering kejadian, coba kurangi main HP dan lakuin peregangan ringan sebelum tidur.
+Biar nggak sering kejadian, coba kurangi main HP dan lakuin peregangan ringan sebelum tidur. 🧘‍♂️
 
 Kalian semalem ngalamin ini juga nggak?
 
-#TibaTibaPaham #HypnicJerk #SainsKeseharian #Edukasi
+#TibaTibaPaham #HypnicJerk #SainsTidur #Edukasi
 ```
 
 #### 3. Komentar Sematan Pertama (*Pinned Comment*):
 ```text
-Semalem ada yang kakinya nyentak pas mau tidur? Coba absen di bawah.
+Semalem ada yang kakinya nyentak pas mau tidur? Coba absen di bawah! 👇
 ```
 
 #### 4. Rekomendasi Cover / Thumbnail:
