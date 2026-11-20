@@ -87,3 +87,12 @@ Dokumen ini adalah ringkasan aturan baku (*hard rules*) hasil iterasi dan perbai
   - **DILARANG keras menumpuk deretan emoji** di setiap akhir kalimat yang memberi kesan AI generik / *AI slop*.
 - **Tagar / Hashtag Hemat & Relevan:**
   - Cukup cantumkan **3 hingga 4 tagar resmi** (misal: `#TibaTibaPaham #SainsSuara #VoiceNote`). Hindari spam belasan tagar.
+
+---
+
+## 8. 🛡️ Zona Bebas Tabrakan Vertikal (Anti-Overlap & Subtitle Safety Buffer)
+- **Batas Bawah Komponen Tengah (Showcase Box / Card / Diagram):**
+  - Subtitle dan Category Badge (`ViralCaptions`) menempati area `bottom: 380px` (titik atas badge mulai di sekitar **Y ≈ 1300px – 1320px**).
+  - **DILARANG KERAS** membiarkan bagian bawah kotak showcase, diagram, kartu perbandingan, atau teks narasi menjorok terlalu ke bawah hingga menabrak/tertutup oleh category badge (`ViralCaptions`).
+  - **Batas Maksimal Bawah:** Seluruh kotak tengah/diagram WAJIB berakhir maksimal di **Y = 1200px – 1220px**, menyisakan *safety breathing room* minimal **+100px – 140px** di atas badge subtitle.
+  - **Pusat Transformasi Vertikal:** Untuk kotak berukuran tinggi 750px – 850px, titik pusat (*center transform*) wajib diposisikan di **Y = 740px – 800px** (BUKAN Y = 880px – 980px) agar seimbang di tengah dan tidak terdorong ke bawah.

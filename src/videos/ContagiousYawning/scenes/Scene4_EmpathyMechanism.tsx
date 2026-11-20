@@ -71,13 +71,13 @@ export const Scene4_EmpathyMechanism: React.FC = () => {
           </text>
         </g>
 
-        {/* 2. CENTRAL SCIENTIFIC SHOWCASE (Two Minds Synchronizing, 860px Wide) */}
-        <g transform={`translate(540, 840) scale(${Math.max(0, cardPop)})`}>
+        {/* 2. CENTRAL SCIENTIFIC SHOWCASE (Two Minds Synchronizing, 860px Wide, y=750) */}
+        <g transform={`translate(540, 750) scale(${Math.max(0, cardPop)})`}>
           <rect
             x="-430"
-            y="-460"
+            y="-380"
             width="860"
-            height="920"
+            height="760"
             rx="40"
             fill="url(#boxGrad4Yawn)"
             stroke="#1e293b"
@@ -86,39 +86,57 @@ export const Scene4_EmpathyMechanism: React.FC = () => {
           />
 
           {/* ── LEFT PERSON A: ORANG YANG MENGUAP (Facing Right) ── */}
-          <g transform="translate(-230, -30)">
-            {/* Person A Anatomical Profile with Open Yawning Mouth */}
+          <g transform="translate(-230, -35)">
+            {/* Person A Anatomical Human Profile with Natural Cranium & Yawning Mouth */}
             <path
-              d="M -90 -160
-                 C -30 -170 30 -150 45 -100
-                 C 50 -80 75 -60 70 -40
-                 C 60 -35 48 -28 42 -22
-                 C 15 -15 -15 -10 -15 15
-                 C -15 40 20 48 48 42
-                 C 55 52 65 72 45 88
-                 C 25 102 0 120 0 160
-                 L -90 160
-                 C -100 60 -105 -60 -90 -160 Z"
-              fill="rgba(56, 189, 248, 0.12)"
+              d="M -75 170
+                 C -85 110 -95 60 -105 10
+                 C -118 -40 -115 -100 -85 -140
+                 C -60 -175 -15 -180 25 -160
+                 C 50 -140 60 -105 58 -80
+                 C 56 -68 52 -62 56 -56
+                 C 64 -48 78 -40 76 -32
+                 C 74 -26 62 -22 55 -16
+                 C 60 -10 60 -2 50 6
+                 C 25 14 5 18 5 35
+                 C 5 50 30 56 48 52
+                 C 54 58 52 66 42 74
+                 C 38 78 48 92 44 102
+                 C 34 114 12 125 -2 132
+                 C -8 144 -8 160 -10 170
+                 Z"
+              fill="rgba(56, 189, 248, 0.14)"
               stroke="#38bdf8"
-              strokeWidth="4"
+              strokeWidth="3.5"
             />
             {/* Yawn Mouth Cavity */}
-            <ellipse cx="16" cy="15" rx="22" ry="26" fill="#881337" stroke="#e11d48" strokeWidth="2" />
-            <path d="M 0 24 Q 16 34 32 24" fill="#fb7185" />
+            <ellipse cx="28" cy="34" rx="20" ry="18" fill="#881337" stroke="#e11d48" strokeWidth="2.5" />
+            <path d="M 14 42 Q 28 50 42 42" fill="#fb7185" />
 
-            {/* Sleepy Closed Eye */}
-            <path d="M 15 -75 Q 30 -85 45 -75" fill="none" stroke="#38bdf8" strokeWidth="4" strokeLinecap="round" />
+            {/* Sleepy Closed Eye & Eyebrow */}
+            <path d="M 28 -52 Q 40 -60 50 -52" fill="none" stroke="#38bdf8" strokeWidth="3.5" strokeLinecap="round" />
+            <path d="M 24 -64 Q 38 -72 52 -62" fill="none" stroke="#0284c7" strokeWidth="3" strokeLinecap="round" />
 
-            {/* Brain A Highlight */}
-            <circle cx="-30" cy="-75" r="42" fill="rgba(56, 189, 248, 0.25)" stroke="#38bdf8" strokeWidth="2.5" />
-            <text x="-30" y="-66" fill="#7dd3fc" fontSize="28" textAnchor="middle">🧠</text>
+            {/* Anatomical Ear Outline */}
+            <path
+              d="M -30 -40
+                 C -15 -42 -12 -20 -20 -5
+                 C -26 8 -30 2 -26 -12
+                 C -24 -24 -20 -30 -30 -40 Z"
+              fill="rgba(56, 189, 248, 0.2)"
+              stroke="#38bdf8"
+              strokeWidth="2.5"
+            />
+
+            {/* Brain A Highlight inside Cranium */}
+            <circle cx="-35" cy="-80" r="42" fill="rgba(56, 189, 248, 0.25)" stroke="#38bdf8" strokeWidth="2.5" />
+            <text x="-35" y="-71" fill="#7dd3fc" fontSize="28" textAnchor="middle">🧠</text>
 
             {/* Yawn breath emission ripples */}
             {[1, 2, 3].map((rIdx) => (
               <path
                 key={rIdx}
-                d="M 65 -5 Q 85 15 65 35"
+                d="M 80 18 Q 100 34 80 50"
                 fill="none"
                 stroke="#38bdf8"
                 strokeWidth="3"
@@ -128,7 +146,7 @@ export const Scene4_EmpathyMechanism: React.FC = () => {
             ))}
 
             {/* Label Person A */}
-            <g transform="translate(-15, 145)">
+            <g transform="translate(-10, 150)">
               <rect x="-85" y="-18" width="170" height="36" rx="18" fill="#0c4a6e" stroke="#0284c7" strokeWidth="2" />
               <text x="0" y="6" fill="#38bdf8" fontSize="18" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
                 Orang A (Nguap) 🥱
@@ -137,7 +155,7 @@ export const Scene4_EmpathyMechanism: React.FC = () => {
           </g>
 
           {/* ── WIRELESS MIRROR RESONANCE BEAMS (Between Brain A and Brain B) ── */}
-          <g transform="translate(0, -105)">
+          <g transform="translate(0, -110)">
             {/* Connecting pulsing laser beam */}
             <line
               x1="-190"
@@ -183,45 +201,63 @@ export const Scene4_EmpathyMechanism: React.FC = () => {
           </g>
 
           {/* ── RIGHT PERSON B: ORANG YANG TERTULAR (Facing Left) ── */}
-          <g transform="translate(230, -30)">
-            {/* Person B Silhouette (Mirrored facing left with jaw dropping open) */}
+          <g transform="translate(230, -35)">
+            {/* Person B Anatomical Human Profile with Natural Cranium (Mirrored Facing Left) */}
             <path
-              d="M 90 -160
-                 C 30 -170 -30 -150 -45 -100
-                 C -50 -80 -75 -60 -70 -40
-                 C -60 -35 -48 -28 -42 -22
-                 C -15 -15 15 -10 15 15
-                 C 15 40 -20 48 -48 42
-                 C -55 52 -65 72 -45 88
-                 C -25 102 0 120 0 160
-                 L 90 160
-                 C 100 60 105 -60 90 -160 Z"
-              fill="rgba(236, 72, 153, 0.12)"
+              d="M 75 170
+                 C 85 110 95 60 105 10
+                 C 118 -40 115 -100 85 -140
+                 C 60 -175 15 -180 -25 -160
+                 C -50 -140 -60 -105 -58 -80
+                 C -56 -68 -52 -62 -56 -56
+                 C -64 -48 -78 -40 -76 -32
+                 C -74 -26 -62 -22 -55 -16
+                 C -60 -10 -60 -2 -50 6
+                 C -25 14 -5 18 -5 35
+                 C -5 50 -30 56 -48 52
+                 C -54 58 -52 66 -42 74
+                 C -38 78 -48 92 -44 102
+                 C -34 114 -12 125 2 132
+                 C 8 144 8 160 10 170
+                 Z"
+              fill="rgba(236, 72, 153, 0.14)"
               stroke="#ec4899"
-              strokeWidth="4"
+              strokeWidth="3.5"
             />
             {/* Involuntary Open Mouth Cavity (Catching the yawn) */}
-            <ellipse cx="-16" cy="15" rx="22" ry="26" fill="#881337" stroke="#e11d48" strokeWidth="2" />
-            <path d="M 0 24 Q -16 34 -32 24" fill="#fb7185" />
+            <ellipse cx="-28" cy="34" rx="20" ry="18" fill="#881337" stroke="#e11d48" strokeWidth="2.5" />
+            <path d="M -14 42 Q -28 50 -42 42" fill="#fb7185" />
 
-            {/* Surprised / Reflected Eye */}
-            <circle cx="-30" cy="-75" r="9" fill="#fbcfe8" />
-            <circle cx="-30" cy="-75" r="4.5" fill="#0f172a" />
+            {/* Surprised / Reflected Eye & Arched Brow */}
+            <circle cx="-38" cy="-52" r="7.5" fill="#fbcfe8" />
+            <circle cx="-38" cy="-52" r="3.5" fill="#0f172a" />
+            <path d="M -24 -66 Q -38 -76 -52 -64" fill="none" stroke="#f472b6" strokeWidth="3" strokeLinecap="round" />
+
+            {/* Anatomical Ear Outline */}
+            <path
+              d="M 30 -40
+                 C 15 -42 12 -20 20 -5
+                 C 26 8 30 2 26 -12
+                 C 24 -24 20 -30 30 -40 Z"
+              fill="rgba(236, 72, 153, 0.2)"
+              stroke="#ec4899"
+              strokeWidth="2.5"
+            />
 
             {/* Brain B Highlight (Firing mirror simulation) */}
             <circle
-              cx="30"
-              cy="-75"
+              cx="35"
+              cy="-80"
               r={42 + Math.sin(frame * 0.4) * 4}
               fill="rgba(236, 72, 153, 0.28)"
               stroke="#f472b6"
               strokeWidth="2.5"
               filter="url(#beamGlow4)"
             />
-            <text x="30" y="-66" fill="#f472b6" fontSize="28" textAnchor="middle">⚡</text>
+            <text x="35" y="-71" fill="#f472b6" fontSize="28" textAnchor="middle">⚡</text>
 
             {/* Involuntary Jaw Trigger Label */}
-            <g transform="translate(15, 145)">
+            <g transform="translate(10, 150)">
               <rect x="-90" y="-18" width="180" height="36" rx="18" fill="#831843" stroke="#f472b6" strokeWidth="2" />
               <text x="0" y="6" fill="#fbcfe8" fontSize="18" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
                 Orang B (Tertular!) 😲
@@ -229,23 +265,23 @@ export const Scene4_EmpathyMechanism: React.FC = () => {
             </g>
           </g>
 
-          {/* 3. BOTTOM EXPLANATION BOX */}
-          <g transform="translate(0, 310)">
+          {/* 3. BOTTOM EXPLANATION BOX (With safe margin from subtitle badge) */}
+          <g transform="translate(0, 280)">
             <rect
               x="-360"
-              y="-54"
+              y="-42"
               width="720"
-              height="108"
-              rx="24"
-              fill="rgba(15, 23, 42, 0.75)"
+              height="84"
+              rx="22"
+              fill="rgba(15, 23, 42, 0.9)"
               stroke="#0284c7"
               strokeWidth="3"
             />
             <text
               x="0"
-              y="-12"
+              y="-8"
               fill="#bae6fd"
-              fontSize="24"
+              fontSize="22"
               fontWeight="800"
               textAnchor="middle"
               fontFamily="'Plus Jakarta Sans', sans-serif"
@@ -254,9 +290,9 @@ export const Scene4_EmpathyMechanism: React.FC = () => {
             </text>
             <text
               x="0"
-              y="28"
+              y="24"
               fill="#38bdf8"
-              fontSize="24"
+              fontSize="22"
               fontWeight="900"
               textAnchor="middle"
               fontFamily="'Fredoka', sans-serif"

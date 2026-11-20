@@ -75,13 +75,13 @@ export const Scene6_EmpathyRadar: React.FC = () => {
           </text>
         </g>
 
-        {/* 2. DUAL COMPARISON STAGE (860px Wide) */}
-        <g transform={`translate(540, 840) scale(${Math.max(0, cardPop)})`}>
+        {/* 2. DUAL COMPARISON STAGE (860px Wide, y=750 - Safe Buffer from Subtitles) */}
+        <g transform={`translate(540, 750) scale(${Math.max(0, cardPop)})`}>
           <rect
             x="-430"
-            y="-460"
+            y="-380"
             width="860"
-            height="920"
+            height="760"
             rx="40"
             fill="#0f172a"
             stroke="#1e293b"
@@ -90,14 +90,14 @@ export const Scene6_EmpathyRadar: React.FC = () => {
           />
 
           {/* ── LEFT COLUMN: EMPATI TINGGI (GREEN) ── */}
-          <g transform="translate(-210, -60)">
+          <g transform="translate(-210, -45)">
             {/* Background Card */}
             <rect
               x="-180"
-              y="-280"
+              y="-245"
               width="360"
-              height="560"
-              rx="30"
+              height="490"
+              rx="28"
               fill="#064e3b"
               stroke="#10b981"
               strokeWidth="3.5"
@@ -105,30 +105,30 @@ export const Scene6_EmpathyRadar: React.FC = () => {
             />
 
             {/* Glowing Heart Icon */}
-            <circle cx="0" cy="-180" r="48" fill="#047857" stroke="#34d399" strokeWidth="3" filter="url(#heartGlow6)" />
-            <text x="0" y="-168" fill="#ffffff" fontSize="42" textAnchor="middle">💚</text>
+            <circle cx="0" cy="-155" r="44" fill="#047857" stroke="#34d399" strokeWidth="3" filter="url(#heartGlow6)" />
+            <text x="0" y="-144" fill="#ffffff" fontSize="38" textAnchor="middle">💚</text>
 
             {/* Title */}
-            <text x="0" y="-85" fill="#a7f3d0" fontSize="24" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+            <text x="0" y="-75" fill="#a7f3d0" fontSize="24" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
               EMPATI TINGGI
             </text>
-            <text x="0" y="-55" fill="#6ee7b7" fontSize="18" fontWeight="800" textAnchor="middle" fontFamily="'Plus Jakarta Sans', sans-serif">
+            <text x="0" y="-46" fill="#6ee7b7" fontSize="17" fontWeight="800" textAnchor="middle" fontFamily="'Plus Jakarta Sans', sans-serif">
               Sangat Peka & Hangat
             </text>
 
             {/* Meter Bar Gauge (95%) */}
-            <g transform="translate(0, 0)">
+            <g transform="translate(0, 5)">
               <rect x="-140" y="-15" width="280" height="30" rx="15" fill="#065f46" stroke="#10b981" strokeWidth="2" />
               <rect x="-140" y="-15" width="265" height="30" rx="15" fill="url(#meterHighGrad)" />
-              <text x="0" y="6" fill="#064e3b" fontSize="18" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+              <text x="0" y="6" fill="#064e3b" fontSize="17" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
                 95% SANGAT PEKA
               </text>
             </g>
 
             {/* Result Stamp */}
-            <g transform="translate(0, 110)">
-              <rect x="-140" y="-36" width="280" height="72" rx="20" fill="#047857" stroke="#6ee7b7" strokeWidth="2" />
-              <text x="0" y="-4" fill="#ffffff" fontSize="20" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+            <g transform="translate(0, 115)">
+              <rect x="-140" y="-34" width="280" height="68" rx="18" fill="#047857" stroke="#6ee7b7" strokeWidth="2" />
+              <text x="0" y="-4" fill="#ffffff" fontSize="19" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
                 ✅ CEPAT TERTULAR!
               </text>
               <text x="0" y="20" fill="#a7f3d0" fontSize="15" fontWeight="800" textAnchor="middle" fontFamily="'Plus Jakarta Sans', sans-serif">
@@ -138,14 +138,14 @@ export const Scene6_EmpathyRadar: React.FC = () => {
           </g>
 
           {/* ── RIGHT COLUMN: MINIM EMPATI / KEBAL (RED) ── */}
-          <g transform="translate(210, -60)">
+          <g transform="translate(210, -45)">
             {/* Background Card */}
             <rect
               x="-180"
-              y="-280"
+              y="-245"
               width="360"
-              height="560"
-              rx="30"
+              height="490"
+              rx="28"
               fill="#450a0a"
               stroke="#ef4444"
               strokeWidth="3.5"
@@ -153,30 +153,30 @@ export const Scene6_EmpathyRadar: React.FC = () => {
             />
 
             {/* Frozen Shield Icon */}
-            <circle cx="0" cy="-180" r="48" fill="#7f1d1d" stroke="#f87171" strokeWidth="3" />
-            <text x="0" y="-168" fill="#ffffff" fontSize="42" textAnchor="middle">🛡️</text>
+            <circle cx="0" cy="-155" r="44" fill="#7f1d1d" stroke="#f87171" strokeWidth="3" />
+            <text x="0" y="-144" fill="#ffffff" fontSize="38" textAnchor="middle">🛡️</text>
 
             {/* Title */}
-            <text x="0" y="-85" fill="#fecaca" fontSize="24" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+            <text x="0" y="-75" fill="#fecaca" fontSize="24" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
               MINIM EMPATI
             </text>
-            <text x="0" y="-55" fill="#fca5a5" fontSize="18" fontWeight="800" textAnchor="middle" fontFamily="'Plus Jakarta Sans', sans-serif">
+            <text x="0" y="-46" fill="#fca5a5" fontSize="17" fontWeight="800" textAnchor="middle" fontFamily="'Plus Jakarta Sans', sans-serif">
               Cenderung Kebal & Dingin
             </text>
 
             {/* Meter Bar Gauge (10%) */}
-            <g transform="translate(0, 0)">
+            <g transform="translate(0, 5)">
               <rect x="-140" y="-15" width="280" height="30" rx="15" fill="#7f1d1d" stroke="#ef4444" strokeWidth="2" />
               <rect x="-140" y="-15" width="40" height="30" rx="15" fill="url(#meterLowGrad)" />
-              <text x="0" y="6" fill="#fca5a5" fontSize="18" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+              <text x="0" y="6" fill="#fca5a5" fontSize="17" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
                 10% KEBAL
               </text>
             </g>
 
             {/* Result Stamp */}
-            <g transform="translate(0, 110)">
-              <rect x="-140" y="-36" width="280" height="72" rx="20" fill="#7f1d1d" stroke="#fca5a5" strokeWidth="2" />
-              <text x="0" y="-4" fill="#ffffff" fontSize="20" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+            <g transform="translate(0, 115)">
+              <rect x="-140" y="-34" width="280" height="68" rx="18" fill="#7f1d1d" stroke="#fca5a5" strokeWidth="2" />
+              <text x="0" y="-4" fill="#ffffff" fontSize="19" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
                 🚫 SUSAH KETULARAN!
               </text>
               <text x="0" y="20" fill="#fca5a5" fontSize="15" fontWeight="800" textAnchor="middle" fontFamily="'Plus Jakarta Sans', sans-serif">
@@ -185,23 +185,23 @@ export const Scene6_EmpathyRadar: React.FC = () => {
             </g>
           </g>
 
-          {/* 3. SCIENTIFIC TAKEAWAY BANNER (Bottom) */}
-          <g transform="translate(0, 310)">
+          {/* 3. SCIENTIFIC TAKEAWAY BANNER (Bottom, comfortably within card) */}
+          <g transform="translate(0, 290)">
             <rect
               x="-360"
-              y="-54"
+              y="-42"
               width="720"
-              height="108"
-              rx="24"
-              fill="rgba(12, 74, 110, 0.55)"
+              height="84"
+              rx="22"
+              fill="rgba(12, 74, 110, 0.75)"
               stroke="#0284c7"
               strokeWidth="3"
             />
             <text
               x="0"
-              y="-12"
+              y="-8"
               fill="#bae6fd"
-              fontSize="24"
+              fontSize="22"
               fontWeight="800"
               textAnchor="middle"
               fontFamily="'Plus Jakarta Sans', sans-serif"
@@ -210,9 +210,9 @@ export const Scene6_EmpathyRadar: React.FC = () => {
             </text>
             <text
               x="0"
-              y="28"
+              y="24"
               fill="#38bdf8"
-              fontSize="24"
+              fontSize="22"
               fontWeight="900"
               textAnchor="middle"
               fontFamily="'Fredoka', sans-serif"

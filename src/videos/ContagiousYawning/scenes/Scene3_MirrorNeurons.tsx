@@ -88,13 +88,13 @@ export const Scene3_MirrorNeurons: React.FC = () => {
           <BrainMascot mood="thinking" scale={0.98} glasses={true} />
         </g>
 
-        {/* 3. CENTRAL ANATOMICAL BRAIN CORTEX SHOWCASE (840px Wide, y=980) */}
-        <g transform={`translate(540, 980) scale(${Math.max(0, cardPop)})`}>
+        {/* 3. CENTRAL ANATOMICAL BRAIN CORTEX SHOWCASE (840px Wide, y=750 - Safe Buffer from Subtitles) */}
+        <g transform={`translate(540, 750) scale(${Math.max(0, cardPop)})`}>
           <rect
             x="-420"
-            y="-400"
+            y="-370"
             width="840"
-            height="800"
+            height="740"
             rx="40"
             fill="url(#boxGrad5)"
             stroke="#334155"
@@ -103,10 +103,10 @@ export const Scene3_MirrorNeurons: React.FC = () => {
           />
 
           {/* Grid lines inside showcase box */}
-          {[-260, -130, 0, 130, 260].map((coord, i) => (
+          {[-240, -120, 0, 120, 240].map((coord, i) => (
             <React.Fragment key={i}>
               <line x1="-380" y1={coord} x2="380" y2={coord} stroke="#1e293b" strokeWidth="2" strokeDasharray="6 6" />
-              <line x1={coord} y1="-360" x2={coord} y2="360" stroke="#1e293b" strokeWidth="2" strokeDasharray="6 6" />
+              <line x1={coord} y1="-330" x2={coord} y2="330" stroke="#1e293b" strokeWidth="2" strokeDasharray="6 6" />
             </React.Fragment>
           ))}
 
