@@ -17,22 +17,20 @@
 
 #### 2. Naskah Caption / Deskripsi (Tinggal Copy):
 ```text
-Lagi asyik rebahan di kamar mau ngambil charger di ruang tamu, pas buka pintu... BLANK! Mendadak lupa mau ngapain?! 😭
+Niatnya mau ambil charger di kamar sebelah, tapi pas lewat pintu mendadak lupa mau ngapain?
 
-Tenang, kamu bukan pikun dini! Ini fenomena sains nyata bernama "Doorway Effect" (Efek Batas Pintu). 🚪🧠
+Ini namanya Doorway Effect. Otak kita mengelompokkan memori berdasarkan ruangan. Pas kamu ngelewatin kusen pintu, otak otomatis nge-reset memori sementara buat nyiapin ruangan baru.
 
-Otak kita itu mengelompokkan memori berdasarkan "ruangan/babak". Begitu kamu melangkah melewati kusen pintu, otak menganggap babak lama udah selesai dan otomatis nge-reset file sementara buat nyiapin ruangan baru!
+Kalau mendadak lupa, triknya gampang: jalan mundur ke posisi awal kamu di kamar tadi.
 
-💡 Trik kilatnya kalau lagi amnesia pintu: Coba jalan mundur ke posisi awas kamu di kamar tadi! Memori visual di ruangan sebelumnya bakal langsung memancing ingatanmu balik.
+Siapa yang paling sering amnesia pas lewat pintu?
 
-Tag temen kamu yang kalau lewat pintu langsung mendadak amnesia! 😂👇
-
-#TibaTibaPaham #DoorwayEffect #SainsKeseharian #MisteriOtak #FaktaPsikologi #EdukasiAnimasi #PsikologiKeseharian #FunScience
+#TibaTibaPaham #DoorwayEffect #SainsKeseharian #FaktaPsikologi
 ```
 
 #### 3. Komentar Sematan Pertama (*Pinned Comment*):
 ```text
-Coba ngaku di kolom komentar, kamu paling sering amnesia pas mau ngambil apa? Charger, gunting kuku, atau camilan kulkas? 😂👇
+Paling sering amnesia pas mau ngambil apa nih? Charger HP, gunting kuku, atau camilan?
 ```
 
 #### 4. Rekomendasi Cover / Thumbnail:
@@ -52,20 +50,18 @@ Coba ngaku di kolom komentar, kamu paling sering amnesia pas mau ngambil apa? Ch
 
 #### 2. Naskah Caption:
 ```text
-Pernah bingung sama hal-hal aneh di pikiranmu sendiri? 🤔
-Mulai dari lewat pintu langsung amnesia, minum kopi malah ngantuk, sampai overthinking jam 2 pagi?
+Pernah bingung kenapa hal-hal sepele di tubuh dan pikiran kita suka kerasa aneh?
 
-Selamat datang di Tiba-Tiba Paham! 💡
-Di sini kita ngebongkar sains & psikologi keseharian lewat animasi 2D yang simpel, seru, dan bikin kamu langsung: "OOH GITU!" ✨
+Di Tiba-Tiba Paham, kita bahas sains dan psikologi keseharian lewat animasi simpel yang gampang dipahami.
 
-Follow @tibatibapaham sekarang biar kamu makin paham sama tubuh dan otakmu sendiri! 🧠👇
+Follow @tibatibapaham biar kamu makin paham sama tubuhmu sendiri.
 
-#TibaTibaPaham #EdukasiAnimasi #PopScienceIndonesia #MisteriTubuh #Psikologi #SainsSeru
+#TibaTibaPaham #PopScience #EdukasiAnimasi
 ```
 
 #### 3. Komentar Sematan:
 ```text
-Selamat datang di channel Tiba-Tiba Paham! 🎉 Hal aneh apa di tubuh/pikiranmu yang paling bikin kamu penasaran buat dibedah sainsnya? Tulis di bawah ya! 👇
+Hal aneh apa di tubuh atau pikiran yang paling bikin kamu penasaran buat dibahas berikutnya?
 ```
 
 ---
@@ -80,36 +76,29 @@ Selamat datang di channel Tiba-Tiba Paham! 🎉 Hal aneh apa di tubuh/pikiranmu 
 ### 📱 Paket Teks Upload Episode 2 (Tinggal Copy-Paste):
 
 #### 1. Pilihan Judul Video:
-* **YouTube Shorts:** *Kenapa Minum Kopi Malah Tambah Lemes & Ngantuk? (Coffee Paradox) ☕🧠*
-* **TikTok / Reels:** *Pernah nggak baru bangun langsung ngopi tapi malah tepar lemes?! 😭☕*
+* **YouTube Shorts:** *Kenapa Minum Kopi Malah Tambah Lemes & Ngantuk? (Coffee Paradox)*
+* **TikTok / Reels:** *Kenapa habis minum kopi malah lemes dan makin ngantuk?*
 
 #### 2. Naskah Caption / Deskripsi (Tinggal Copy):
 ```text
-Niatnya ngopi pagi biar melek dan fokus kerja, eh 20 menit kemudian mata malah sepet dan tepar lemes?! 😭☕
+Niatnya ngopi biar melek kerja, tapi 20 menit kemudian malah lemes dan makin ngantuk?
 
-Tenang, bukan kopinya yang rusak! Yang lagi dikerjain itu... reseptor di otakmu! 🧠
+Ini namanya Coffee Paradox. Kafein cuma ngeblok reseptor rasa capek di otak sementara waktu, tapi nggak ngilangin zat capeknya. Pas efek kafein mulai habis, rasa lelah yang numpuk bakal menyerbu sekaligus.
 
-Di otak kita ada zat bernama Adenosin—zat kimia alami pengirim sinyal rasa capek. Nah, molekul kafein itu bentuknya mirip banget sama Adenosin. Pas kafein masuk, dia langsung nyerobot slot parkir rasa capek di reseptor otakmu!
+Biar nggak kena caffeine crash, coba tunggu 60–90 menit setelah bangun tidur baru minum kopi pertamamu.
 
-Tapi ingat: Kafein cuma nyumbat lubangnya, BUKAN ngilangin rasa capeknya! Di belakang slot parkir, molekul Adenosin terus diproduksi dan numpuk macet parah. ⏳
+Ada yang sering ngerasa gini juga pas ngopi?
 
-Begitu efek kafein luntur... BUM! Seluruh antrean rasa lelah tadi menyerbu reseptor sekaligus. Inilah yang bikin kamu kena "Caffeine Crash" dan ngantuk dobel! 💥
-
-💡 Hack Sains:
-Terapkan Aturan 90 Menit! Tunggu 60–90 menit setelah bangun tidur baru seruput kopi pertamamu. Biarkan Adenosin alami tubuhmu terurai bersih dulu, baru kafein bekerja optimal bikin kamu segar seharian! ✨
-
-Tag temen kamu yang kalau ngopi bukannya produktif malah molor! 😂👇
-
-#TibaTibaPaham #CoffeeParadox #SainsKopi #MisteriTubuh #FaktaKesehatan #EdukasiAnimasi #PopScienceIndonesia #FunScience #KebiasaanPagi
+#TibaTibaPaham #SainsKopi #Kesehatan #FaktaTubuh
 ```
 
 #### 3. Komentar Sematan Pertama (*Pinned Comment*):
 ```text
-Siapa di sini yang tim 'baru bangun melek mata langsung nyeduh kopi' tapi jam 10 pagi udah lemes lagi? Coba ngaku di kolom komentar! 😂👇
+Siapa yang tim bangun tidur langsung seduh kopi tapi jam 10 pagi udah lemes lagi?
 ```
 
 #### 4. Rekomendasi Cover / Thumbnail:
-* Pilih frame di detik ke-18 atau ke-38 (saat analogi parkir reseptor otak `🅿️ RESEPTOR TIDUR` atau saat karakter lemas kena stamp komik `💥 CAFFEINE CRASH!`).
+* Pilih frame di detik ke-25 (saat analogi molekul kafein nyerobot slot parkir reseptor otak).
 * Teks Cover Rekomendasi: **"UDAH NGOPI... KOK MALAH TEPAR?!"**
 
 ---
@@ -123,34 +112,25 @@ Siapa di sini yang tim 'baru bangun melek mata langsung nyeduh kopi' tapi jam 10
 ### 📱 Paket Teks Upload Episode 3 (Tinggal Copy-Paste):
 
 #### 1. Pilihan Judul Video:
-* **TikTok / Reels:** *Pernah nggak pas mau tidur nyenyak, tiba-tiba kaki nyentak kayak jatuh dari jurang?! 😱⚡*
-* **YouTube Shorts:** *Kenapa Pas Mau Tidur Kaki Berasa Jatuh dari Jurang? (Hypnic Jerk) 🛌⚡*
+* **TikTok / Reels:** *Pernah nggak pas mau tidur, tiba-tiba kaki nyentak kayak jatuh dari jurang?*
+* **YouTube Shorts:** *Kenapa Pas Mau Tidur Kaki Berasa Jatuh dari Jurang? (Hypnic Jerk)*
 
 #### 2. Naskah Caption / Deskripsi (Tinggal Copy):
 ```text
-Lagi enak-enak terlentang mau tidur nyenyak di kasur empuk, tiba-tiba... DEG! Kaki berasa melangkah ke jurang kosong! 😱⚡
-Tubuh langsung kesentak bangun, jantung deg-degan kencang!
+Lagi enak-enak mau tidur nyenyak, tiba-tiba kaki berasa melangkah ke jurang kosong terus kaget bangun?
 
-Padahal kasur rata dan nggak jatuh ke mana-mana... Kenapa bisa gitu? 🤔
+Tenang, ini namanya Hypnic Jerk. Pas ototmu mengendur terlalu cepat saat transisi tidur, otak purba mengira kamu lagi jatuh dari pohon dan langsung kirim sinyal kejut darurat ke kaki buat nyari tumpuan.
 
-Tenang, kamu nggak sendirian! Lebih dari 70% manusia di bumi pernah ngalamin fenomena bernama "Hypnic Jerk"! 🧠✨
+Biar nggak sering kejadian, coba kurangi main HP dan lakuin peregangan ringan sebelum tidur.
 
-Waktu kamu mulai terlelap, otot-otot tubuhmu mengendur sangat cepat. Nah, otak purba kita yang mewarisi insting nenek moyang zaman purba (yang dulu tidurnya di dahan pohon tinggi biar aman dari predator) SALAH PAHAM! 🌳
-Otak purba mengira cengkeraman tanganmu lepas dan tubuhmu lagi terjun bebas dari pohon!
+Kalian semalem ngalamin ini juga nggak?
 
-Makanya, otak langsung ngirim sinyal kejut listrik darurat ke kaki buat refleks nendang dan nyari tumpuan! ⚡🦵
-
-💡 Tips mencegahnya:
-Hypnic jerk makin sering muncul kalau kamu stres, kurang tidur, atau main HP sebelum tidur. Coba lakukan peregangan santai 5 menit sebelum tidur biar otot mengendur bertahap. 🧘‍♂️🌙
-
-Pernah ngalamin ini semalem? Tag temenmu yang tidurnya suka nendang kasur! 😂👇
-
-#TibaTibaPaham #HypnicJerk #SainsTidur #MisteriOtak #FaktaBiologi #EdukasiAnimasi #PopScienceIndonesia #KesehatanTidur #FaktaMenarik #SerbaSerbi
+#TibaTibaPaham #HypnicJerk #SainsKeseharian #Edukasi
 ```
 
 #### 3. Komentar Sematan Pertama (*Pinned Comment*):
 ```text
-Jujur semalem ada yang kaget kesentak kayak gini nggak pas mau tidur? Coba absen di bawah, kamu tim kaget kaki nyentak atau tim tidur pules tanpa gangguan? 😂👇
+Semalem ada yang kakinya nyentak pas mau tidur? Coba absen di bawah.
 ```
 
 #### 4. Rekomendasi Cover / Thumbnail:
