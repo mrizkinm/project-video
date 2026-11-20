@@ -45,21 +45,22 @@ export const Scene3_WakeUpShock: React.FC = () => {
           fontFamily: "'Fredoka', 'Plus Jakarta Sans', sans-serif",
         }}
       >
-        {/* Rapid Heartbeat EKG Monitor Widget */}
-        <g transform={`translate(540, 215) scale(${Math.max(0, widgetPop)})`}>
+        {/* Rapid Heartbeat EKG Monitor Widget (Sole Clean Indicator) */}
+        <g transform={`translate(540, 230) scale(${Math.max(0, widgetPop)})`}>
           <rect
-            x="-280"
-            y="-36"
-            width="560"
-            height="72"
-            rx="36"
+            x="-260"
+            y="-35"
+            width="520"
+            height="70"
+            rx="35"
             fill="rgba(15, 23, 42, 0.95)"
             stroke="#ef4444"
             strokeWidth="3.5"
+            filter="drop-shadow(0px 8px 20px rgba(239, 68, 68, 0.35))"
           />
           <text
-            x="-120"
-            y="12"
+            x="-100"
+            y="11"
             fill="#f87171"
             fontSize="26"
             fontWeight="900"
@@ -69,9 +70,9 @@ export const Scene3_WakeUpShock: React.FC = () => {
           >
             💓 DETAK: 130 BPM
           </text>
-          {/* Mini EKG Waveform with Clear Separation */}
+          {/* Mini EKG Waveform */}
           <path
-            d="M 30 0 L 60 0 L 72 -20 L 86 20 L 98 -26 L 110 10 L 122 0 L 180 0"
+            d="M 35 0 L 65 0 L 78 -20 L 92 20 L 104 -26 L 116 10 L 128 0 L 180 0"
             stroke="#ef4444"
             strokeWidth="4"
             strokeLinecap="round"
@@ -79,33 +80,6 @@ export const Scene3_WakeUpShock: React.FC = () => {
             fill="none"
           />
         </g>
-
-        {/* Comic Bewildered Stamp: KASUR RATA KOK JATUH?! */}
-        {frame > 14 && (
-          <g transform={`translate(540, 305) scale(${Math.max(0, stampPop)})`}>
-            <rect
-              x="-240"
-              y="-28"
-              width="480"
-              height="58"
-              rx="29"
-              fill="rgba(15, 23, 42, 0.9)"
-              stroke="#facc15"
-              strokeWidth="3"
-            />
-            <text
-              x="0"
-              y="10"
-              fontSize="24"
-              fontWeight="800"
-              fill="#facc15"
-              textAnchor="middle"
-              fontFamily="'Fredoka', sans-serif"
-            >
-              😵 HAH?! KASUR RATA KOK JATUH?!
-            </text>
-          </g>
-        )}
 
         {/* Sudden Light Aura from lamp */}
         <circle cx="880" cy="980" r="280" fill="#fef08a" opacity={lampGlow * 0.15} />

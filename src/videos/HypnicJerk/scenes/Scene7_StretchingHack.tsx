@@ -8,16 +8,10 @@ export const Scene7_StretchingHack: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const cardPop = spring({
+  const pillPop = spring({
     frame: frame - 6,
     fps,
     config: { damping: 11, stiffness: 130 },
-  });
-
-  const tipPop = spring({
-    frame: frame - 20,
-    fps,
-    config: { damping: 12, stiffness: 120 },
   });
 
   return (
@@ -35,69 +29,30 @@ export const Scene7_StretchingHack: React.FC = () => {
           fontFamily: "'Fredoka', 'Plus Jakarta Sans', sans-serif",
         }}
       >
-        {/* Warning Pill: Pemicu Utama (Kurang Tidur & Main HP) */}
-        <g transform="translate(540, 205)">
+        {/* Sleek Minimalist Solution Pill (1 single clean badge, zero clutter) */}
+        <g transform={`translate(540, 220) scale(${Math.max(0, pillPop)})`}>
           <rect
             x="-260"
-            y="-30"
+            y="-32"
             width="520"
-            height="60"
-            rx="30"
-            fill="rgba(69, 10, 10, 0.9)"
-            stroke="#ef4444"
-            strokeWidth="3.5"
+            height="64"
+            rx="32"
+            fill="rgba(15, 23, 42, 0.92)"
+            stroke="#10b981"
+            strokeWidth="3"
+            filter="drop-shadow(0px 8px 20px rgba(16, 185, 129, 0.35))"
           />
           <text
             x="0"
             y="11"
-            fill="#f87171"
+            fill="#34d399"
             fontSize="24"
             fontWeight="900"
             textAnchor="middle"
             letterSpacing="1"
             fontFamily="'Fredoka', sans-serif"
           >
-            🚫 PEMICU: KURANG TIDUR & MAIN HP
-          </text>
-        </g>
-
-        {/* Generous Solution Card (Width 800px) */}
-        <g transform={`translate(540, 295) scale(${Math.max(0, cardPop)})`}>
-          <rect
-            x="-400"
-            y="-48"
-            width="800"
-            height="96"
-            rx="28"
-            fill="rgba(15, 23, 42, 0.95)"
-            stroke="#10b981"
-            strokeWidth="4"
-          />
-          <text
-            x="0"
-            y="-6"
-            fill="#34d399"
-            fontSize="28"
-            fontWeight="900"
-            textAnchor="middle"
-            letterSpacing="1"
-            fontFamily="'Fredoka', sans-serif"
-          >
-            🧘 HACK: 5 MENIT PEREGANGAN SANTAI
-          </text>
-
-          {/* Subtitle Inside Card */}
-          <rect x="-280" y="10" width="560" height="30" rx="15" fill="#064e3b" opacity="0.6" />
-          <text
-            x="0"
-            y="32"
-            fill="#a7f3d0"
-            fontSize="21"
-            fontWeight="700"
-            textAnchor="middle"
-            fontFamily="'Fredoka', sans-serif"
-          >
-            Otot mengendur bertahap, otak tidur lelap! ✨
+            🧘 TIPS: PEREGANGAN SEBELUM TIDUR
           </text>
         </g>
 

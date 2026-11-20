@@ -8,9 +8,9 @@ export const Scene5_AncientTree: React.FC = () => {
   const { fps } = useVideoConfig();
 
   // ── TIMELINE:
-  // Frames 0 - 45 (0.0s - 1.5s): Sleeping comfortably on the ancient tree branch
-  // Frames 45 - 60 (1.5s - 2.0s): Sudden slip! Branch vibrates, character slips off
-  // Frames 60 - 175 (2.0s - 5.8s): Dramatic plunge / free-fall downward with wind speed lines!
+  // Frames 0 - 45: Sleeping comfortably on the ancient tree branch
+  // Frames 45 - 60: Sudden slip! Branch vibrates, character slips off
+  // Frames 60 - 175: Dramatic plunge / free-fall downward with wind speed lines!
   const isFalling = frame >= 45;
 
   // Branch vibration when character slips
@@ -37,15 +37,9 @@ export const Scene5_AncientTree: React.FC = () => {
   // Speed lines animation: rushing upward at high speed
   const speedCycle = (frame * 50) % 700;
 
-  // Pop-in springs
-  const alertPop = spring({
-    frame: frame - 46,
-    fps,
-    config: { damping: 9, stiffness: 160 },
-  });
-
+  // Pop-in spring for comic speech bubble
   const bubblePop = spring({
-    frame: frame - 50,
+    frame: frame - 48,
     fps,
     config: { damping: 11, stiffness: 140 },
   });
@@ -82,11 +76,6 @@ export const Scene5_AncientTree: React.FC = () => {
             <stop offset="85%" stopColor="#020c07" />
             <stop offset="100%" stopColor="#000302" />
           </linearGradient>
-
-          <linearGradient id="dangerRedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#dc2626" />
-            <stop offset="100%" stopColor="#991b1b" />
-          </linearGradient>
         </defs>
 
         {/* Prehistoric Deep Jungle Night Sky */}
@@ -96,18 +85,18 @@ export const Scene5_AncientTree: React.FC = () => {
         <circle cx="180" cy="180" r="100" fill="#fef08a" opacity="0.12" />
         <circle cx="180" cy="180" r="70" fill="#fef9c3" opacity="0.65" />
 
-        {/* ── TOP BADGES (Vertical Budget: Y = 170 to 390) ── */}
-        {/* 1. Category Pill */}
-        <g transform="translate(540, 185)">
+        {/* ── 1. SINGLE CLEAN TOP BADGE ── */}
+        <g transform="translate(540, 200)">
           <rect
-            x="-280"
+            x="-260"
             y="-32"
-            width="560"
+            width="520"
             height="64"
             rx="32"
             fill="rgba(15, 23, 42, 0.92)"
             stroke="#10b981"
-            strokeWidth="3.5"
+            strokeWidth="3"
+            filter="drop-shadow(0px 6px 18px rgba(0,0,0,0.4))"
           />
           <text
             x="0"
@@ -123,88 +112,34 @@ export const Scene5_AncientTree: React.FC = () => {
           </text>
         </g>
 
-        {/* 2. Balance Sensor HUD */}
-        <g transform="translate(540, 265)">
-          {!isFalling ? (
-            <g>
-              <rect
-                x="-250"
-                y="-25"
-                width="500"
-                height="50"
-                rx="25"
-                fill="rgba(6, 78, 59, 0.9)"
-                stroke="#10b981"
-                strokeWidth="3"
-              />
-              <text
-                x="0"
-                y="8"
-                fontSize="22"
-                fontWeight="900"
-                fill="#a7f3d0"
-                textAnchor="middle"
-                fontFamily="'Fredoka', sans-serif"
-              >
-                🟢 KESEIMBANGAN: NORMAL (DAHAN 15M)
-              </text>
-            </g>
-          ) : (
-            <g transform={`scale(${Math.max(0, alertPop)})`}>
-              <rect
-                x="-280"
-                y="-30"
-                width="560"
-                height="60"
-                rx="30"
-                fill="url(#dangerRedGrad)"
-                stroke="#fef08a"
-                strokeWidth="3.5"
-                filter="drop-shadow(0px 8px 24px rgba(239, 68, 68, 0.6))"
-              />
-              <text
-                x="0"
-                y="9"
-                fontSize="24"
-                fontWeight="900"
-                fill="#ffffff"
-                textAnchor="middle"
-                fontFamily="'Fredoka', sans-serif"
-                letterSpacing="1"
-              >
-                🚨 SENSOR KESEIMBANGAN: ANJLOK! (0G)
-              </text>
-            </g>
-          )}
-        </g>
-
-        {/* 3. Comic Panic Speech Bubble (Frame 48+) */}
+        {/* ── 2. SINGLE COMIC PANIC SPEECH BUBBLE (Frame 48+) ── */}
+        {/* Only appears when falling, removing all duplicate stacked HUD bars */}
         {frame >= 48 && (
-          <g transform={`translate(540, 355) scale(${Math.max(0, bubblePop)})`}>
+          <g transform={`translate(540, 310) scale(${Math.max(0, bubblePop)})`}>
             <rect
-              x="-280"
+              x="-260"
               y="-34"
-              width="560"
+              width="520"
               height="68"
               rx="34"
-              fill="#ffffff"
-              stroke="#0f172a"
+              fill="#fee2e2"
+              stroke="#ef4444"
               strokeWidth="4"
-              filter="drop-shadow(0px 10px 22px rgba(0,0,0,0.5))"
+              filter="drop-shadow(0px 8px 24px rgba(239, 68, 68, 0.45))"
             />
-            {/* Bubble Tail pointing down toward character */}
-            <polygon points="-12,34 12,34 0,54" fill="#ffffff" stroke="#0f172a" strokeWidth="4" />
-            <polygon points="-9,32 9,32 0,50" fill="#ffffff" />
+            {/* Bubble Tail pointing down toward falling character */}
+            <polygon points="-12,34 12,34 0,54" fill="#fee2e2" stroke="#ef4444" strokeWidth="4" />
+            <polygon points="-9,32 9,32 0,50" fill="#fee2e2" />
             <text
               x="0"
               y="11"
               fontSize="24"
               fontWeight="900"
-              fill="#0f172a"
+              fill="#dc2626"
               textAnchor="middle"
               fontFamily="'Fredoka', sans-serif"
             >
-              "Gawat! Tubuh kita jatuh dari dahan!"
+              💥 "Gawat! Tubuh kita jatuh dari dahan!"
             </text>
           </g>
         )}
@@ -255,7 +190,6 @@ export const Scene5_AncientTree: React.FC = () => {
         </g>
 
         {/* ── TAPERED COMIC SPEED LINES (Free-Fall Action, Frame 45+) ── */}
-        {/* Rushing upward arrows/streaks simulating dramatic downward plunge */}
         {isFalling && (
           <g opacity={Math.min(1, (frame - 45) / 10)}>
             {[180, 260, 330, 410, 670, 750, 830, 910, 990].map((lineX, idx) => {
@@ -340,30 +274,30 @@ export const Scene5_AncientTree: React.FC = () => {
 
         {/* ── BRAIN MASCOT: GUARDIAN OF PRIMAL SURVIVAL ── */}
         {/* Floating Holographic Monitor (Top Right) */}
-        <g transform="translate(930, 270)">
+        <g transform="translate(930, 230)">
           <circle
             cx="0"
             cy="0"
-            r="82"
+            r="75"
             fill="rgba(15, 23, 42, 0.94)"
             stroke={isFalling ? '#ef4444' : '#10b981'}
-            strokeWidth="3.5"
+            strokeWidth="3"
             filter="drop-shadow(0px 6px 16px rgba(0,0,0,0.4))"
           />
           {/* Emergency siren beacon on top of mascot */}
           {isFalling && (
-            <g transform="translate(0, -90)">
-              <rect x="-12" y="-14" width="24" height="20" rx="6" fill="#ef4444" stroke="#ffffff" strokeWidth="2" />
-              <polygon points="-8,-14 8,-14 0,-24" fill="#fef08a" />
+            <g transform="translate(0, -82)">
+              <rect x="-10" y="-12" width="20" height="18" rx="5" fill="#ef4444" stroke="#ffffff" strokeWidth="2" />
+              <polygon points="-7,-12 7,-12 0,-22" fill="#fef08a" />
             </g>
           )}
-          <BrainMascot mood={isFalling ? 'thinking' : 'happy'} scale={0.5} />
-          <rect x="-65" y="55" width="130" height="28" rx="14" fill="rgba(15, 23, 42, 0.95)" stroke="#334155" strokeWidth="2" />
+          <BrainMascot mood={isFalling ? 'thinking' : 'happy'} scale={0.46} />
+          <rect x="-55" y="48" width="110" height="24" rx="12" fill="rgba(15, 23, 42, 0.95)" stroke="#334155" strokeWidth="1.5" />
           <text
             x="0"
-            y="75"
+            y="65"
             fill={isFalling ? '#f87171' : '#34d399'}
-            fontSize="16"
+            fontSize="14"
             fontWeight="900"
             textAnchor="middle"
             fontFamily="'Fredoka', sans-serif"
@@ -372,53 +306,40 @@ export const Scene5_AncientTree: React.FC = () => {
           </text>
         </g>
 
-        {/* ── ALTITUDE METER (Right Side) ── */}
-        <g transform="translate(995, 780)">
-          <rect x="-42" y="-120" width="84" height="240" rx="14" fill="rgba(15, 23, 42, 0.88)" stroke="#334155" strokeWidth="2.5" />
-          <text x="0" y="-90" fill="#38bdf8" fontSize="15" fontWeight="900" textAnchor="middle">15m</text>
-          <text x="0" y="-72" fill="#64748b" fontSize="12" fontWeight="700" textAnchor="middle">DAHAN</text>
-          
-          <line x1="0" y1="-55" x2="0" y2="55" stroke="#475569" strokeWidth="2.5" strokeDasharray="4 4" />
+        {/* ── MINIMALIST ALTITUDE METER (Right Side) ── */}
+        <g transform="translate(1005, 780)">
+          <rect x="-30" y="-90" width="60" height="180" rx="12" fill="rgba(15, 23, 42, 0.85)" stroke="#334155" strokeWidth="2" />
+          <text x="0" y="-65" fill="#38bdf8" fontSize="15" fontWeight="900" textAnchor="middle">15m</text>
+          <line x1="0" y1="-45" x2="0" y2="45" stroke="#475569" strokeWidth="2.5" strokeDasharray="4 4" />
           <circle
             cx="0"
-            cy={interpolate(fallProgress, [0, 1], [-55, 45])}
-            r="8"
+            cy={interpolate(fallProgress, [0, 1], [-45, 38])}
+            r="7"
             fill={isFalling ? '#ef4444' : '#10b981'}
             stroke="#ffffff"
             strokeWidth="2"
           />
-          <text x="0" y="80" fill="#ef4444" fontSize="15" fontWeight="900" textAnchor="middle">0m</text>
-          <text x="0" y="98" fill="#64748b" fontSize="12" fontWeight="700" textAnchor="middle">TANAH</text>
+          <text x="0" y="68" fill="#ef4444" fontSize="15" fontWeight="900" textAnchor="middle">0m</text>
         </g>
 
-        {/* ── GROUND DANGER (Predators in Distant Jungle Abyss) ── */}
-        <g transform="translate(0, 1720)">
+        {/* ── GROUND DANGER (Visual Only: Glowing Predator Eyes in the Dark) ── */}
+        {/* Pure visual storytelling: NO CLUTTERED TEXT AT THE BOTTOM! */}
+        <g transform="translate(0, 1750)">
           <path
-            d="M 0 120 Q 220 40 480 90 Q 780 30 1080 100 L 1080 200 L 0 200 Z"
+            d="M 0 90 Q 220 30 480 70 Q 780 20 1080 80 L 1080 170 L 0 170 Z"
             fill="#010604"
           />
           <path
-            d="M 0 150 Q 350 80 700 130 Q 900 100 1080 140 L 1080 200 L 0 200 Z"
+            d="M 0 120 Q 350 60 700 100 Q 900 80 1080 110 L 1080 170 L 0 170 Z"
             fill="#000201"
           />
           {/* Glowing predator eyes lurking in dark grass */}
           <g opacity={0.85}>
-            <circle cx="280" cy="130" r="4" fill="#facc15" />
-            <circle cx="295" cy="130" r="4" fill="#facc15" />
-            <circle cx="820" cy="145" r="4" fill="#ef4444" />
-            <circle cx="835" cy="145" r="4" fill="#ef4444" />
+            <circle cx="280" cy="110" r="4" fill="#facc15" />
+            <circle cx="295" cy="110" r="4" fill="#facc15" />
+            <circle cx="820" cy="125" r="4" fill="#ef4444" />
+            <circle cx="835" cy="125" r="4" fill="#ef4444" />
           </g>
-          <text
-            x="540"
-            y="180"
-            fill="#64748b"
-            fontSize="18"
-            fontWeight="700"
-            textAnchor="middle"
-            fontFamily="'Fredoka', sans-serif"
-          >
-            ⚠️ LANTAI HUTAN: PREDATOR MENGINTAI (15 METER DI BAWAH)
-          </text>
         </g>
       </svg>
     </AbsoluteFill>

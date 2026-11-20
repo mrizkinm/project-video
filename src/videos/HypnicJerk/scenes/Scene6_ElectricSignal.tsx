@@ -51,8 +51,8 @@ export const Scene6_ElectricSignal: React.FC = () => {
 
         <rect width="1080" height="1920" fill="url(#neuralGrad)" />
 
-        {/* Top Neural Command Hub */}
-        <g transform="translate(540, 240)">
+        {/* Top Neural Command Hub (Concise & Punchy) */}
+        <g transform="translate(540, 230)">
           <rect
             x="-260"
             y="-35"
@@ -62,6 +62,7 @@ export const Scene6_ElectricSignal: React.FC = () => {
             fill="rgba(15, 23, 42, 0.95)"
             stroke="#facc15"
             strokeWidth="3.5"
+            filter="drop-shadow(0px 8px 22px rgba(250, 204, 21, 0.35))"
           />
           <text
             x="0"
@@ -73,7 +74,7 @@ export const Scene6_ElectricSignal: React.FC = () => {
             letterSpacing="1"
             fontFamily="'Fredoka', sans-serif"
           >
-            ⚡ SINYAL KEJUT LISTRIK DARURAT
+            ⚡ SINYAL KEJUT LISTRIK KE KAKI
           </text>
         </g>
 
@@ -141,56 +142,31 @@ export const Scene6_ElectricSignal: React.FC = () => {
           <text x="40" y="550" fontSize="34" fill="#facc15">⚡</text>
         </g>
 
-        {/* Leg Target Receptor Facility at Bottom Center (Width 760px) */}
-        <g transform="translate(540, 1020)">
-          <rect
-            x="-380"
-            y="-45"
-            width="760"
-            height="90"
-            rx="28"
-            fill="rgba(15, 23, 42, 0.95)"
-            stroke="#f59e0b"
-            strokeWidth="4"
-          />
-          <text
-            x="0"
-            y="13"
-            fontSize="28"
-            fontWeight="900"
-            fill="#fbbf24"
-            textAnchor="middle"
-            letterSpacing="1"
-            fontFamily="'Fredoka', sans-serif"
-          >
-            🦵 OTOT KAKI: TENDANGAN REFLEKS
-          </text>
-        </g>
-
-        {/* Comic Explanation Stamp: REFLEKS CENGKERAM DAHAN! */}
+        {/* Single Impact Action Stamp (No duplicate stacked boxes) */}
         {frame > 14 && (
-          <g transform={`translate(540, 1140) rotate(-3) scale(${Math.max(0, stampPop)})`}>
+          <g transform={`translate(540, 1080) rotate(-2) scale(${Math.max(0, stampPop)})`}>
             <rect
-              x="-270"
-              y="-40"
-              width="540"
-              height="80"
+              x="-240"
+              y="-36"
+              width="480"
+              height="72"
               rx="24"
               fill="#fee2e2"
               stroke="#ef4444"
-              strokeWidth="5"
+              strokeWidth="4.5"
+              filter="drop-shadow(0px 8px 24px rgba(239, 68, 68, 0.45))"
             />
             <text
               x="0"
-              y="14"
-              fontSize="30"
+              y="13"
+              fontSize="28"
               fontWeight="900"
               fill="#dc2626"
               textAnchor="middle"
               letterSpacing="1"
               fontFamily="'Fredoka', sans-serif"
             >
-              💥 UPAYA CENGKERAM DAHAN!
+              💥 TENDANGAN REFLEKS!
             </text>
           </g>
         )}

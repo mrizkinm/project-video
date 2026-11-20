@@ -79,23 +79,24 @@ export const Scene2_CliffFall: React.FC = () => {
           <circle cx="220" cy="270" r="16" fill="#6366f1" opacity="0.4" />
         </g>
 
-        {/* Shock Action Comic Stamp: JATUH KE JURANG?! */}
+        {/* Shock Action Comic Stamp: JATUH KE JURANG?! (Single Focal Text) */}
         {frame > 5 && (
-          <g transform={`translate(540, 210) rotate(-3) scale(${Math.max(0, stampPop)})`}>
+          <g transform={`translate(540, 230) rotate(-2) scale(${Math.max(0, stampPop)})`}>
             <rect
-              x="-250"
-              y="-38"
-              width="500"
-              height="78"
-              rx="39"
+              x="-240"
+              y="-36"
+              width="480"
+              height="72"
+              rx="36"
               fill="#fee2e2"
               stroke="#ef4444"
-              strokeWidth="5"
+              strokeWidth="4"
+              filter="drop-shadow(0px 8px 20px rgba(239, 68, 68, 0.4))"
             />
             <text
               x="0"
-              y="14"
-              fontSize="34"
+              y="13"
+              fontSize="32"
               fontWeight="900"
               fill="#dc2626"
               textAnchor="middle"
@@ -103,33 +104,6 @@ export const Scene2_CliffFall: React.FC = () => {
               fontFamily="'Fredoka', sans-serif"
             >
               💥 JATUH KE JURANG?!
-            </text>
-          </g>
-        )}
-
-        {/* Supporting Reflex Stamp: KAKI NYENTAK KOSONG! */}
-        {frame > 12 && (
-          <g transform={`translate(540, 295) scale(${Math.max(0, pillPop)})`}>
-            <rect
-              x="-220"
-              y="-28"
-              width="440"
-              height="56"
-              rx="28"
-              fill="rgba(15, 23, 42, 0.9)"
-              stroke="#facc15"
-              strokeWidth="3"
-            />
-            <text
-              x="0"
-              y="10"
-              fontSize="24"
-              fontWeight="800"
-              fill="#facc15"
-              textAnchor="middle"
-              fontFamily="'Fredoka', sans-serif"
-            >
-              🦵 KAKI NYENTAK KOSONG!
             </text>
           </g>
         )}

@@ -41,29 +41,29 @@ export const Scene1_FloatingSleep: React.FC = () => {
           fontFamily: "'Fredoka', 'Plus Jakarta Sans', sans-serif",
         }}
       >
-        {/* In-Scene Time & Muscle Relaxation Pill */}
+        {/* In-Scene Time Pill: Minimalist & Clean */}
         <g transform={`translate(540, 220) scale(${Math.max(0, pillPop)})`}>
           <rect
-            x="-260"
-            y="-35"
-            width="520"
-            height="70"
-            rx="35"
+            x="-180"
+            y="-30"
+            width="360"
+            height="60"
+            rx="30"
             fill="rgba(15, 23, 42, 0.92)"
             stroke="#38bdf8"
-            strokeWidth="3.5"
+            strokeWidth="3"
           />
           <text
             x="0"
-            y="12"
+            y="10"
             fill="#38bdf8"
             fontSize="26"
-            fontWeight="800"
+            fontWeight="900"
             textAnchor="middle"
             letterSpacing="1"
             fontFamily="'Fredoka', sans-serif"
           >
-            🌙 23:30 MALAM (OTOT RILEKS)
+            🌙 23:30 MALAM
           </text>
         </g>
 

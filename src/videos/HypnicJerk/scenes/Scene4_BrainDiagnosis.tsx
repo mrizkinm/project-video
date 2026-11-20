@@ -7,8 +7,14 @@ export const Scene4_BrainDiagnosis: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
+  const headerPop = spring({
+    frame: frame - 4,
+    fps,
+    config: { damping: 12, stiffness: 130 },
+  });
+
   const stampPop = spring({
-    frame: frame - 20,
+    frame: frame - 14,
     fps,
     config: { damping: 11, stiffness: 140 },
   });
@@ -28,8 +34,8 @@ export const Scene4_BrainDiagnosis: React.FC = () => {
           fontFamily: "'Fredoka', 'Plus Jakarta Sans', sans-serif",
         }}
       >
-        {/* Top Header Pill */}
-        <g transform="translate(540, 240)">
+        {/* 1. Sleek Top Header Pill */}
+        <g transform={`translate(540, 240) scale(${Math.max(0, headerPop)})`}>
           <rect
             x="-250"
             y="-35"
@@ -38,7 +44,8 @@ export const Scene4_BrainDiagnosis: React.FC = () => {
             rx="35"
             fill="#312e81"
             stroke="#818cf8"
-            strokeWidth="4"
+            strokeWidth="3.5"
+            filter="drop-shadow(0px 8px 20px rgba(99, 102, 241, 0.4))"
           />
           <text
             x="0"
@@ -54,125 +61,38 @@ export const Scene4_BrainDiagnosis: React.FC = () => {
           </text>
         </g>
 
-        {/* Large Science Diagnostic Facility Container (860px wide) */}
-        <g transform="translate(110, 315)">
-          <rect
-            x="0"
-            y="0"
-            width="860"
-            height="370"
-            rx="32"
-            fill="rgba(15, 23, 42, 0.88)"
-            stroke="#6366f1"
-            strokeWidth="5"
-          />
-
-          {/* Left Column Card: Otot Rileks Cepat */}
-          <g transform="translate(40, 40)">
+        {/* 2. Reassuring Stat Stamp (Minimal & High Impact) */}
+        {frame > 12 && (
+          <g transform={`translate(540, 345) rotate(-2) scale(${Math.max(0, stampPop)})`}>
             <rect
-              x="0"
-              y="0"
-              width="360"
-              height="185"
+              x="-260"
+              y="-38"
+              width="520"
+              height="76"
               rx="24"
-              fill="#1e1b4b"
-              stroke="#818cf8"
-              strokeWidth="3"
+              fill="#dcfce7"
+              stroke="#22c55e"
+              strokeWidth="4.5"
+              filter="drop-shadow(0px 8px 24px rgba(34, 197, 94, 0.45))"
             />
-            <text x="35" y="58" fontSize="40">😴</text>
             <text
-              x="92"
-              y="60"
-              fill="#f8fafc"
-              fontSize="24"
+              x="0"
+              y="13"
+              fontSize="30"
               fontWeight="900"
-              fontFamily="'Fredoka', sans-serif"
-            >
-              Otot Rileks Cepat
-            </text>
-            <rect x="25" y="105" width="310" height="50" rx="20" fill="#f59e0b" opacity="0.2" />
-            <text
-              x="180"
-              y="138"
-              fill="#fbbf24"
-              fontSize="22"
-              fontWeight="800"
+              fill="#15803d"
               textAnchor="middle"
+              letterSpacing="1"
               fontFamily="'Fredoka', sans-serif"
             >
-              Masuk Transisi Tidur
+              ✅ 70% ORANG PERNAH ALAMI!
             </text>
           </g>
+        )}
 
-          {/* Right Column Card: Otak Mengira Bahaya */}
-          <g transform="translate(460, 40)">
-            <rect
-              x="0"
-              y="0"
-              width="360"
-              height="185"
-              rx="24"
-              fill="#450a0a"
-              stroke="#f87171"
-              strokeWidth="3"
-            />
-            <text x="35" y="58" fontSize="40">⚠️</text>
-            <text
-              x="92"
-              y="60"
-              fill="#f8fafc"
-              fontSize="24"
-              fontWeight="900"
-              fontFamily="'Fredoka', sans-serif"
-            >
-              Otak Curiga Jatuh
-            </text>
-            <rect x="25" y="105" width="310" height="50" rx="20" fill="#ef4444" opacity="0.2" />
-            <text
-              x="180"
-              y="138"
-              fill="#f87171"
-              fontSize="22"
-              fontWeight="800"
-              textAnchor="middle"
-              fontFamily="'Fredoka', sans-serif"
-            >
-              Sensor Anjlok Mendadak
-            </text>
-          </g>
-
-          {/* Comic Reassuring Stamp: 70% MANUSIA PERNAH NGARASA! */}
-          {frame > 18 && (
-            <g transform={`translate(430, 280) rotate(-4) scale(${Math.max(0, stampPop)})`}>
-              <rect
-                x="-270"
-                y="-42"
-                width="540"
-                height="84"
-                rx="24"
-                fill="#dcfce7"
-                stroke="#22c55e"
-                strokeWidth="5"
-              />
-              <text
-                x="0"
-                y="13"
-                fontSize="30"
-                fontWeight="900"
-                fill="#15803d"
-                textAnchor="middle"
-                letterSpacing="1"
-                fontFamily="'Fredoka', sans-serif"
-              >
-                ✅ 70% MANUSIA PERNAH ALAMI!
-              </text>
-            </g>
-          )}
-        </g>
-
-        {/* Mascot Brain in Center Stage - scale 1.35x */}
-        <g transform="translate(540, 940)">
-          <BrainMascot mood="thinking" scale={1.35} />
+        {/* 3. Friendly Brain Mascot in Center Stage - Dominant & Expressive (Scale 1.45x) */}
+        <g transform="translate(540, 920)">
+          <BrainMascot mood="happy" scale={1.45} />
         </g>
       </svg>
     </AbsoluteFill>
