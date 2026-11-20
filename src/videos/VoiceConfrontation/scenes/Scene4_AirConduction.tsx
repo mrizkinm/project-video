@@ -36,13 +36,14 @@ export const Scene4_AirConduction: React.FC = () => {
             <stop offset="0%" stopColor="#0f172a" stopOpacity="0.95" />
             <stop offset="100%" stopColor="#082f49" stopOpacity="0.98" />
           </linearGradient>
-          <linearGradient id="lipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#f43f5e" />
-            <stop offset="100%" stopColor="#be123c" />
+          <linearGradient id="skinGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#1e293b" />
+            <stop offset="100%" stopColor="#0f172a" />
           </linearGradient>
-          <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#334155" />
-            <stop offset="100%" stopColor="#1e293b" />
+          <linearGradient id="tongueGrad4" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="#be123c" />
+            <stop offset="60%" stopColor="#f43f5e" />
+            <stop offset="100%" stopColor="#fda4af" />
           </linearGradient>
         </defs>
 
@@ -61,82 +62,160 @@ export const Scene4_AirConduction: React.FC = () => {
           />
 
           {/* ══════════════════════════════════════════════════════════
-              LEFT: REALISTIC HUMAN SPEAKING MOUTH PROFILE
+              LEFT: BEAUTIFULLY PROPORTIONED HUMAN FACE & SAGITTAL VOCAL TRACT
+              Vertical offset: -23 so mouth opening center (y=23) aligns precisely with y=0!
               ══════════════════════════════════════════════════════════ */}
-          <g transform="translate(-270, 0)">
-            {/* Cutaway Facial Head Mass (Jaw, Chin, Lips Profile) */}
+          <g transform="translate(-250, -23)">
+            {/* 1. Seamless Anatomical Profile & Cross-Section Mass */}
             <path
-              d="M -110 -180
-                 C -85 -150 -75 -110 -80 -60
-                 C -80 -40 -65 -30 -35 -20
-                 C -10 -12 10 -4 28 6
-                 C 15 12 0 16 -12 20
-                 C 2 28 16 35 26 44
-                 C 10 52 -5 56 -18 64
-                 C -35 74 -45 94 -55 120
-                 C -65 155 -75 180 -100 200
-                 L -135 200 L -135 -180 Z"
-              fill="url(#skinGrad)"
-              stroke="#475569"
+              d="M -150 -190
+                 L -60 -190
+                 C -35 -190 -18 -150 -15 -110
+                 C -15 -105 -12 -95 10 -65
+                 C 22 -48 36 -38 36 -30
+                 C 36 -24 26 -20 16 -18
+                 C 14 -12 18 -6 24 -4
+                 C 26 0 26 4 12 10
+                 L 0 8
+                 C -22 6 -45 6 -65 4
+                 C -75 4 -85 12 -85 24
+                 C -85 30 -78 30 -80 24
+                 L -95 40
+                 L -95 150
+                 C -95 165 -75 165 -75 150
+                 L -75 100
+                 C -70 85 -55 70 -35 60
+                 C -15 52 0 54 8 56
+                 L 10 36
+                 C 16 38 24 40 24 44
+                 C 24 50 16 56 8 62
+                 C 4 72 16 85 22 94
+                 C 24 104 15 114 0 120
+                 C -20 128 -35 138 -45 150
+                 C -52 165 -55 180 -55 200
+                 L -150 200 Z"
+              fill="url(#skinGrad4)"
+              stroke="#38bdf8"
+              strokeWidth="3.5"
+            />
+
+            {/* Nostril Ala Contour */}
+            <path
+              d="M 16 -18 C 24 -18 26 -12 18 -8 C 12 -6 10 -12 14 -16 Z"
+              fill="#060913"
+              stroke="#64748b"
+              strokeWidth="1.5"
+            />
+
+            {/* Nasal Cavity (Rongga Hidung / Cavitas Nasi) */}
+            <path
+              d="M 8 -22
+                 C -15 -35 -45 -38 -75 -32
+                 C -90 -26 -98 -12 -98 4
+                 L -70 4
+                 C -45 4 -15 -4 8 -22 Z"
+              fill="#082f49"
+              opacity="0.85"
+            />
+            <path d="M -12 -20 Q -42 -24 -68 -16" fill="none" stroke="#38bdf8" strokeWidth="2" strokeDasharray="4 4" opacity="0.6" />
+
+            {/* Hard Palate Bone Plate (Langit-langit Mulut) */}
+            <path
+              d="M 0 8 C -22 6 -45 6 -65 4"
+              fill="none"
+              stroke="#f1f5f9"
+              strokeWidth="5"
+              strokeLinecap="round"
+            />
+
+            {/* Soft Palate & Uvula (Tekak / Anak Lidah) */}
+            <path
+              d="M -65 4 C -75 4 -85 12 -85 24 C -85 30 -78 30 -80 24"
+              fill="#f43f5e"
+              stroke="#be123c"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+
+            {/* Upper Lip Vermilion (Bibir Atas) */}
+            <path
+              d="M 16 -16
+                 C 14 -10 18 -6 24 -4
+                 C 26 0 26 4 12 10
+                 C 6 6 8 -4 16 -16 Z"
+              fill="#f43f5e"
+              opacity="0.9"
+            />
+
+            {/* Upper Gums & Central Incisor Tooth */}
+            <path d="M -2 0 Q 6 -2 14 0" fill="none" stroke="#f43f5e" strokeWidth="5" strokeLinecap="round" />
+            <polygon points="1,0 13,0 12,14 0,12" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" />
+            <line x1="6" y1="0" x2="5" y2="13" stroke="#e2e8f0" strokeWidth="1" />
+
+            {/* Lower Lip Vermilion (Bibir Bawah) */}
+            <path
+              d="M 10 36
+                 C 16 38 24 40 24 44
+                 C 24 50 16 56 8 62
+                 C 4 56 6 44 10 36 Z"
+              fill="#f43f5e"
+              opacity="0.9"
+            />
+
+            {/* Lower Gums & Central Incisor Tooth */}
+            <path d="M -2 38 Q 6 40 14 38" fill="none" stroke="#f43f5e" strokeWidth="5" strokeLinecap="round" />
+            <polygon points="0,26 12,24 11,38 -1,38" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" />
+
+            {/* Anatomical Muscular Tongue (Lidah Manusia) */}
+            <path
+              d="M -75 100
+                 C -70 85 -55 70 -35 60
+                 C -15 52 0 54 8 56
+                 L 10 36
+                 C 2 40 -8 46 -18 52
+                 C -40 65 -65 82 -75 100 Z"
+              fill="url(#tongueGrad4)"
+              stroke="#be123c"
+              strokeWidth="2.5"
+            />
+            {/* Tongue Surface Papillae Texture */}
+            <path d="M -30 58 Q -14 56 2 59" fill="none" stroke="#fda4af" strokeWidth="2.5" strokeLinecap="round" />
+            <path d="M -48 64 Q -34 62 -20 66" fill="none" stroke="#fda4af" strokeWidth="2" strokeLinecap="round" />
+
+            {/* Larynx & Vibrating Vocal Cords (Pita Suara) */}
+            <g transform="translate(-85, 150)">
+              <rect x="-18" y="-12" width="36" height="24" rx="6" fill="#1e293b" stroke="#facc15" strokeWidth="2.5" />
+              {/* Vibrating cords */}
+              <line x1="-10" y1="-4" x2="10" y2="4" stroke="#fef08a" strokeWidth="3" strokeLinecap="round" />
+              <line x1="-10" y1="4" x2="10" y2="-4" stroke="#fef08a" strokeWidth="3" strokeLinecap="round" />
+              {/* Acoustic vibration pulse */}
+              <circle
+                cx="0"
+                cy="0"
+                r={16 + Math.sin(frame * 0.5) * 5}
+                fill="none"
+                stroke="#facc15"
+                strokeWidth="2"
+                opacity={0.6 + Math.sin(frame * 0.5) * 0.4}
+              />
+            </g>
+
+            {/* Acoustic Energy Stream flowing from vocal cords out parted lips */}
+            <path
+              d="M -85 135
+                 C -85 85 -70 50 -35 38
+                 C -10 30 12 24 38 23"
+              fill="none"
+              stroke="#38bdf8"
               strokeWidth="4"
+              strokeDasharray="6 6"
+              strokeDashoffset={-frame * 4}
+              filter="url(#cyanNeon4)"
             />
 
-            {/* Oral Cavity Interior (Rongga Mulut) */}
-            <path
-              d="M 5 6
-                 C -25 2 -60 -5 -75 5
-                 C -90 20 -90 55 -80 75
-                 C -60 85 -35 75 -5 55
-                 C 2 45 10 32 6 22
-                 C 0 16 -8 12 -8 8
-                 C -5 4 0 2 5 6 Z"
-              fill="#0b0f19"
-            />
-
-            {/* Upper Lip Contour (Bibir Atas Manusia) */}
-            <path
-              d="M -25 -16
-                 C 0 -10 16 -2 28 6
-                 C 15 12 2 10 -10 4
-                 C -20 -2 -24 -10 -25 -16 Z"
-              fill="url(#lipGrad)"
-              stroke="#e11d48"
-              strokeWidth="2"
-            />
-
-            {/* Lower Lip Contour (Bibir Bawah Manusia) */}
-            <path
-              d="M -12 60
-                 C 6 52 18 44 26 32
-                 C 12 24 0 22 -8 30
-                 C -14 38 -16 50 -12 60 Z"
-              fill="url(#lipGrad)"
-              stroke="#e11d48"
-              strokeWidth="2"
-            />
-
-            {/* Hard Palate (Langit-langit Mulut) */}
-            <path d="M -70 5 Q -35 -2 -4 6" fill="none" stroke="#fecdd3" strokeWidth="4" strokeLinecap="round" />
-
-            {/* Upper Incisor Teeth (Gigi Seri Atas) */}
-            <path d="M -2 2 L 14 5 L 14 18 L 0 16 Z" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" />
-
-            {/* Lower Incisor Teeth (Gigi Seri Bawah) */}
-            <path d="M -2 26 L 12 24 L 12 37 L 0 35 Z" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" />
-
-            {/* Muscular Pink Tongue (Lidah Manusia) */}
-            <path
-              d="M -65 52
-                 C -45 28 -25 26 -5 26
-                 C 5 26 8 36 2 44
-                 C -16 54 -48 62 -65 52 Z"
-              fill="#fb7185"
-              stroke="#f43f5e"
-              strokeWidth="2"
-            />
-
-            {/* Label Tag for Mouth */}
-            <g transform="translate(-40, 155)">
+            {/* 🏷️ Clean Anatomical Labels (No overlapping, ample breathing room) */}
+            {/* Rongga Mulut Tag (Placed gracefully above palate with pointer) */}
+            <g transform="translate(-40, -65)">
               <rect x="-70" y="-18" width="140" height="36" rx="18" fill="#0c4a6e" stroke="#0284c7" strokeWidth="2" />
               <text
                 x="0"
@@ -149,13 +228,31 @@ export const Scene4_AirConduction: React.FC = () => {
               >
                 Rongga Mulut 👄
               </text>
+              {/* Guide pointer down to oral cavity */}
+              <path d="M 0 18 L 10 45" fill="none" stroke="#38bdf8" strokeWidth="2" strokeDasharray="3 3" />
+            </g>
+
+            {/* Pita Suara Tag (Placed directly below larynx) */}
+            <g transform="translate(-85, 195)">
+              <rect x="-65" y="-14" width="130" height="28" rx="14" fill="#1e293b" stroke="#facc15" strokeWidth="2" />
+              <text
+                x="0"
+                y="5"
+                fill="#fef08a"
+                fontSize="14"
+                fontWeight="900"
+                textAnchor="middle"
+                fontFamily="'Fredoka', sans-serif"
+              >
+                Pita Suara ⚡
+              </text>
             </g>
           </g>
 
           {/* ══════════════════════════════════════════════════════════
               CENTER: ACOUSTIC PRESSURE WAVES IN AIR
               ══════════════════════════════════════════════════════════ */}
-          <g transform="translate(-45, 10)">
+          <g transform="translate(-45, 0)">
             {[-100, -40, 20, 80, 140].map((offset, i) => {
               const waveProgress = (frame * 5 + i * 40) % 250;
               const waveX = -120 + waveProgress * 1.5;
@@ -192,7 +289,7 @@ export const Scene4_AirConduction: React.FC = () => {
             })}
 
             {/* Molecule label badge */}
-            <g transform="translate(10, -210)">
+            <g transform="translate(10, -220)">
               <rect
                 x="-140"
                 y="-24"
@@ -221,7 +318,7 @@ export const Scene4_AirConduction: React.FC = () => {
               RIGHT: SEAMLESS ANATOMICAL HUMAN EAR CROSS-SECTION
               (Daun Telinga -> Concha -> Liang Telinga Halus -> Gendang -> Tulang Pendengaran -> Koklea)
               ══════════════════════════════════════════════════════════ */}
-          <g transform="translate(250, 10)">
+          <g transform="translate(250, 0)">
             {/* Temporal Bone & Ear Tissue Surrounding (Natural Cross-Section Profile) */}
             <path
               d="M -70 -160
@@ -231,9 +328,9 @@ export const Scene4_AirConduction: React.FC = () => {
                  C -50 80 -25 60 -30 20
                  C -30 5 -20 -5 -10 -15
                  C -25 -40 -40 -80 -70 -110 Z"
-              fill="url(#skinGrad)"
-              stroke="#64748b"
-              strokeWidth="4"
+              fill="url(#skinGrad4)"
+              stroke="#38bdf8"
+              strokeWidth="3.5"
             />
 
             {/* Helix & Antihelix Cartilage Folds of Pinna */}
@@ -253,7 +350,7 @@ export const Scene4_AirConduction: React.FC = () => {
               strokeWidth="2"
             />
 
-            {/* Natural Ear Canal (Liang Telinga) - Seamless Conduit Tunnel (No black box!) */}
+            {/* Natural Ear Canal (Liang Telinga) - Seamless Conduit Tunnel */}
             {/* Top Canal Wall */}
             <path
               d="M -25 -16 C 5 -18 30 -14 65 -12"

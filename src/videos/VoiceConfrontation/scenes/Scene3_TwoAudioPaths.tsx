@@ -49,17 +49,9 @@ export const Scene3_TwoAudioPaths: React.FC = () => {
           </filter>
         </defs>
 
-        {/* Brain Mascot (Top Right, professor role, comfortably positioned) */}
+        {/* Brain Mascot (Top Right, professor role, perfectly synchronized with glasses) */}
         <g transform={`translate(770, 360) scale(${Math.max(0, mascotPop) * 1.15})`}>
-          <BrainMascot mood="thinking" scale={1.15} />
-          {/* Smart Glasses on Brain */}
-          <g transform="translate(0, -20)">
-            <rect x="-85" y="-18" width="60" height="36" rx="8" fill="none" stroke="#38bdf8" strokeWidth="6" />
-            <rect x="25" y="-18" width="60" height="36" rx="8" fill="none" stroke="#38bdf8" strokeWidth="6" />
-            <line x1="-25" y1="0" x2="25" y2="0" stroke="#38bdf8" strokeWidth="6" />
-            <line x1="-85" y1="0" x2="-115" y2="-10" stroke="#38bdf8" strokeWidth="6" />
-            <line x1="85" y1="0" x2="115" y2="-10" stroke="#38bdf8" strokeWidth="6" />
-          </g>
+          <BrainMascot mood="thinking" scale={1.15} glasses={true} />
         </g>
 
         {/* Central Anatomical Showcase Box (Wide 840px, y=980) */}

@@ -30,12 +30,12 @@ Seluruh 8 gambar still preview telah digenerate di folder `public/`:
   > *"Padahal di dalam kepala kita, suara kita kerasa berat, berwibawa, dan keren banget!"*
 
 ### 3. Scene 3 — Dua Jalur Suara (8.5s – 13.0s)
-* **Visual:** Maskot Otak berkacamata audiometri menjelaskan diagram anatomi kepala manusia dengan siluet profil halus alami, tengkorak akurat, otak pink, pita suara, dan koklea. Terlihat jelas pembagian 2 rute rambatan: Konduksi Udara (Cyan) dan Konduksi Tulang (Emas).
+* **Visual:** Maskot Otak berkacamata audiometri pintar (gerakan kacamata 100% tersinkronisasi dengan floating bobbing maskot) menjelaskan diagram anatomi kepala manusia dengan siluet profil halus alami, tengkorak akurat, otak pink, pita suara, dan koklea. Terlihat jelas pembagian 2 rute rambatan: Konduksi Udara (Cyan) dan Konduksi Tulang (Emas).
 * **Naskah VO (`public/audio/ep4_voiceover/scene3.mp3`):**  
   > *"Tenang, ini bukan salah mikrofon HP-mu. Saat kamu ngomong langsung, otakmu nerima suara lewat dua jalur sekaligus!"*
 
 ### 4. Scene 4 — Konduksi Udara (13.0s – 16.8s)
-* **Visual:** Bedah sains medium udara bebas. Penampang profil bibir & rongga mulut manusia mengeluarkan gelombang tekanan udara, menggetarkan partikel udara, lalu masuk ke liang telinga halus dan menggetarkan gendang telinga.
+* **Visual:** Penampang anatomi profil lateral wajah manusia presisi (*facial thirds*: dahi, hidung alami, bibir vermilion atas/bawah terbuka berbicara, gigi seri putih rapi, langit-langit keras/lunak, lidah berotot pink, dan pita suara di laring). Gelombang tekanan udara cyan meluncur mulus horizontal melintasi partikel udara bebas menuju liang telinga, menggetarkan gendang telinga, tulang martil/landasan/sanggurdi, dan koklea.
 * **Naskah VO (`public/audio/ep4_voiceover/scene4.mp3`):**  
   > *"Pertama, gelombang suara merambat lewat udara dari mulut masuk ke lubang telinga."*
 

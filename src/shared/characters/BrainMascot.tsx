@@ -4,11 +4,13 @@ import { interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
 interface BrainMascotProps {
   mood?: 'happy' | 'waving' | 'thinking';
   scale?: number;
+  glasses?: boolean;
 }
 
 export const BrainMascot: React.FC<BrainMascotProps> = ({
   mood = 'happy',
   scale = 1,
+  glasses = false,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -92,6 +94,48 @@ export const BrainMascot: React.FC<BrainMascotProps> = ({
         fill="none"
         strokeLinecap="round"
       />
+
+      {/* Smart Audiometry / Professor Glasses (Synchronized with mascot floating) */}
+      {glasses && (
+        <g id="brain-glasses">
+          {/* Left Frame */}
+          <rect
+            x="-96"
+            y="-38"
+            width="72"
+            height="56"
+            rx="14"
+            fill="rgba(56, 189, 248, 0.18)"
+            stroke="#0284c7"
+            strokeWidth="8"
+          />
+          {/* Right Frame */}
+          <rect
+            x="24"
+            y="-38"
+            width="72"
+            height="56"
+            rx="14"
+            fill="rgba(56, 189, 248, 0.18)"
+            stroke="#0284c7"
+            strokeWidth="8"
+          />
+          {/* Bridge */}
+          <path
+            d="M -24 -10 Q 0 -18 24 -10"
+            fill="none"
+            stroke="#0284c7"
+            strokeWidth="8"
+            strokeLinecap="round"
+          />
+          {/* Temples (side arms) */}
+          <line x1="-96" y1="-10" x2="-140" y2="-22" stroke="#0284c7" strokeWidth="7" strokeLinecap="round" />
+          <line x1="96" y1="-10" x2="140" y2="-22" stroke="#0284c7" strokeWidth="7" strokeLinecap="round" />
+          {/* Glass glare highlight */}
+          <line x1="-80" y1="-26" x2="-62" y2="-8" stroke="#ffffff" strokeWidth="4.5" strokeLinecap="round" opacity="0.85" />
+          <line x1="40" y1="-26" x2="58" y2="-8" stroke="#ffffff" strokeWidth="4.5" strokeLinecap="round" opacity="0.85" />
+        </g>
+      )}
 
       {/* Animated Hands */}
       <g transform={`translate(-185, 0) rotate(${waveAngle})`}>
