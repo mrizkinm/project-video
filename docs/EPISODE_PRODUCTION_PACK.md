@@ -174,16 +174,36 @@ Jujur siapa di sini yang paling anti dengerin ulang voice note sendiri? Coba nga
 ---
 
 ## 🥱 EPISODE 5: "Kenapa Nguap Itu Bisa Nular?"
-* **Pilar:** 🔵 Deep Mind-Blowing Science (Evolusi & Empati)
-* **Durasi Estimasi:** 36 detik (1080 frames @ 30fps)
-* **Fenomena Ilmiah:** *Contagious Yawning & Mirror Neurons*.
+* **Pilar:** 🔵 Deep Mind-Blowing Science (Evolusi, Otak & Psikologi)
+* **Durasi Estimasi:** ~38–42 detik (8 Scene @ 30fps)
+* **Fenomena Ilmiah:** *Contagious Yawning, Mirror Neurons & Brain Thermoregulation*.
+* **Folder Voiceover:** `public/audio/ep5_voiceover/scene1.mp3` s/d `scene8.mp3`
 
-### 🎬 Ringkasan Naskah:
-1. **Hook (0-3s):** *"Lihat orang nguap, kita ikutan nguap. Denger suara orang nguap, ikut nguap. Bahkan baca kata 'MENGUAP' di layar ini aja... rahangmu udah mulai gatal mau kebuka, kan?"*
-2. **Relatable (3-10s):** Nguap itu salah satu refleks paling menular di muka bumi. Bahkan anjing dan kucing peliharaan bisa tertular nguap dari majikannya!
-3. **Sains (10-24s):** Ini bukan karena ngantuk, tapi karena *Mirror Neurons* di otak yang bertanggung jawab atas empati sosial. Zaman purba dulu, manusia hidup berkelompok. Kalau satu orang nguap (tanda waspada menurun/otak butuh pendinginan oksigen), otak anggota lain meniru otomatis agar ritme kelompok tetap selaras.
-4. **Fakta Menarik (24-32s):** Orang yang memiliki tingkat empati tinggi jauh lebih gampang tertular nguap! Penelitian membuktikan psikopat sangat jarang tertular nguap.
-5. **CTA (32-35s):** *"Jujur, dari detik pertama tadi kamu udah nguap berapa kali? Ngaku di kolom komentar!"*
+### 📱 Paket Teks Upload Episode 5 (Tinggal Copy-Paste):
+
+#### 1. Pilihan Judul Video:
+* **TikTok / Reels:** *Baru baca kata "NGUAP" aja rahangmu udah mulai gatal pengen kebuka? 🥱*
+* **YouTube Shorts:** *Kenapa Nguap Itu Bisa Nular? (Bukan Cuma Ngantuk!) 🥱🧠*
+
+#### 2. Naskah Caption / Deskripsi (Tinggal Copy):
+```text
+Baru baca kata "NGUAP" aja rahangmu udah gatal pengen kebuka? 🥱
+
+Nguap menular itu bukan tanda kurang tidur, tapi kerjaan Mirror Neurons di otak. Makin tinggi rasa empatimu ke sesama, makin gampang kamu ketularan nguap! 🧠
+
+Jujur, dari detik pertama tadi kamu udah nguap berapa kali?
+
+#TibaTibaPaham #SainsOtak #FaktaTubuh
+```
+
+#### 3. Komentar Sematan Pertama (*Pinned Comment*):
+```text
+Jujur siapa yang dari detik pertama tadi udah nguap? Coba absen berapa kali di bawah! 😂👇
+```
+
+#### 4. Rekomendasi Cover / Thumbnail:
+* Pilih frame di Scene 1 (kata "NGUAP" besar di tengah layar dengan ekspresi karakter menahan rahang menguap) atau di Scene 3 (diagram korteks otak bercahaya neon dengan sistem saraf cermin).
+* Teks Cover Rekomendasi: **"BARU BACA 'NGUAP'... KOK IKUTAN NGUAP?!"**
 
 ---
 
