@@ -114,17 +114,48 @@ Siapa di sini yang tim 'baru bangun melek mata langsung nyeduh kopi' tapi jam 10
 
 ---
 
-## ⚡ EPISODE 3: "Kenapa Pas Mau Tidur Kaki Berasa Jatuh dari Jurang?"
-* **Pilar:** 🟢 Viral Everyday Glitches (Tidur & Saraf)
-* **Durasi Estimasi:** 35 detik (1050 frames @ 30fps)
-* **Fenomena Ilmiah:** *Hypnic Jerk* (Kedutan Mioklonik saat transisi tidur).
+## ⚡ EPISODE 3: "Kenapa Pas Mau Tidur Kaki Berasa Jatuh dari Jurang?" (Hypnic Jerk)
+* **File Video:** [out/hypnic_jerk_final.mp4](file:///c:/more/project-video/out/hypnic_jerk_final.mp4) (40.67 detik, 1080x1920 Full HD Vertikal, 12.6 MB)
+* **Pilar:** 🟢 Viral Everyday Glitches (Tidur & Evolusi Otak)
+* **Status:** ✅ Selesai Render & Siap Diunggah (100% Utuh Voiceover Pengguna + Dynamic Subtitles Inklusif)
+* **Karakter & Maskot:** Main Character (Mood: sleepy ➔ shocked ➔ happy), Brain Mascot (Mood: thinking ➔ happy ➔ waving)
 
-### 🎬 Ringkasan Naskah:
-1. **Hook (0-3s):** *"Lagi enak-enak melayang mau tidur nyenyak, tiba-tiba... DEG! Kaki berasa melangkah ke jurang kosong dan tubuh langsung kesentak bangun!"*
-2. **Relatable (3-10s):** Jantung deg-degan kencang, nafas ngos-ngosan, padahal kasur rata dan nggak jatuh ke mana-mana.
-3. **Sains (10-24s):** Saat fase transisi tidur (*Hypnagogic state*), otot-otot tubuh mengendur secara mendadak. Otak purba kita salah paham dan mengira: *"Gawat! Tubuh kita lagi jatuh dari pohon/jurang!"*. Otak langsung mengirimkan sinyal listrik darurat ke kaki untuk menyeimbangkan diri.
-4. **Hack (24-32s):** Hypnic jerk makin parah kalau kamu kurang tidur, stres, atau main HP sebelum tidur. Solusinya: peregangan ringan 5 menit sebelum tidur.
-5. **CTA (32-35s):** *"Kira-kira semalem kamu nendang kasur berapa kali? Tulis di bawah dan follow biar Tiba-Tiba Paham!"*
+### 📱 Paket Teks Upload Episode 3 (Tinggal Copy-Paste):
+
+#### 1. Pilihan Judul Video:
+* **TikTok / Reels:** *Pernah nggak pas mau tidur nyenyak, tiba-tiba kaki nyentak kayak jatuh dari jurang?! 😱⚡*
+* **YouTube Shorts:** *Kenapa Pas Mau Tidur Kaki Berasa Jatuh dari Jurang? (Hypnic Jerk) 🛌⚡*
+
+#### 2. Naskah Caption / Deskripsi (Tinggal Copy):
+```text
+Lagi enak-enak terlentang mau tidur nyenyak di kasur empuk, tiba-tiba... DEG! Kaki berasa melangkah ke jurang kosong! 😱⚡
+Tubuh langsung kesentak bangun, jantung deg-degan kencang!
+
+Padahal kasur rata dan nggak jatuh ke mana-mana... Kenapa bisa gitu? 🤔
+
+Tenang, kamu nggak sendirian! Lebih dari 70% manusia di bumi pernah ngalamin fenomena bernama "Hypnic Jerk"! 🧠✨
+
+Waktu kamu mulai terlelap, otot-otot tubuhmu mengendur sangat cepat. Nah, otak purba kita yang mewarisi insting nenek moyang zaman purba (yang dulu tidurnya di dahan pohon tinggi biar aman dari predator) SALAH PAHAM! 🌳
+Otak purba mengira cengkeraman tanganmu lepas dan tubuhmu lagi terjun bebas dari pohon!
+
+Makanya, otak langsung ngirim sinyal kejut listrik darurat ke kaki buat refleks nendang dan nyari tumpuan! ⚡🦵
+
+💡 Tips mencegahnya:
+Hypnic jerk makin sering muncul kalau kamu stres, kurang tidur, atau main HP sebelum tidur. Coba lakukan peregangan santai 5 menit sebelum tidur biar otot mengendur bertahap. 🧘‍♂️🌙
+
+Pernah ngalamin ini semalem? Tag temenmu yang tidurnya suka nendang kasur! 😂👇
+
+#TibaTibaPaham #HypnicJerk #SainsTidur #MisteriOtak #FaktaBiologi #EdukasiAnimasi #PopScienceIndonesia #KesehatanTidur #FaktaMenarik #SerbaSerbi
+```
+
+#### 3. Komentar Sematan Pertama (*Pinned Comment*):
+```text
+Jujur semalem ada yang kaget kesentak kayak gini nggak pas mau tidur? Coba absen di bawah, kamu tim kaget kaki nyentak atau tim tidur pules tanpa gangguan? 😂👇
+```
+
+#### 4. Rekomendasi Cover / Thumbnail:
+* Pilih frame di detik ke-5 (saat kasur miring ke jurang mimpi dengan karakter kaget melotot) atau detik ke-21 (saat karakter tergelincir dari dahan pohon purba).
+* Teks Cover Rekomendasi: **"LAGI ENAK TIDUR... KOK KAKI NYENTAK JATUH?!"**
 
 ---
 
