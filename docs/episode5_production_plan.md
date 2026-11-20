@@ -2,9 +2,11 @@
 
 > **Saluran:** Tiba-Tiba Paham (`@tibatibapaham`)  
 > **Format:** 9:16 Vertikal (1080 x 1920 piksel) @ 30 FPS  
-> **Durasi Estimasi:** ~38–42 detik (8 Scene)  
+> **Durasi Final:** 72.57 detik (2177 frames @ 30 FPS)  
+> **Status:** Selesai Render & Siap Diunggah  
+> **File Video:** [out/contagious_yawning_final.mp4](file:///c:/more/project-video/out/contagious_yawning_final.mp4) (24.8 MB)  
 > **Pilar Konten:** 🔵 Deep Mind-Blowing Science (Evolusi, Otak & Psikologi)  
-> **Folder Voiceover Siap Rekam:** `public/audio/ep5_voiceover/` (`scene1.mp3` s/d `scene8.mp3`)  
+> **Folder Voiceover:** `public/audio/ep5_voiceover/` (`scene1.mp3` s/d `scene8.mp3`)  
 
 ---
 

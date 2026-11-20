@@ -82,11 +82,11 @@ export const Root: React.FC = () => {
         height={1920}
       />
 
-      {/* VIDEO 5: Contagious Yawning - Kenapa Nguap Itu Bisa Nular (35.33 seconds / 1060 frames @ 30 fps) */}
+      {/* VIDEO 5: Contagious Yawning - Kenapa Nguap Itu Bisa Nular (72.57 seconds / 2177 frames @ 30 fps) */}
       <Composition
         id="ContagiousYawning"
         component={ContagiousYawningVideo}
-        durationInFrames={1060}
+        durationInFrames={2177}
         fps={30}
         width={1080}
         height={1920}

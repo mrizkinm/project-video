@@ -26,11 +26,12 @@ import { ProgressBar } from '../../components/ProgressBar';
  * Episode 5: "Kenapa Nguap Itu Bisa Nular?" (Contagious Yawning & Mirror Neurons)
  * Saluran: Tiba-Tiba Paham (@tibatibapaham)
  * Format: 9:16 Vertical (1080 x 1920) @ 30 FPS
- * Total Durasi Estimasi Preview: 1060 frame (~35.33 detik)
+ * Total Durasi Final: 2177 frame (~72.57 detik)
  *
  * Akustik & Audio:
- * - Folder Voiceover Pengguna: public/audio/ep5_voiceover/scene1.mp3 s/d scene8.mp3
+ * - Voiceover User: public/audio/ep5_voiceover/scene1.mp3 s/d scene8.mp3
  * - BGM Ducking: 14% volume agar suara voiceover terdengar jernih dan tajam.
+ * - Subtitle 100% Verbatim dengan Acoustic Pause Alignment per Rule 4.
  */
 export const ContagiousYawningVideo: React.FC = () => {
   return (
@@ -57,8 +58,8 @@ export const ContagiousYawningVideo: React.FC = () => {
       <Audio
         src={staticFile('audio/bgm/bgm_mystery.mp3')}
         volume={(f) => {
-          if (f > 1000) {
-            return interpolate(f, [1000, 1060], [0.14, 0], {
+          if (f > 2110) {
+            return interpolate(f, [2110, 2177], [0.14, 0], {
               extrapolateLeft: 'clamp',
               extrapolateRight: 'clamp',
             });
@@ -69,157 +70,285 @@ export const ContagiousYawningVideo: React.FC = () => {
       />
 
       {/* ══════════════════════════════════════════════════════════════
-          SCENE 1: 0 - 4.5s (135 frames)
+          SCENE 1: 0 - 9.27s (278 frames)
+          Voiceover: 8.75s (263 frames) + 15 frames safety breathing room
           Naskah: "Lihat orang nguap, kamu ikutan nguap. Bahkan baru baca kata 'NGUAP' di layar ini aja... rahangmu udah mulai gatal mau kebuka, kan?"
           ══════════════════════════════════════════════════════════════ */}
-      <Sequence from={0} durationInFrames={135}>
+      <Sequence from={0} durationInFrames={278}>
         <Scene1_PsychologicalTrigger />
-        <ViralCaptions
-          badge="🥱 UJI PSIKOLOGIS"
-          badgeColor="#f59e0b"
-          text="Baru baca kata 'NGUAP' di layar aja, rahangmu udah mulai gatal mau kebuka, kan?"
-          highlightWord="NGUAP"
-        />
+        <Audio src={staticFile('audio/ep5_voiceover/scene1.mp3')} volume={1.0} />
+
+        {/* Phrase 1 (frames 0 - 120) */}
+        <Sequence from={0} durationInFrames={120}>
+          <ViralCaptions
+            badge="🥱 UJI REFLEKS"
+            badgeColor="#f59e0b"
+            text="Lihat orang nguap, kamu ikutan nguap."
+            highlightWord="ikutan nguap."
+          />
+        </Sequence>
+
+        {/* Phrase 2 (frames 120 - 278) */}
+        <Sequence from={120} durationInFrames={158}>
+          <ViralCaptions
+            badge="🥱 UJI PSIKOLOGIS"
+            badgeColor="#f59e0b"
+            text="Baru baca kata 'NGUAP' di layar aja, rahangmu udah mulai gatal mau kebuka, kan?"
+            highlightWord="NGUAP"
+          />
+        </Sequence>
       </Sequence>
 
-      {/* ✨ TRANSITION 1→2: Centered at frame 135 (frames 129-141) */}
-      <Sequence from={129} durationInFrames={12}>
+      {/* ✨ TRANSITION 1→2: Centered at frame 278 (frames 272-284) */}
+      <Sequence from={272} durationInFrames={12}>
         <SceneTransition type="flash-cut" durationFrames={12} color="#ec4899" />
         <Audio src={staticFile('audio/sfx/whoosh.wav')} volume={0.16} />
       </Sequence>
 
       {/* ══════════════════════════════════════════════════════════════
-          SCENE 2: 4.5s - 9.0s (135 frames, from 135 to 270)
+          SCENE 2: 9.27s - 18.37s (273 frames, from 278 to 551)
+          Voiceover: 8.59s (258 frames) + 15 frames safety breathing room
           Naskah: "Nguap menular itu salah satu fenomena paling aneh di bumi. Bahkan anjing atau kucing peliharaanmu bisa ikutan nguap pas ngeliat kamu nguap!"
           ══════════════════════════════════════════════════════════════ */}
-      <Sequence from={135} durationInFrames={135}>
+      <Sequence from={278} durationInFrames={273}>
         <Scene2_PetContagion />
-        <ViralCaptions
-          badge="🐕 NULAR KE HEWAN"
-          badgeColor="#ec4899"
-          text="Bahkan anjing atau kucing peliharaanmu bisa ikutan nguap pas ngeliat kamu nguap!"
-          highlightWord="anjing atau kucing"
-        />
+        <Audio src={staticFile('audio/ep5_voiceover/scene2.mp3')} volume={1.0} />
+
+        {/* Phrase 1 (frames 0 - 125) */}
+        <Sequence from={0} durationInFrames={125}>
+          <ViralCaptions
+            badge="🌍 FENOMENA ANEH"
+            badgeColor="#ec4899"
+            text="Nguap menular itu salah satu fenomena paling aneh di bumi."
+            highlightWord="paling aneh"
+          />
+        </Sequence>
+
+        {/* Phrase 2 (frames 125 - 273) */}
+        <Sequence from={125} durationInFrames={148}>
+          <ViralCaptions
+            badge="🐕 NULAR KE HEWAN"
+            badgeColor="#ec4899"
+            text="Bahkan anjing atau kucing peliharaanmu bisa ikutan nguap pas ngeliat kamu nguap!"
+            highlightWord="anjing atau kucing"
+          />
+        </Sequence>
       </Sequence>
 
-      {/* ✨ TRANSITION 2→3: Centered at frame 270 (frames 264-276) */}
-      <Sequence from={264} durationInFrames={12}>
+      {/* ✨ TRANSITION 2→3: Centered at frame 551 (frames 545-557) */}
+      <Sequence from={545} durationInFrames={12}>
         <SceneTransition type="wipe-diagonal" durationFrames={12} color="#38bdf8" />
         <Audio src={staticFile('audio/sfx/pop.wav')} volume={0.20} />
       </Sequence>
 
       {/* ══════════════════════════════════════════════════════════════
-          SCENE 3: 9.0s - 13.5s (135 frames, from 270 to 405)
+          SCENE 3: 18.37s - 27.33s (269 frames, from 551 to 820)
+          Voiceover: 8.44s (254 frames) + 15 frames safety breathing room
           Naskah: "Tapi tenang, kamu nguap bukan melulu karena kurang tidur. Di dalam otak kita, ada sistem saraf canggih bernama Mirror Neurons!"
           ══════════════════════════════════════════════════════════════ */}
-      <Sequence from={270} durationInFrames={135}>
+      <Sequence from={551} durationInFrames={269}>
         <Scene3_MirrorNeurons />
-        <ViralCaptions
-          badge="🧠 MIRROR NEURONS"
-          badgeColor="#38bdf8"
-          text="Di dalam otak kita, ada sistem saraf canggih bernama Mirror Neurons!"
-          highlightWord="Mirror Neurons!"
-        />
+        <Audio src={staticFile('audio/ep5_voiceover/scene3.mp3')} volume={1.0} />
+
+        {/* Phrase 1 (frames 0 - 120) */}
+        <Sequence from={0} durationInFrames={120}>
+          <ViralCaptions
+            badge="💤 BUKAN KURANG TIDUR"
+            badgeColor="#38bdf8"
+            text="Tapi tenang, kamu nguap bukan melulu karena kurang tidur."
+            highlightWord="kurang tidur."
+          />
+        </Sequence>
+
+        {/* Phrase 2 (frames 120 - 269) */}
+        <Sequence from={120} durationInFrames={149}>
+          <ViralCaptions
+            badge="🧠 MIRROR NEURONS"
+            badgeColor="#38bdf8"
+            text="Di dalam otak kita, ada sistem saraf canggih bernama Mirror Neurons!"
+            highlightWord="Mirror Neurons!"
+          />
+        </Sequence>
       </Sequence>
 
-      {/* ✨ TRANSITION 3→4: Centered at frame 405 (frames 399-411) */}
-      <Sequence from={399} durationInFrames={12}>
+      {/* ✨ TRANSITION 3→4: Centered at frame 820 (frames 814-826) */}
+      <Sequence from={814} durationInFrames={12}>
         <SceneTransition type="circle-reveal" durationFrames={12} color="#06b6d4" />
         <Audio src={staticFile('audio/sfx/whoosh.wav')} volume={0.16} />
       </Sequence>
 
       {/* ══════════════════════════════════════════════════════════════
-          SCENE 4: 13.5s - 17.67s (125 frames, from 405 to 530)
+          SCENE 4: 27.33s - 36.03s (261 frames, from 820 to 1081)
+          Voiceover: 8.20s (246 frames) + 15 frames safety breathing room
           Naskah: "Neuron cermin ini bertugas meniru tindakan orang lain secara otomatis, agar kita bisa merasakan apa yang orang lain rasakan."
           ══════════════════════════════════════════════════════════════ */}
-      <Sequence from={405} durationInFrames={125}>
+      <Sequence from={820} durationInFrames={261}>
         <Scene4_EmpathyMechanism />
-        <ViralCaptions
-          badge="🪞 SISTEM EMPATI"
-          badgeColor="#06b6d4"
-          text="Neuron cermin bertugas meniru aksi orang lain secara otomatis buat ngerasain emosinya."
-          highlightWord="meniru aksi"
-        />
+        <Audio src={staticFile('audio/ep5_voiceover/scene4.mp3')} volume={1.0} />
+
+        {/* Phrase 1 (frames 0 - 130) */}
+        <Sequence from={0} durationInFrames={130}>
+          <ViralCaptions
+            badge="🪞 SISTEM EMPATI"
+            badgeColor="#06b6d4"
+            text="Neuron cermin ini bertugas meniru tindakan orang lain secara otomatis,"
+            highlightWord="meniru tindakan"
+          />
+        </Sequence>
+
+        {/* Phrase 2 (frames 130 - 261) */}
+        <Sequence from={130} durationInFrames={131}>
+          <ViralCaptions
+            badge="📡 RESONANSI OTAK"
+            badgeColor="#06b6d4"
+            text="agar kita bisa merasakan apa yang orang lain rasakan."
+            highlightWord="merasakan"
+          />
+        </Sequence>
       </Sequence>
 
-      {/* ✨ TRANSITION 4→5: Centered at frame 530 (frames 524-536) */}
-      <Sequence from={524} durationInFrames={12}>
+      {/* ✨ TRANSITION 4→5: Centered at frame 1081 (frames 1075-1087) */}
+      <Sequence from={1075} durationInFrames={12}>
         <SceneTransition type="flash-cut" durationFrames={12} color="#0284c7" />
         <Audio src={staticFile('audio/sfx/glitch.wav')} volume={0.18} />
       </Sequence>
 
       {/* ══════════════════════════════════════════════════════════════
-          SCENE 5: 17.67s - 22.17s (135 frames, from 530 to 665)
+          SCENE 5: 36.03s - 45.47s (283 frames, from 1081 to 1364)
+          Voiceover: 8.91s (268 frames) + 15 frames safety breathing room
           Naskah: "Zaman purba dulu, nguap barengan dipakai buat sinkronisasi kelompok: mendinginkan suhu otak dan memastikan semua anggota tetap waspada!"
           ══════════════════════════════════════════════════════════════ */}
-      <Sequence from={530} durationInFrames={135}>
+      <Sequence from={1081} durationInFrames={283}>
         <Scene5_BrainRadiator />
-        <ViralCaptions
-          badge="❄️ RADIATOR OTAK"
-          badgeColor="#0284c7"
-          text="Zaman purba, nguap bareng mendinginkan suhu otak agar kelompok tetap waspada!"
-          highlightWord="mendinginkan suhu"
-        />
+        <Audio src={staticFile('audio/ep5_voiceover/scene5.mp3')} volume={1.0} />
+
+        {/* Phrase 1 (frames 0 - 140) */}
+        <Sequence from={0} durationInFrames={140}>
+          <ViralCaptions
+            badge="🔥 EVOLUSI PURBA"
+            badgeColor="#f59e0b"
+            text="Zaman purba dulu, nguap barengan dipakai buat sinkronisasi kelompok:"
+            highlightWord="sinkronisasi kelompok:"
+          />
+        </Sequence>
+
+        {/* Phrase 2 (frames 140 - 283) */}
+        <Sequence from={140} durationInFrames={143}>
+          <ViralCaptions
+            badge="❄️ RADIATOR OTAK"
+            badgeColor="#0284c7"
+            text="mendinginkan suhu otak dan memastikan semua anggota tetap waspada!"
+            highlightWord="tetap waspada!"
+          />
+        </Sequence>
       </Sequence>
 
-      {/* ✨ TRANSITION 5→6: Centered at frame 665 (frames 659-671) */}
-      <Sequence from={659} durationInFrames={12}>
+      {/* ✨ TRANSITION 5→6: Centered at frame 1364 (frames 1358-1370) */}
+      <Sequence from={1358} durationInFrames={12}>
         <SceneTransition type="wipe-diagonal" durationFrames={12} color="#10b981" />
         <Audio src={staticFile('audio/sfx/whoosh.wav')} volume={0.16} />
       </Sequence>
 
       {/* ══════════════════════════════════════════════════════════════
-          SCENE 6: 22.17s - 26.67s (135 frames, from 665 to 800)
+          SCENE 6: 45.47s - 56.10s (319 frames, from 1364 to 1683)
+          Voiceover: 10.11s (304 frames) + 15 frames safety breathing room
           Naskah: "Makanya, makin tinggi rasa empatimu, makin gampang kamu ketularan nguap. Penelitian membuktikan orang yang manipulatif dan minim empati justru kebal!"
           ══════════════════════════════════════════════════════════════ */}
-      <Sequence from={665} durationInFrames={135}>
+      <Sequence from={1364} durationInFrames={319}>
         <Scene6_EmpathyRadar />
-        <ViralCaptions
-          badge="📊 RADAR EMPATI"
-          badgeColor="#10b981"
-          text="Makin tinggi rasa empatimu, makin gampang ketularan. Orang minim empati justru kebal!"
-          highlightWord="rasa empatimu"
-        />
+        <Audio src={staticFile('audio/ep5_voiceover/scene6.mp3')} volume={1.0} />
+
+        {/* Phrase 1 (frames 0 - 155) */}
+        <Sequence from={0} durationInFrames={155}>
+          <ViralCaptions
+            badge="📊 RADAR EMPATI"
+            badgeColor="#10b981"
+            text="Makanya, makin tinggi rasa empatimu, makin gampang kamu ketularan nguap."
+            highlightWord="rasa empatimu,"
+          />
+        </Sequence>
+
+        {/* Phrase 2 (frames 155 - 319) */}
+        <Sequence from={155} durationInFrames={164}>
+          <ViralCaptions
+            badge="🛡️ MINIM EMPATI"
+            badgeColor="#ef4444"
+            text="Penelitian membuktikan orang yang manipulatif dan minim empati justru kebal!"
+            highlightWord="justru kebal!"
+          />
+        </Sequence>
       </Sequence>
 
-      {/* ✨ TRANSITION 6→7: Centered at frame 800 (frames 794-806) */}
-      <Sequence from={794} durationInFrames={12}>
+      {/* ✨ TRANSITION 6→7: Centered at frame 1683 (frames 1677-1689) */}
+      <Sequence from={1677} durationInFrames={12}>
         <SceneTransition type="circle-reveal" durationFrames={12} color="#34d399" />
         <Audio src={staticFile('audio/sfx/chime.wav')} volume={0.20} />
       </Sequence>
 
       {/* ══════════════════════════════════════════════════════════════
-          SCENE 7: 26.67s - 30.83s (125 frames, from 800 to 925)
+          SCENE 7: 56.10s - 65.07s (269 frames, from 1683 to 1952)
+          Voiceover: 8.44s (254 frames) + 15 frames safety breathing room
           Naskah: "Jadi kalau dari tadi kamu udah nguap berkali-kali, selamat! Itu bukti ilmiah kalau otakmu punya rasa empati sosial yang sehat."
           ══════════════════════════════════════════════════════════════ */}
-      <Sequence from={800} durationInFrames={125}>
+      <Sequence from={1683} durationInFrames={269}>
         <Scene7_SocialValidation />
-        <ViralCaptions
-          badge="🌟 OTAK SEHAT"
-          badgeColor="#34d399"
-          text="Kalau dari tadi kamu ikutan nguap, selamat! Itu bukti otak sosialmu sangat sehat."
-          highlightWord="otak sosialmu"
-        />
+        <Audio src={staticFile('audio/ep5_voiceover/scene7.mp3')} volume={1.0} />
+
+        {/* Phrase 1 (frames 0 - 125) */}
+        <Sequence from={0} durationInFrames={125}>
+          <ViralCaptions
+            badge="🌟 SELAMAT!"
+            badgeColor="#34d399"
+            text="Jadi kalau dari tadi kamu udah nguap berkali-kali, selamat!"
+            highlightWord="selamat!"
+          />
+        </Sequence>
+
+        {/* Phrase 2 (frames 125 - 269) */}
+        <Sequence from={125} durationInFrames={144}>
+          <ViralCaptions
+            badge="🧠 OTAK SEHAT"
+            badgeColor="#34d399"
+            text="Itu bukti ilmiah kalau otakmu punya rasa empati sosial yang sehat."
+            highlightWord="empati sosial yang sehat."
+          />
+        </Sequence>
       </Sequence>
 
-      {/* ✨ TRANSITION 7→8: Centered at frame 925 (frames 919-931) */}
-      <Sequence from={919} durationInFrames={12}>
+      {/* ✨ TRANSITION 7→8: Centered at frame 1952 (frames 1946-1958) */}
+      <Sequence from={1946} durationInFrames={12}>
         <SceneTransition type="flash-cut" durationFrames={12} color="#ef4444" />
         <Audio src={staticFile('audio/sfx/ding.wav')} volume={0.20} />
       </Sequence>
 
       {/* ══════════════════════════════════════════════════════════════
-          SCENE 8: 30.83s - 35.33s (135 frames, from 925 to 1060)
+          SCENE 8: 65.07s - 72.57s (225 frames, from 1952 to 2177)
+          Voiceover: 7.00s (210 frames) + 15 frames safety breathing room
           Naskah: "Jujur, selama nonton video ini kamu udah nguap berapa kali? Tulis di komentar dan follow biar Tiba-Tiba Paham!"
           ══════════════════════════════════════════════════════════════ */}
-      <Sequence from={925} durationInFrames={135}>
+      <Sequence from={1952} durationInFrames={225}>
         <Scene8_OutroCTA />
-        <ViralCaptions
-          badge="💬 KUIS NGUAP"
-          badgeColor="#ef4444"
-          text="Jujur kamu udah nguap berapa kali? Tulis di komentar dan follow biar Tiba-Tiba Paham!"
-          highlightWord="Tiba-Tiba Paham!"
-        />
+        <Audio src={staticFile('audio/ep5_voiceover/scene8.mp3')} volume={1.0} />
+
+        {/* Phrase 1 (frames 0 - 110) */}
+        <Sequence from={0} durationInFrames={110}>
+          <ViralCaptions
+            badge="💬 KUIS NGUAP"
+            badgeColor="#ef4444"
+            text="Jujur, selama nonton video ini kamu udah nguap berapa kali?"
+            highlightWord="berapa kali?"
+          />
+        </Sequence>
+
+        {/* Phrase 2 (frames 110 - 225) */}
+        <Sequence from={110} durationInFrames={115}>
+          <ViralCaptions
+            badge="👉 FOLLOW @TibaTibaPaham"
+            badgeColor="#ef4444"
+            text="Tulis di komentar dan follow biar Tiba-Tiba Paham!"
+            highlightWord="Tiba-Tiba Paham!"
+          />
+        </Sequence>
       </Sequence>
 
       {/* 🏷️ TOP HEADER WATERMARK (Kurzgesagt/Vox Branding) */}

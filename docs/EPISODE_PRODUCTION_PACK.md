@@ -174,8 +174,10 @@ Jujur siapa di sini yang paling anti dengerin ulang voice note sendiri? Coba nga
 ---
 
 ## 🥱 EPISODE 5: "Kenapa Nguap Itu Bisa Nular?"
+* **File Video:** [out/contagious_yawning_final.mp4](file:///c:/more/project-video/out/contagious_yawning_final.mp4) (72.57 detik / 2177 frames, 1080x1920 Full HD Vertikal, 24.8 MB)
 * **Pilar:** 🔵 Deep Mind-Blowing Science (Evolusi, Otak & Psikologi)
-* **Durasi Estimasi:** ~38–42 detik (8 Scene @ 30fps)
+* **Status:** Selesai Render & Siap Diunggah
+* **Durasi Final:** 72.57 detik (2177 frames @ 30fps)
 * **Fenomena Ilmiah:** *Contagious Yawning, Mirror Neurons & Brain Thermoregulation*.
 * **Folder Voiceover:** `public/audio/ep5_voiceover/scene1.mp3` s/d `scene8.mp3`
 
