@@ -30,17 +30,17 @@ Seluruh 8 gambar still preview telah digenerate di folder `public/`:
   > *"Padahal di dalam kepala kita, suara kita kerasa berat, berwibawa, dan keren banget!"*
 
 ### 3. Scene 3 — Dua Jalur Suara (8.5s – 13.0s)
-* **Visual:** Maskot Otak berkacamata audiometri menjelaskan diagram anatomi kepala manusia dengan siluet tengkorak akurat, otak pink, pita suara, dan koklea. Terlihat jelas pembagian 2 rute rambatan: Konduksi Udara (Cyan) dan Konduksi Tulang (Emas).
+* **Visual:** Maskot Otak berkacamata audiometri menjelaskan diagram anatomi kepala manusia dengan siluet profil halus alami, tengkorak akurat, otak pink, pita suara, dan koklea. Terlihat jelas pembagian 2 rute rambatan: Konduksi Udara (Cyan) dan Konduksi Tulang (Emas).
 * **Naskah VO (`public/audio/ep4_voiceover/scene3.mp3`):**  
   > *"Tenang, ini bukan salah mikrofon HP-mu. Saat kamu ngomong langsung, otakmu nerima suara lewat dua jalur sekaligus!"*
 
 ### 4. Scene 4 — Konduksi Udara (13.0s – 16.8s)
-* **Visual:** Bedah sains medium udara bebas. Gelombang suara cyan merambat dari mulut, menggetarkan partikel udara, lalu masuk ke lubang dan gendang telinga luar.
+* **Visual:** Bedah sains medium udara bebas. Penampang profil bibir & rongga mulut manusia mengeluarkan gelombang tekanan udara, menggetarkan partikel udara, lalu masuk ke liang telinga halus dan menggetarkan gendang telinga.
 * **Naskah VO (`public/audio/ep4_voiceover/scene4.mp3`):**  
   > *"Pertama, gelombang suara merambat lewat udara dari mulut masuk ke lubang telinga."*
 
 ### 5. Scene 5 — Konduksi Tulang (16.8s – 21.0s)
-* **Visual:** X-ray blueprint tengkorak lateral anatomis akurat (tempurung dahi, rongga mata, hidung, susunan gigi, dan tulang rahang bawah / *mandible*). Getaran mekanik pita suara merambat langsung lewat kepadatan tulang rahang & pelipis menuju koklea (*inner ear*). Stamp: `🔊 BASS BOOSTER ALAMI! (+6dB)`.
+* **Visual:** X-ray blueprint tengkorak lateral anatomis akurat (tempurung dahi, garis jahitan tengkorak, rongga mata, hidung, susunan gigi, dan tulang rahang bawah / *mandible*). Getaran mekanik pita suara merambat langsung lewat kepadatan tulang rahang & pelipis menuju koklea (*inner ear*). Stamp: `🔊 BASS BOOSTER ALAMI! (+6dB)`.
 * **Naskah VO (`public/audio/ep4_voiceover/scene5.mp3`):**  
   > *"Tapi yang kedua, getaran pita suaramu juga merambat langsung menembus tulang tengkorak!"*
 
