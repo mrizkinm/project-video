@@ -4,6 +4,7 @@ import { IntroTibaTibaPahamVideo } from './videos/IntroTibaTibaPaham/Composition
 import { DoorwayEffectVideo } from './videos/DoorwayEffect/Composition';
 import { CoffeeParadoxVideo } from './videos/CoffeeParadox/Composition';
 import { HypnicJerkVideo } from './videos/HypnicJerk/Composition';
+import { VoiceConfrontationVideo } from './videos/VoiceConfrontation/Composition';
 import { Scene1_SleepyCoffee } from './videos/CoffeeParadox/scenes/Scene1_SleepyCoffee';
 import { Scene2_CrashDilemma } from './videos/CoffeeParadox/scenes/Scene2_CrashDilemma';
 import { Scene3_BrainParkingLot } from './videos/CoffeeParadox/scenes/Scene3_BrainParkingLot';
@@ -65,6 +66,16 @@ export const Root: React.FC = () => {
         id="HypnicJerk"
         component={HypnicJerkVideo}
         durationInFrames={1220}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      {/* VIDEO 4: Voice Confrontation Effect - Kenapa Suara Rekaman Sendiri Kedengeran Asing & Geli (34.83 seconds / 1045 frames @ 30 fps) */}
+      <Composition
+        id="VoiceConfrontation"
+        component={VoiceConfrontationVideo}
+        durationInFrames={1045}
         fps={30}
         width={1080}
         height={1920}
