@@ -71,11 +71,11 @@ export const Root: React.FC = () => {
         height={1920}
       />
 
-      {/* VIDEO 4: Voice Confrontation Effect - Kenapa Suara Rekaman Sendiri Kedengeran Asing & Geli (34.83 seconds / 1045 frames @ 30 fps) */}
+      {/* VIDEO 4: Voice Confrontation Effect - Kenapa Suara Rekaman Sendiri Kedengeran Asing & Geli (59.43 seconds / 1783 frames @ 30 fps) */}
       <Composition
         id="VoiceConfrontation"
         component={VoiceConfrontationVideo}
-        durationInFrames={1045}
+        durationInFrames={1783}
         fps={30}
         width={1080}
         height={1920}

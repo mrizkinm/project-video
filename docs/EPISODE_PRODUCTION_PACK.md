@@ -139,17 +139,39 @@ Semalem ada yang kakinya nyentak pas mau tidur? Coba absen di bawah! 👇
 
 ---
 
-## 🎙️ EPISODE 4: "Kenapa Suara Rekaman Sendiri Kedengeran Asing & Geli?"
-* **Pilar:** 🟢 Viral Everyday Glitches (Biologi & Suara)
-* **Durasi Estimasi:** 35 detik (1050 frames @ 30fps)
-* **Fenomena Ilmiah:** *Bone Conduction vs. Air Conduction*.
+## 🎙️ EPISODE 4: "Kenapa Suara Rekaman Sendiri Kedengeran Asing & Geli?" (Voice Confrontation Effect)
+* **File Video:** [out/voice_confrontation_final.mp4](file:///c:/more/project-video/out/voice_confrontation_final.mp4) (59.43 detik, 1080x1920 Full HD Vertikal, 1783 frames)
+* **Pilar:** 🟢 Viral Everyday Glitches (Biologi & Sains Suara)
+* **Status:** ✅ Selesai Render & Siap Diunggah (100% Utuh Voiceover Pengguna + Dynamic Subtitles Inklusif)
+* **Karakter & Maskot:** Main Character (Mood: confused ➔ neutral ➔ happy), Brain Mascot (Mood: audiometry glasses ➔ happy ➔ waving)
 
-### 🎬 Ringkasan Naskah:
-1. **Hook (0-3s):** *"Pernah dengerin ulang voice note WhatsApp sendiri dan langsung mikir: 'Hah?! Suaraku beneran secempreng ini?!'."*
-2. **Relatable (3-10s):** Di kepala kita suara kita berasa berat, berwibawa, dan keren. Tapi di HP kok kayak suara orang lain?
-3. **Sains (10-24s):** Saat kamu bicara langsung, suaramu masuk lewat dua jalur: getaran udara (*Air conduction*) dan getaran tulang tengkorak (*Bone conduction*). Tulang tengkorakmu meredam frekuensi tinggi dan memberi resonansi bass yang hangat. Saat dengar rekaman, kamu cuma dengar lewat udara!
-4. **Takeaway (24-32s):** Kabar baiknya: semua orang di sekitarmu udah terbiasa sama suaramu yang asli. Cuma kamu satu-satunya orang di bumi yang ngerasa suaramu aneh!
-5. **CTA (32-35s):** *"Kirim video ini ke temenmu yang paling anti dengerin voice note-nya sendiri!"*
+### 📱 Paket Teks Upload Episode 4 (Tinggal Copy-Paste):
+
+#### 1. Pilihan Judul Video:
+* **TikTok / Reels:** *Pernah nggak geli sendiri pas dengerin voice note WhatsApp rekaman sendiri? 😭🎙️*
+* **YouTube Shorts:** *Kenapa Suara Rekaman Sendiri Kedengeran Cempreng & Aneh? 🎙️🧠*
+
+#### 2. Naskah Caption / Deskripsi (Tinggal Copy):
+```text
+Pernah nggak, pas iseng muter balik voice note WhatsApp sendiri, kamu langsung geli dan mikir: "Hah, suaraku beneran secempreng ini?!" 😭🎙️
+
+Tenang, ini bukan salah mikrofon HP-mu. Saat kamu ngomong langsung, otakmu nerima suara lewat dua jalur sekaligus: getaran udara dan getaran tulang tengkorak! Tulang tengkorakmu berfungsi kayak "bass booster" alami yang bikin suaramu terdengar lebih berat dan berwibawa di dalam kepalamu sendiri. 🧠🦴
+
+Nah, pas direkam di HP, yang ketangkep cuma getaran udara tanpa booster tulang tadi. Tapi tenang aja, semua temanmu udah terbiasa sama suaramu yang asli kok! ✨
+
+Kirim video ini ke temanmu yang paling anti dengerin voice note-nya sendiri! 😂👇
+
+#TibaTibaPaham #SainsSuara #VoiceNote #FaktaTubuh #Edukasi
+```
+
+#### 3. Komentar Sematan Pertama (*Pinned Comment*):
+```text
+Jujur siapa di sini yang paling anti dengerin ulang voice note sendiri? Coba ngaku di bawah! 😂👇
+```
+
+#### 4. Rekomendasi Cover / Thumbnail:
+* Pilih frame di awal scene (saat karakter megang HP dengan bubble VN hijau WhatsApp dan ekspresi geli) atau di Scene 5 (saat diagram lateral tengkorak bercahaya emas dengan label "BASS BOOSTER ALAMI!").
+* Teks Cover Rekomendasi: **"DENGER VOICE NOTE SENDIRI... KOK GELI?!"**
 
 ---
 
