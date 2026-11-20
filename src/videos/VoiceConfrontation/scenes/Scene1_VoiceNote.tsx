@@ -28,27 +28,34 @@ export const Scene1_VoiceNote: React.FC = () => {
           fontFamily: "'Fredoka', 'Plus Jakarta Sans', sans-serif",
         }}
       >
-        {/* Floating WhatsApp Voice Note Bubble Pop-Up (Cleanly positioned on right side) */}
-        <g transform={`translate(700, 620) scale(${Math.max(0, chatPop)})`}>
+        <defs>
+          <filter id="vnGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="10" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+
+        {/* Floating WhatsApp Voice Note Bubble - Elevated & Shifted Right (100% UNBLOCKED from Head) */}
+        <g transform={`translate(730, 480) scale(${Math.max(0, chatPop)})`}>
           {/* Chat Container */}
           <rect
-            x="-190"
-            y="-52"
-            width="380"
-            height="104"
-            rx="26"
+            x="-200"
+            y="-54"
+            width="400"
+            height="108"
+            rx="28"
             fill="#075e54"
             stroke="#25d366"
-            strokeWidth="3.5"
-            filter="drop-shadow(0px 10px 24px rgba(0,0,0,0.5))"
+            strokeWidth="4"
+            filter="url(#vnGlow)"
           />
           {/* Play Icon Circle */}
-          <circle cx="-135" cy="0" r="26" fill="#25d366" />
-          <polygon points="-140,-13 -140,13 -122,0" fill="#ffffff" />
+          <circle cx="-140" cy="0" r="28" fill="#25d366" />
+          <polygon points="-146,-14 -146,14 -126,0" fill="#ffffff" />
 
           {/* Animated Audio Waveform Bars */}
-          {[-80, -60, -40, -20, 0, 20, 40, 60, 80, 100, 120].map((barX, idx) => {
-            const barH = 16 + Math.sin((frame * 0.3) + idx * 0.8) * 18;
+          {[-85, -65, -45, -25, -5, 15, 35, 55, 75, 95, 115, 135].map((barX, idx) => {
+            const barH = 16 + Math.sin((frame * 0.3) + idx * 0.8) * 20;
             return (
               <line
                 key={idx}
@@ -63,32 +70,35 @@ export const Scene1_VoiceNote: React.FC = () => {
             );
           })}
           {/* Audio Duration */}
-          <text x="145" y="7" fill="#86efac" fontSize="18" fontWeight="800" fontFamily="'Fredoka', sans-serif">
+          <text x="160" y="8" fill="#86efac" fontSize="20" fontWeight="800" fontFamily="'Fredoka', sans-serif">
             0:14
           </text>
+
+          {/* WhatsApp Chat Pointer Tail pointing down-left toward phone */}
+          <polygon points="-180,54 -160,54 -190,78" fill="#075e54" stroke="#25d366" strokeWidth="2" />
         </g>
 
-        {/* Sound Ripples from phone */}
-        <g transform="translate(620, 980)">
+        {/* Sound Waves radiating upwards from smartphone held in hand */}
+        <g transform="translate(560, 960)">
           {[1, 2, 3].map((rIdx) => {
             const waveProgress = ((frame * 4 + rIdx * 20) % 60) / 60;
             return (
               <path
                 key={rIdx}
-                d="M 10 -25 C 25 -10 25 10 10 25"
+                d="M 15 -35 C 35 -15 35 15 15 35"
                 fill="none"
                 stroke="#25d366"
-                strokeWidth="4"
+                strokeWidth="4.5"
                 strokeLinecap="round"
                 opacity={1 - waveProgress}
-                transform={`scale(${1 + waveProgress * 0.8})`}
+                transform={`scale(${1 + waveProgress * 0.9})`}
               />
             );
           })}
         </g>
 
-        {/* Character Holding Smartphone with Confused / Cringe Expression */}
-        <g transform="translate(480, 1060)">
+        {/* Character Shifted Slightly Left to Give Room to VN Bubble */}
+        <g transform="translate(410, 1070)">
           <MainCharacter
             mood="confused"
             holdingItem="phone"
