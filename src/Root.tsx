@@ -5,6 +5,7 @@ import { DoorwayEffectVideo } from './videos/DoorwayEffect/Composition';
 import { CoffeeParadoxVideo } from './videos/CoffeeParadox/Composition';
 import { HypnicJerkVideo } from './videos/HypnicJerk/Composition';
 import { VoiceConfrontationVideo } from './videos/VoiceConfrontation/Composition';
+import { ContagiousYawningVideo } from './videos/ContagiousYawning/Composition';
 import { Scene1_SleepyCoffee } from './videos/CoffeeParadox/scenes/Scene1_SleepyCoffee';
 import { Scene2_CrashDilemma } from './videos/CoffeeParadox/scenes/Scene2_CrashDilemma';
 import { Scene3_BrainParkingLot } from './videos/CoffeeParadox/scenes/Scene3_BrainParkingLot';
@@ -76,6 +77,16 @@ export const Root: React.FC = () => {
         id="VoiceConfrontation"
         component={VoiceConfrontationVideo}
         durationInFrames={1783}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      {/* VIDEO 5: Contagious Yawning - Kenapa Nguap Itu Bisa Nular (35.33 seconds / 1060 frames @ 30 fps) */}
+      <Composition
+        id="ContagiousYawning"
+        component={ContagiousYawningVideo}
+        durationInFrames={1060}
         fps={30}
         width={1080}
         height={1920}
