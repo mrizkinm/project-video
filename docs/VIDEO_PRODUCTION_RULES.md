@@ -92,7 +92,7 @@ Dokumen ini adalah ringkasan aturan baku (*hard rules*) hasil iterasi dan perbai
 
 ## 8. 🛡️ Zona Bebas Tabrakan Vertikal (Anti-Overlap & Subtitle Safety Buffer)
 - **Batas Bawah Komponen Tengah (Showcase Box / Card / Diagram):**
-  - Subtitle dan Category Badge (`ViralCaptions`) menempati area `bottom: 380px` (titik atas badge mulai di sekitar **Y ≈ 1300px – 1320px**).
-  - **DILARANG KERAS** membiarkan bagian bawah kotak showcase, diagram, kartu perbandingan, atau teks narasi menjorok terlalu ke bawah hingga menabrak/tertutup oleh category badge (`ViralCaptions`).
-  - **Batas Maksimal Bawah:** Seluruh kotak tengah/diagram WAJIB berakhir maksimal di **Y = 1200px – 1220px**, menyisakan *safety breathing room* minimal **+100px – 140px** di atas badge subtitle.
-  - **Pusat Transformasi Vertikal:** Untuk kotak berukuran tinggi 750px – 850px, titik pusat (*center transform*) wajib diposisikan di **Y = 740px – 800px** (BUKAN Y = 880px – 980px) agar seimbang di tengah dan tidak terdorong ke bawah.
+  - Subtitle dan Category Badge (`ViralCaptions`) menempati area `bottom: 380px` (titik atas badge mulai di sekitar **Y ≈ 1310px – 1320px**).
+  - **DILARANG menempel atau menabrak badge**, dan **DILARANG juga menyisakan celah terlalu renggang** (>150px – 200px) yang menyebabkan ruang tengah kosong dan komponen terdorong terlalu ke atas.
+  - **Jarak Bersih Ideal (*Sweet Spot*):** Berikan jarak aman terukur sebesar **60px – 90px** (optimal **~70px – 80px**) di atas badge subtitle.
+  - **Batas Maksimal Bawah Kotak:** Seluruh kotak tengah/diagram berukuran tinggi 780px – 840px wajib berakhir di kisaran **Y = 1230px – 1250px**, dengan titik pusat vertikal (*center transform*) diposisikan ideal di **Y = 810px – 830px**.

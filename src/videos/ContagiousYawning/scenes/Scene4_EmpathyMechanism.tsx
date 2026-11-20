@@ -71,13 +71,13 @@ export const Scene4_EmpathyMechanism: React.FC = () => {
           </text>
         </g>
 
-        {/* 2. CENTRAL SCIENTIFIC SHOWCASE (Two Minds Synchronizing, 860px Wide, y=750) */}
-        <g transform={`translate(540, 750) scale(${Math.max(0, cardPop)})`}>
+        {/* 2. CENTRAL SCIENTIFIC SHOWCASE (Two Minds Synchronizing, 860px Wide, y=815 - Balanced Sweet Spot) */}
+        <g transform={`translate(540, 815) scale(${Math.max(0, cardPop)})`}>
           <rect
             x="-430"
-            y="-380"
+            y="-410"
             width="860"
-            height="760"
+            height="820"
             rx="40"
             fill="url(#boxGrad4Yawn)"
             stroke="#1e293b"

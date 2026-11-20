@@ -75,13 +75,13 @@ export const Scene6_EmpathyRadar: React.FC = () => {
           </text>
         </g>
 
-        {/* 2. DUAL COMPARISON STAGE (860px Wide, y=750 - Safe Buffer from Subtitles) */}
-        <g transform={`translate(540, 750) scale(${Math.max(0, cardPop)})`}>
+        {/* 2. DUAL COMPARISON STAGE (860px Wide, y=815 - Balanced Sweet Spot) */}
+        <g transform={`translate(540, 815) scale(${Math.max(0, cardPop)})`}>
           <rect
             x="-430"
-            y="-380"
+            y="-410"
             width="860"
-            height="760"
+            height="820"
             rx="40"
             fill="#0f172a"
             stroke="#1e293b"
@@ -90,14 +90,14 @@ export const Scene6_EmpathyRadar: React.FC = () => {
           />
 
           {/* ── LEFT COLUMN: EMPATI TINGGI (GREEN) ── */}
-          <g transform="translate(-210, -45)">
+          <g transform="translate(-210, -50)">
             {/* Background Card */}
             <rect
               x="-180"
-              y="-245"
+              y="-260"
               width="360"
-              height="490"
-              rx="28"
+              height="520"
+              rx="30"
               fill="#064e3b"
               stroke="#10b981"
               strokeWidth="3.5"
@@ -105,14 +105,14 @@ export const Scene6_EmpathyRadar: React.FC = () => {
             />
 
             {/* Glowing Heart Icon */}
-            <circle cx="0" cy="-155" r="44" fill="#047857" stroke="#34d399" strokeWidth="3" filter="url(#heartGlow6)" />
-            <text x="0" y="-144" fill="#ffffff" fontSize="38" textAnchor="middle">💚</text>
+            <circle cx="0" cy="-165" r="46" fill="#047857" stroke="#34d399" strokeWidth="3" filter="url(#heartGlow6)" />
+            <text x="0" y="-154" fill="#ffffff" fontSize="40" textAnchor="middle">💚</text>
 
             {/* Title */}
-            <text x="0" y="-75" fill="#a7f3d0" fontSize="24" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+            <text x="0" y="-80" fill="#a7f3d0" fontSize="24" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
               EMPATI TINGGI
             </text>
-            <text x="0" y="-46" fill="#6ee7b7" fontSize="17" fontWeight="800" textAnchor="middle" fontFamily="'Plus Jakarta Sans', sans-serif">
+            <text x="0" y="-50" fill="#6ee7b7" fontSize="17" fontWeight="800" textAnchor="middle" fontFamily="'Plus Jakarta Sans', sans-serif">
               Sangat Peka & Hangat
             </text>
 
@@ -126,8 +126,8 @@ export const Scene6_EmpathyRadar: React.FC = () => {
             </g>
 
             {/* Result Stamp */}
-            <g transform="translate(0, 115)">
-              <rect x="-140" y="-34" width="280" height="68" rx="18" fill="#047857" stroke="#6ee7b7" strokeWidth="2" />
+            <g transform="translate(0, 120)">
+              <rect x="-140" y="-35" width="280" height="70" rx="18" fill="#047857" stroke="#6ee7b7" strokeWidth="2" />
               <text x="0" y="-4" fill="#ffffff" fontSize="19" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
                 ✅ CEPAT TERTULAR!
               </text>
@@ -138,14 +138,14 @@ export const Scene6_EmpathyRadar: React.FC = () => {
           </g>
 
           {/* ── RIGHT COLUMN: MINIM EMPATI / KEBAL (RED) ── */}
-          <g transform="translate(210, -45)">
+          <g transform="translate(210, -50)">
             {/* Background Card */}
             <rect
               x="-180"
-              y="-245"
+              y="-260"
               width="360"
-              height="490"
-              rx="28"
+              height="520"
+              rx="30"
               fill="#450a0a"
               stroke="#ef4444"
               strokeWidth="3.5"
@@ -153,14 +153,14 @@ export const Scene6_EmpathyRadar: React.FC = () => {
             />
 
             {/* Frozen Shield Icon */}
-            <circle cx="0" cy="-155" r="44" fill="#7f1d1d" stroke="#f87171" strokeWidth="3" />
-            <text x="0" y="-144" fill="#ffffff" fontSize="38" textAnchor="middle">🛡️</text>
+            <circle cx="0" cy="-165" r="46" fill="#7f1d1d" stroke="#f87171" strokeWidth="3" />
+            <text x="0" y="-154" fill="#ffffff" fontSize="40" textAnchor="middle">🛡️</text>
 
             {/* Title */}
-            <text x="0" y="-75" fill="#fecaca" fontSize="24" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+            <text x="0" y="-80" fill="#fecaca" fontSize="24" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
               MINIM EMPATI
             </text>
-            <text x="0" y="-46" fill="#fca5a5" fontSize="17" fontWeight="800" textAnchor="middle" fontFamily="'Plus Jakarta Sans', sans-serif">
+            <text x="0" y="-50" fill="#fca5a5" fontSize="17" fontWeight="800" textAnchor="middle" fontFamily="'Plus Jakarta Sans', sans-serif">
               Cenderung Kebal & Dingin
             </text>
 
@@ -174,8 +174,8 @@ export const Scene6_EmpathyRadar: React.FC = () => {
             </g>
 
             {/* Result Stamp */}
-            <g transform="translate(0, 115)">
-              <rect x="-140" y="-34" width="280" height="68" rx="18" fill="#7f1d1d" stroke="#fca5a5" strokeWidth="2" />
+            <g transform="translate(0, 120)">
+              <rect x="-140" y="-35" width="280" height="70" rx="18" fill="#7f1d1d" stroke="#fca5a5" strokeWidth="2" />
               <text x="0" y="-4" fill="#ffffff" fontSize="19" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
                 🚫 SUSAH KETULARAN!
               </text>
@@ -186,7 +186,7 @@ export const Scene6_EmpathyRadar: React.FC = () => {
           </g>
 
           {/* 3. SCIENTIFIC TAKEAWAY BANNER (Bottom, comfortably within card) */}
-          <g transform="translate(0, 290)">
+          <g transform="translate(0, 310)">
             <rect
               x="-360"
               y="-42"
