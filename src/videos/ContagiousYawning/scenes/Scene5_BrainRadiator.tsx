@@ -18,8 +18,13 @@ export const Scene5_BrainRadiator: React.FC = () => {
     config: { damping: 12, stiffness: 120 },
   });
 
-  // Thermometer temperature animation dropping
-  const tempDrop = Math.sin(frame * 0.1) * 0.3;
+  // Campfire flame flickering
+  const fireFlicker1 = Math.sin(frame * 0.45) * 12;
+  const fireFlicker2 = Math.cos(frame * 0.35) * 9;
+
+  // Radar pulse expansion
+  const radarRadius = 200 + ((frame * 4.5) % 260);
+  const radarOpacity = 1 - (((frame * 4.5) % 260) / 260);
 
   return (
     <AbsoluteFill>
@@ -37,173 +42,359 @@ export const Scene5_BrainRadiator: React.FC = () => {
         }}
       >
         <defs>
-          <filter id="iceGlow5" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="8" result="blur" />
+          <filter id="fireGlow5" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="18" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
           </filter>
-          <linearGradient id="iceAirGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <filter id="coolGlow5" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="12" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+          <linearGradient id="caveCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#0b132b" stopOpacity="0.98" />
+            <stop offset="50%" stopColor="#1c2541" stopOpacity="0.98" />
+            <stop offset="100%" stopColor="#080c18" stopOpacity="1" />
+          </linearGradient>
+          <linearGradient id="fireGrad1" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="#dc2626" />
+            <stop offset="50%" stopColor="#f97316" />
+            <stop offset="100%" stopColor="#fde047" />
+          </linearGradient>
+          <linearGradient id="fireGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="#ea580c" />
+            <stop offset="60%" stopColor="#fbbf24" />
+            <stop offset="100%" stopColor="#ffffff" />
+          </linearGradient>
+          <linearGradient id="coolBrainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#38bdf8" />
-            <stop offset="100%" stopColor="#06b6d4" />
-          </linearGradient>
-          <linearGradient id="thermoGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-            <stop offset="0%" stopColor="#0284c7" />
-            <stop offset="60%" stopColor="#38bdf8" />
-            <stop offset="100%" stopColor="#f43f5e" />
-          </linearGradient>
-          <linearGradient id="brainCoolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#0284c7" />
-            <stop offset="50%" stopColor="#0369a1" />
-            <stop offset="100%" stopColor="#0c4a6e" />
+            <stop offset="50%" stopColor="#0284c7" />
+            <stop offset="100%" stopColor="#075985" />
           </linearGradient>
         </defs>
 
-        {/* 1. TOP HEADER STAMP: Radiator Pendingin Otak */}
-        <g transform={`translate(540, 230) rotate(-1.5) scale(${Math.max(0, stampPop)})`}>
+        {/* 1. TOP HEADER STAMP: Evolusi & Sinkronisasi Kelompok */}
+        <g transform={`translate(540, 225) rotate(-1) scale(${Math.max(0, stampPop)})`}>
           <rect
-            x="-310"
+            x="-330"
             y="-38"
-            width="620"
+            width="660"
             height="76"
             rx="26"
             fill="#0f172a"
-            stroke="#38bdf8"
+            stroke="#f59e0b"
             strokeWidth="4"
-            filter="drop-shadow(0px 8px 24px rgba(56, 189, 248, 0.45))"
+            filter="drop-shadow(0px 8px 24px rgba(245, 158, 11, 0.45))"
           />
           <text
             x="0"
             y="12"
-            fill="#bae6fd"
-            fontSize="30"
+            fill="#fef08a"
+            fontSize="28"
             fontWeight="900"
             textAnchor="middle"
             fontFamily="'Fredoka', sans-serif"
             letterSpacing="1"
           >
-            ❄️ RADIATOR PENDINGIN OTAK
+            🔥 RADIATOR ALAMI & EVOLUSI PURBA
           </text>
         </g>
 
-        {/* 2. CENTRAL SCIENTIFIC SHOWCASE: THE RADIATOR BRAIN (860px Wide) */}
-        <g transform={`translate(540, 840) scale(${Math.max(0, cardPop)})`}>
+        {/* 2. CENTRAL PREHISTORIC SHOWCASE CARD (880px Wide, y=790) */}
+        <g transform={`translate(540, 790) scale(${Math.max(0, cardPop)})`}>
+          {/* Outer Showcase Box */}
           <rect
-            x="-430"
-            y="-460"
-            width="860"
-            height="920"
+            x="-440"
+            y="-430"
+            width="880"
+            height="860"
             rx="40"
-            fill="#0f172a"
-            stroke="#1e293b"
+            fill="url(#caveCardGrad)"
+            stroke="#334155"
             strokeWidth="4"
-            filter="drop-shadow(0px 20px 40px rgba(0,0,0,0.6))"
+            filter="drop-shadow(0px 20px 40px rgba(0,0,0,0.7))"
           />
 
-          {/* Central Stylized Brain with Cold Cooling Circulation */}
-          <g transform="translate(-70, -35)">
-            {/* Brain Aura / Cooling Glow */}
-            <circle cx="0" cy="0" r="200" fill="rgba(56, 189, 248, 0.16)" filter="url(#iceGlow5)" />
-
-            {/* Brain Mass with rich cool gradient */}
-            <path
-              d="M -130 -40
-                 C -170 -130 -70 -190 0 -135
-                 C 70 -190 170 -130 130 -40
-                 C 190 50 110 150 0 130
-                 C -110 150 -190 50 -130 -40 Z"
-              fill="url(#brainCoolGrad)"
-              stroke="#38bdf8"
-              strokeWidth="5"
-              filter="drop-shadow(0px 10px 20px rgba(2, 132, 199, 0.5))"
+          {/* Starry night & Moon in prehistoric sky */}
+          {[-340, -220, 260, 360].map((starX, i) => (
+            <circle
+              key={i}
+              cx={starX}
+              cy={-360 + (i % 2) * 50}
+              r={2.5 + (i % 2)}
+              fill="#fef08a"
+              opacity={0.6 + Math.sin(frame * 0.2 + i) * 0.3}
             />
-            {/* Brain Wrinkle Folds */}
-            <path d="M -50 -80 Q -20 -40 -60 20 Q -80 50 -40 80" stroke="#bae6fd" strokeWidth="5" fill="none" strokeLinecap="round" />
-            <path d="M 50 -80 Q 20 -40 60 20 Q 80 50 40 80" stroke="#bae6fd" strokeWidth="5" fill="none" strokeLinecap="round" />
+          ))}
 
-            {/* Cold Air Inflow Arrows (Rushing in like radiator coolants) */}
-            {[-120, -40, 40, 110].map((posY, idx) => {
-              const arrowOffset = (frame * 5 + idx * 30) % 200;
+          {/* Prehistoric Ground Silhouette */}
+          <path
+            d="M -440 200 Q -200 170 0 190 Q 200 210 440 190 L 440 430 L -440 430 Z"
+            fill="#0f172a"
+          />
+
+          {/* ── 📡 COLLECTIVE VIGILANCE RADAR HEADER (At very top of card) ── */}
+          <g transform="translate(0, -360)">
+            <rect x="-210" y="-22" width="420" height="44" rx="22" fill="rgba(15, 23, 42, 0.95)" stroke="#38bdf8" strokeWidth="2.5" />
+            <text x="0" y="8" fill="#7dd3fc" fontSize="20" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+              📡 RADAR KEWASPADAAN KELOMPOK
+            </text>
+          </g>
+
+          {/* ── 📡 EXPANDING RADAR DOME WAVES (Center at campfire y=90) ── */}
+          <g transform="translate(0, 90)">
+            {/* Outer Expanding Radar Wave */}
+            <ellipse
+              cx="0"
+              cy="0"
+              rx={radarRadius * 1.55}
+              ry={radarRadius * 0.85}
+              fill="none"
+              stroke="#38bdf8"
+              strokeWidth="3.5"
+              strokeDasharray="12 10"
+              opacity={radarOpacity * 0.75}
+            />
+            {/* Inner Fixed Sync Dome */}
+            <ellipse
+              cx="0"
+              cy="0"
+              rx="400"
+              ry="230"
+              fill="rgba(56, 189, 248, 0.05)"
+              stroke="#06b6d4"
+              strokeWidth="2.5"
+              strokeDasharray="8 6"
+            />
+          </g>
+
+          {/* ── 🔥 CAMPFIRE IN CENTER (Base y=170) ── */}
+          <g transform="translate(0, 170)">
+            {/* Warm Radial Firelight Glow on Ground */}
+            <ellipse cx="0" cy="15" rx="260" ry="80" fill="rgba(249, 115, 22, 0.28)" filter="url(#fireGlow5)" />
+
+            {/* Stone Ring around fire */}
+            {[-80, -50, -15, 20, 55, 85].map((sX, i) => (
+              <ellipse key={i} cx={sX} cy={20 + (i % 2) * 4} rx="20" ry="12" fill="#475569" stroke="#1e293b" strokeWidth="2.5" />
+            ))}
+
+            {/* Crossed Wooden Fireplace Logs */}
+            <line x1="-70" y1="14" x2="70" y2="-14" stroke="#78350f" strokeWidth="18" strokeLinecap="round" />
+            <line x1="-65" y1="-14" x2="65" y2="14" stroke="#92400e" strokeWidth="18" strokeLinecap="round" />
+
+            {/* Outer Orange Flame */}
+            <path
+              d={`M -55 8
+                 C -70 -45 -35 ${ -100 + fireFlicker1 } 0 ${ -140 + fireFlicker2 }
+                 C 35 ${ -100 - fireFlicker1 } 70 -45 55 8
+                 Z`}
+              fill="url(#fireGrad1)"
+              filter="url(#fireGlow5)"
+            />
+
+            {/* Inner Yellow Core Flame */}
+            <path
+              d={`M -30 8
+                 C -40 -30 -18 ${ -70 + fireFlicker2 } 0 ${ -100 + fireFlicker1 }
+                 C 18 ${ -70 - fireFlicker2 } 40 -30 30 8
+                 Z`}
+              fill="url(#fireGrad2)"
+            />
+
+            {/* Rising Fire Sparks / Embers */}
+            {[1, 2, 3, 4].map((spIdx) => {
+              const spY = -80 - ((frame * 3.5 + spIdx * 30) % 110);
+              const spX = Math.sin(frame * 0.25 + spIdx) * 25;
               return (
-                <g key={idx} transform={`translate(${-240 + arrowOffset}, ${posY})`}>
-                  <line x1="-30" y1="0" x2="30" y2="0" stroke="#38bdf8" strokeWidth="4.5" strokeLinecap="round" />
-                  <polygon points="30,0 20,-6 20,6" fill="#38bdf8" />
-                </g>
+                <circle key={spIdx} cx={spX} cy={spY} r="3.5" fill="#fef08a" opacity={1 - (Math.abs(spY + 80) / 110)} />
               );
             })}
-
-            {/* Cool Air Tag on Left with plenty of clearance */}
-            <g transform="translate(-250, -190)">
-              <rect x="-95" y="-18" width="190" height="36" rx="18" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
-              <text x="0" y="6" fill="#7dd3fc" fontSize="17" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
-                🌬️ Udara Dingin
-              </text>
-            </g>
-
-            {/* Cold Ice Crystals */}
-            {[-80, 80].map((xP, i) => (
-              <text key={i} x={xP} y={-85} fill="#7dd3fc" fontSize="34" filter="url(#iceGlow5)">
-                ❄️
-              </text>
-            ))}
           </g>
 
-          {/* 3. TEMPERATURE GAUGE THERMOMETER (Right Side of Box) */}
-          <g transform="translate(260, -35)">
-            {/* Thermometer Glass Outer Frame */}
-            <rect x="-24" y="-180" width="48" height="320" rx="24" fill="#1e293b" stroke="#64748b" strokeWidth="4" />
-            {/* Thermometer Bulb Base */}
-            <circle cx="0" cy="150" r="44" fill="#0284c7" stroke="#38bdf8" strokeWidth="4" />
+          {/* ── 👥 PREHISTORIC HUMANS AROUND FIRE (Larger & More Expressive) ── */}
 
-            {/* Mercury Liquid Level (Animated Dropping -0.5C) */}
-            <rect x="-14" y="-30" width="28" height="170" rx="14" fill="url(#thermoGrad)" />
-            <circle cx="0" cy="150" r="32" fill="#0284c7" />
-
-            {/* Measurement Ticks */}
-            {[-140, -100, -60, -20, 20, 60, 100].map((tY, i) => (
-              <line key={i} x1="28" y1={tY} x2="42" y2={tY} stroke="#94a3b8" strokeWidth="3" />
-            ))}
-
-            {/* Temperature Value Tag */}
-            <g transform="translate(-10, -215)">
-              <rect x="-85" y="-22" width="170" height="44" rx="22" fill="#0c4a6e" stroke="#38bdf8" strokeWidth="2.5" />
-              <text x="0" y="8" fill="#38bdf8" fontSize="22" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
-                36.7°C ❄️ ⬇️
-              </text>
+          {/* 1. CAVEMAN 1 (Left - Alert Tribe Member) */}
+          <g transform="translate(-260, 110)">
+            {/* Alert Eye Icon */}
+            <g transform="translate(0, -180)">
+              <circle cx="0" cy="0" r="24" fill="#0f172a" stroke="#facc15" strokeWidth="3" />
+              <text x="0" y="8" fill="#facc15" fontSize="24" textAnchor="middle">👁️</text>
             </g>
+
+            {/* Body / Fur Tunic */}
+            <path d="M -55 70 L -30 -40 L 30 -40 L 55 70 Z" fill="#92400e" stroke="#78350f" strokeWidth="3.5" />
+            {/* Fur Tunic Texture */}
+            <circle cx="-14" cy="5" r="5" fill="#78350f" />
+            <circle cx="15" cy="25" r="5" fill="#78350f" />
+
+            {/* Shaggy Caveman Hair & Beard */}
+            <ellipse cx="0" cy="-85" rx="42" ry="40" fill="#1c1917" />
+            {/* Face */}
+            <circle cx="8" cy="-80" r="28" fill="#e0a96d" />
+            {/* Shaggy Bangs */}
+            <path d="M -24 -105 Q 6 -80 30 -105" fill="#1c1917" />
+            {/* Wide Alert Open Eye */}
+            <circle cx="16" cy="-80" r="7" fill="#ffffff" />
+            <circle cx="18" cy="-80" r="3.5" fill="#0f172a" />
+            {/* Beard */}
+            <path d="M -18 -65 C -5 -38 28 -38 28 -65 Z" fill="#1c1917" />
+
+            {/* Seated Legs */}
+            <ellipse cx="-25" cy="75" rx="26" ry="16" fill="#78350f" />
+            <ellipse cx="25" cy="75" rx="26" ry="16" fill="#78350f" />
+
+            {/* Label */}
+            <text x="0" y="112" fill="#cbd5e1" fontSize="18" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+              Waspada 🛡️
+            </text>
           </g>
 
-          {/* 4. EVOLUTIONARY ALERT RADAR (Bottom of Box) */}
+          {/* 2. CAVEMAN 2 (Center-Left - THE MAIN YAWNER WITH BRAIN COOLING EFFECT) */}
+          <g transform="translate(-75, 45)">
+            {/* Body / Fur Tunic */}
+            <path d="M -60 135 L -35 30 L 35 30 L 60 135 Z" fill="#b45309" stroke="#78350f" strokeWidth="3.5" />
+            <ellipse cx="0" cy="140" rx="48" ry="24" fill="#78350f" />
+
+            {/* Head Tilted Back in Deep Yawn */}
+            <ellipse cx="0" cy="-25" rx="44" ry="42" fill="#1c1917" />
+            <circle cx="0" cy="-20" r="32" fill="#f7c5a4" />
+
+            {/* Sleepy Closed Squint Eyes */}
+            <path d="M -20 -28 Q -10 -38 0 -28" fill="none" stroke="#78350f" strokeWidth="4" strokeLinecap="round" />
+            <path d="M 8 -28 Q 18 -38 28 -28" fill="none" stroke="#78350f" strokeWidth="4" strokeLinecap="round" />
+
+            {/* WIDE OPEN YAWNING MOUTH */}
+            <ellipse cx="4" cy="-5" rx="20" ry="26" fill="#881337" stroke="#e11d48" strokeWidth="3" />
+            <path d="M -6 0 Q 4 10 14 0" fill="#fb7185" />
+
+            {/* Cold Air Intake Streamlines into Mouth */}
+            {[-1, 0, 1].map((sIdx) => (
+              <path
+                key={sIdx}
+                d={`M ${-65 + sIdx * 10} ${-25 + sIdx * 18} Q -35 -10 0 -5`}
+                fill="none"
+                stroke="#38bdf8"
+                strokeWidth="3.5"
+                strokeDasharray="8 5"
+                strokeDashoffset={-frame * 5}
+                opacity={0.85}
+              />
+            ))}
+
+            {/* ── ❄️ FLOATING BRAIN RADIATOR THERMOSTAT (Above Head with Clear Space) ── */}
+            <g transform="translate(0, -190)">
+              {/* Cooling Aura Glow */}
+              <circle cx="0" cy="0" r="70" fill="rgba(56, 189, 248, 0.22)" filter="url(#coolGlow5)" />
+
+              {/* Stylized Glowing Cyan Brain */}
+              <path
+                d="M -48 -14
+                   C -65 -48 -28 -70 0 -48
+                   C 28 -70 65 -48 48 -14
+                   C 70 22 42 55 0 48
+                   C -42 55 -70 22 -48 -14 Z"
+                fill="url(#coolBrainGrad)"
+                stroke="#bae6fd"
+                strokeWidth="4"
+              />
+              {/* Brain Wrinkles */}
+              <path d="M -20 -28 Q -8 -10 -22 12" stroke="#bae6fd" strokeWidth="3" fill="none" strokeLinecap="round" />
+              <path d="M 20 -28 Q 8 -10 22 12" stroke="#bae6fd" strokeWidth="3" fill="none" strokeLinecap="round" />
+
+              {/* Cold Snowflakes on Brain */}
+              <text x="-28" y="-32" fill="#ffffff" fontSize="22" filter="url(#coolGlow5)">❄️</text>
+              <text x="14" y="-32" fill="#ffffff" fontSize="22" filter="url(#coolGlow5)">❄️</text>
+
+              {/* Cooling Thermostat Tag */}
+              <g transform="translate(0, 68)">
+                <rect x="-115" y="-18" width="230" height="36" rx="18" fill="#0f172a" stroke="#38bdf8" strokeWidth="2.5" />
+                <text x="0" y="6" fill="#38bdf8" fontSize="17" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+                  ❄️ Suhu Turun 0.5°C ⬇️
+                </text>
+              </g>
+            </g>
+
+            {/* Label */}
+            <text x="0" y="180" fill="#fde047" fontSize="18" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+              Nguap Mendinginkan Otak 🥱
+            </text>
+          </g>
+
+          {/* 3. CAVEMAN 3 (Right - Catching the Yawn / Alerted) */}
+          <g transform="translate(255, 105)">
+            {/* Alert / Exclamation Icon */}
+            <g transform="translate(0, -170)">
+              <circle cx="0" cy="0" r="24" fill="#0f172a" stroke="#f43f5e" strokeWidth="3" />
+              <text x="0" y="8" fill="#f43f5e" fontSize="22" fontWeight="900" textAnchor="middle">⚡</text>
+            </g>
+
+            {/* Body / Fur Tunic */}
+            <path d="M -50 75 L -25 -35 L 35 -35 L 55 75 Z" fill="#78350f" stroke="#92400e" strokeWidth="3.5" />
+
+            {/* Shaggy Hair */}
+            <ellipse cx="0" cy="-75" rx="42" ry="40" fill="#292524" />
+            {/* Face */}
+            <circle cx="-8" cy="-70" r="28" fill="#d97706" />
+
+            {/* Reflexive Contagious Yawn Mouth */}
+            <ellipse cx="-12" cy="-60" rx="15" ry="22" fill="#881337" stroke="#e11d48" strokeWidth="2.5" />
+            <path d="M -18 -55 Q -12 -48 -6 -55" fill="#fb7185" />
+
+            {/* Surprised / Alert Eye */}
+            <circle cx="-14" cy="-78" r="6" fill="#ffffff" />
+            <circle cx="-15" cy="-78" r="3" fill="#0f172a" />
+
+            {/* Seated Base */}
+            <ellipse cx="0" cy="80" rx="46" ry="20" fill="#451a03" />
+
+            {/* Connecting Resonance Wave from Yawner */}
+            <path
+              d="M -195 -30 Q -90 -85 0 -60"
+              fill="none"
+              stroke="#fb7185"
+              strokeWidth="4"
+              strokeDasharray="8 6"
+              strokeDashoffset={-frame * 4}
+            />
+
+            {/* Label */}
+            <text x="0" y="118" fill="#fbcfe8" fontSize="18" fontWeight="900" textAnchor="middle" fontFamily="'Fredoka', sans-serif">
+              Ikutan Nguap! 😲
+            </text>
+          </g>
+
+          {/* 4. BOTTOM NARRATIVE BOX (Positioned comfortably at y=295) */}
           <g transform="translate(0, 310)">
             <rect
-              x="-360"
-              y="-54"
-              width="720"
-              height="108"
-              rx="24"
-              fill="rgba(12, 74, 110, 0.55)"
-              stroke="#0284c7"
+              x="-380"
+              y="-42"
+              width="760"
+              height="84"
+              rx="22"
+              fill="rgba(15, 23, 42, 0.92)"
+              stroke="#f59e0b"
               strokeWidth="3"
             />
             <text
               x="0"
-              y="-12"
-              fill="#bae6fd"
-              fontSize="24"
-              fontWeight="800"
-              textAnchor="middle"
-              fontFamily="'Plus Jakarta Sans', sans-serif"
-            >
-              Udara dingin mendinginkan otak yang panas,
-            </text>
-            <text
-              x="0"
-              y="28"
-              fill="#38bdf8"
-              fontSize="24"
+              y="-8"
+              fill="#fef08a"
+              fontSize="22"
               fontWeight="900"
               textAnchor="middle"
               fontFamily="'Fredoka', sans-serif"
             >
-              membuat kelompok manusia purba tetap waspada! ⚡
+              Nguap mendinginkan otak & menyalakan radar kelompok,
+            </text>
+            <text
+              x="0"
+              y="24"
+              fill="#bae6fd"
+              fontSize="20"
+              fontWeight="800"
+              textAnchor="middle"
+              fontFamily="'Plus Jakarta Sans', sans-serif"
+            >
+              membuat seluruh kawanan tetap waspada dari predator malam! 🐆🛡️
             </text>
           </g>
         </g>

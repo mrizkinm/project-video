@@ -73,17 +73,18 @@ Dokumen ini memuat preview visual lengkap 8 scene untuk **Episode 5** saluran **
 
 ---
 
-### 🎬 Scene 5: Brain Radiator Theory (Radiator Pendingin Otak)
+### 🎬 Scene 5: Prehistoric Group Vigilance (Radiator Alami & Evolusi Purba)
 ![Preview Scene 5](../public/preview_ep5_s5.png)
 
 - **Durasi & Frame:** 17.67s – 22.17s (Frame 530 – 665)
 - **Naskah Voiceover (Verbatim):**  
   > *"Zaman purba, nguap bareng mendinginkan suhu otak agar kelompok tetap waspada!"*
 - **Visual & Analogi:**
-  - Otak dengan gradient biru sejuk dialiri panah udara dingin dari hembusan nafas dalam (`🌬️ Udara Dingin`).
-  - Termometer di sebelah kanan dengan cairan raksa yang turun animatif ke angka `36.7°C ❄️ ⬇️`.
-  - Penjelasan bawah: *Udara dingin mendinginkan otak yang panas, membuat kelompok manusia purba tetap waspada! ⚡*
-- **Kenapa Mudah Dimengerti:** Menjawab pertanyaan *"kenapa fungsi ini diciptakan secara evolusi?"* dengan analogi radiator pendingin mesin mobil yang familiar bagi semua orang.
+  - **Kelompok Manusia Purba & Api Unggun:** Tiga manusia purba duduk melingkari api unggun malam hari di bawah langit berbintang.
+  - **Cooling Effect (Termostat Otak):** Manusia purba di tengah menguap lebar menghirup udara dingin malam hari. Di atas kepalanya muncul grafik otak berpendar es dengan termostat suhu turun: `❄️ Suhu Turun 0.5°C ⬇️`.
+  - **Radar Kewaspadaan Kelompok (Group Vigilance):** Kubah radar biru-cyan berdenyut melebar memayungi seluruh anggota kelompok (`📡 RADAR KEWASPADAAN KELOMPOK`), memicu anggota lain ikut menguap dan mata mereka menyala waspada (`👁️ Waspada` & `⚡ Ikutan Nguap!`).
+  - **Penjelasan Bawah:** *Nguap mendinginkan otak & menyalakan radar kelompok, membuat seluruh kawanan tetap waspada dari predator malam! 🐆🛡️*
+- **Kenapa Mudah Dimengerti:** Memvisualisasikan fungsi evolusi secara nyata dan sinematik: menguap adalah mekanisme pendingin radiator alami agar kelompok manusia purba tidak tertidur lelap bersamaan dan tetap awas terhadap ancaman predator di malam hari.
 
 ---
 
